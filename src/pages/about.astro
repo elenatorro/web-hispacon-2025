@@ -4,29 +4,37 @@ import { Picture } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
+import Link from "@/components/ui/link.astro";
 
 // Filter team entries with 'draft: false' & date before current date
-const publishedTeamMembers = await getCollection("team", ({ data }) => {
-  return !data.draft && data.publishDate < new Date();
-});
+const publishedTeamMembers = []
+//const publishedTeamMembers = await getCollection("team", ({ data }) => {
+// return !data.draft && data.publishDate < new Date();
+//});
 ---
 
-<Layout title="About">
+<Layout title="Invitados">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
+      <Fragment slot="title">Invitados</Fragment>
+      <Fragment slot="desc">Lista de participantes</Fragment>
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <h2 class="font-bold text-3xl text-gray-800">
-        Empowering the world with Astro.
+        Formulario de recepción de charlas
       </h2>
-      <p class="text-lg leading-relaxed text-slate-500">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
+      <p class="text-lg leading-relaxed text-slate-500">Podréis hacernos llegar vuestras propuestas para el programa de charlas. Estamos abiertes a cualquier tipo de propuesta, desde charlas hasta mesas redondas, pasando por exposiciones, proyecciones, entrevistas, podcasts, talleres, performances... ¡Cualquier propuesta es bienvenida!
       </p>
+        <Link
+        size="lg"
+        style="outline"
+        rel="noopener"
+        href="https://docs.google.com/forms/d/e/1FAIpQLScFHpRUepODkJb3fma5gbLEDDmM8WHvAJ2C1TBTcCihLDiYtQ/viewform"
+        class="flex gap-1 items-center justify-center"
+        target="_blank">
+        Formulario
+      </Link>
     </div>
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
       {

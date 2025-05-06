@@ -1,5 +1,19 @@
-<footer class="my-20">
+---
+import { Picture } from "astro:assets";
+import ajuntamentSabadell from "@/assets/ajuntament-de-sabadell.png";
+
+---
+
+<footer class="my-20 w-full flex items-center justify-center sm:flex-row gap-3 bottom-0">
   <p class="text-center text-sm text-slate-500">
-    Copyright © {new Date().getFullYear()} Hispacón 2025
+    Copyright © Hispacón 2025 - Pórtico
   </p>
+  <Picture
+    src={ajuntamentSabadell}
+    alt="Ajuntament de Sabadell"
+    width="220"
+    sizes="(max-width: 800px) 100vw, 620px"
+    loading="eager"
+    format="avif"
+  />
 </footer>

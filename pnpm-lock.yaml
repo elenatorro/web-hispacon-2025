@@ -20,6 +20,9 @@ importers:
       '@fontsource-variable/inter':
         specifier: ^5.2.5
         version: 5.2.5
+      '@fontsource/turret-road':
+        specifier: ^5.2.5
+        version: 5.2.5
       '@iconify-json/bx':
         specifier: ^1.2.2
         version: 1.2.2
@@ -308,6 +311,9 @@ packages:
 
   '@fontsource-variable/inter@5.2.5':
     resolution: {integrity: sha512-TrWffUAFOnT8zroE9YmGybagoOgM/HjRqMQ8k9R0vVgXlnUh/vnpbGPAS/Caz1KIlOPnPGh6fvJbb7DHbFCncA==}
+
+  '@fontsource/turret-road@5.2.5':
+    resolution: {integrity: sha512-XvZSA+KEuXNS9uVb9pIfS2T10FwfVa9GD7hlXgPUNnbMVXfhRY4Ln6LqsPnfB4mG2qkQlov7Om45lxfmJ7pxcg==}
 
   '@iconify-json/bx@1.2.2':
     resolution: {integrity: sha512-hZVx6LMEkYckScdRdUuQWcmv8Lm2au6Cnf799TLoR6YgiAfFvaJ4M5ElwcnExvCu8ntsS7jW89r0W5LwBAfZXQ==}
@@ -2791,6 +2797,8 @@ snapshots:
   '@fontsource-variable/bricolage-grotesque@5.2.7': {}
 
   '@fontsource-variable/inter@5.2.5': {}
+
+  '@fontsource/turret-road@5.2.5': {}
 
   '@iconify-json/bx@1.2.2':
     dependencies:
