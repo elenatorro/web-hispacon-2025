@@ -12,7 +12,7 @@ const menuitems = [
     path: "/pricing",
   },
   {
-    title: "Invitados",
+    title: "Participantes",
     path: "/about",
     badge: false
   },
@@ -32,8 +32,8 @@ const menuitems = [
 ];
 ---
 
-<Container>
-  <header class="flex flex-col lg:flex-row justify-between items-center my-5">
+<!-- <Container> -->
+  <header class="flex flex-col lg:flex-row justify-around items-center py-5 px-8 bg-(--main-color) text-(--font-secondary-color)">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg">
@@ -47,10 +47,10 @@ const menuitems = [
           />
         </a>
         <div class="block lg:hidden">
-          <MenuIcon class="w-4 h-4 text-gray-800" />
+          <MenuIcon class="w-4 h-4 text-white-800" />
         </div>
       </div>
-      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0 text-lg uppercase">
         <ul class="flex flex-col lg:flex-row lg:gap-3">
           {
             menuitems.map((item, index) => (
@@ -67,7 +67,7 @@ const menuitems = [
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
+                      class="flex lg:px-3 py-2 items-center text-(--font-secondary-color) hover:text-(--font-hover-color)">
                       <span> {item.title}</span>
                       {item.badge && (
                         <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
@@ -85,8 +85,8 @@ const menuitems = [
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <Link href="https://patreon.com/Hispacon2025" size="md" target="_blank">Patreon</Link>
+        <Link href="https://patreon.com/Hispacon2025" class="" size="md" target="_blank">Patreon</Link>
       </div>
     </div>
   </header>
-</Container>
+<!-- </Container> -->
