@@ -3,6 +3,8 @@ import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 
+const base =  "/hispacon2025" // FIXME
+
 // Generate a new path for every collection entry
 export async function getStaticPaths() {
   const infoEntries = await getCollection("info");
@@ -47,7 +49,7 @@ const { Content } = await entry.render();
     </div>
     <div class="text-center mt-8">
       <a
-        href="/info"
+        href={`${base}/info`}
         class="bg-gray-100 px-5 py-3 rounded-md hover:bg-gray-200 transition"
         >← Info</a
       >

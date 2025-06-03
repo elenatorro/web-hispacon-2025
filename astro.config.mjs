@@ -5,7 +5,8 @@ import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 
 export default defineConfig({
-  site: "https://hispacon2025.netlify.app",
+  site: "https://asociacionportico.com",
+  base: "/hispacon2025",
   integrations: [mdx(), sitemap(), icon()],
   vite: {
     plugins: [tailwindcss()],

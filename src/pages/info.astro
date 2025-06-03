@@ -5,6 +5,8 @@ import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
 
+const base =  "/hispacon2025" // FIXME
+
 // Filter info entries with 'draft: false' & date before current date
 const publishedBlogEntries = await getCollection("info", ({ data }) => {
   return !data.draft
@@ -25,7 +27,7 @@ const publishedBlogEntries = await getCollection("info", ({ data }) => {
         {
           publishedBlogEntries.map((infoPostEntry, index) => (
             <li>
-              <a href={`/info/${infoPostEntry.slug}`}>
+              <a href={`${base}/info/${infoPostEntry.slug}`}>
                 <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
                   <Picture
                     src={infoPostEntry.data.image.src}

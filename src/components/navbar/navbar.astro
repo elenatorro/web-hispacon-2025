@@ -6,29 +6,31 @@ import hispaconLogo from "@/assets/hispacon-logo.png";
 import { Picture } from "astro:assets";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
+const base =  "/hispacon2025" // FIXME
+
 const menuitems = [
   {
     title: "Horario",
-    path: "/horario",
+    path: `${base}/horario`,
   },
   {
     title: "Participantes",
-    path: "/about",
+    path: `${base}/about`,
     badge: false
   },
   {
     title: "Contacto",
-    path: "/contact",
+    path: `${base}/contact`,
   },
   {
     title: "Info",
-    path: "/info",
+    path: `${base}/info`,
   },
   {
     title: "Más",
     path: "#",
     children: [
-      { title: "Código de Conducta", path: "/info/codigo-de-conducta" },
+      { title: "Código de Conducta", path: `${base}/info/codigo-de-conducta` },
     ],
   }
 ];
@@ -38,7 +40,7 @@ const menuitems = [
   <header class="flex flex-col lg:flex-row justify-around items-center py-5 px-8 bg-(--main-color) text-(--font-secondary-color)">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg">
+        <a href={base} class="text-lg">
           <Picture
             src={hispaconLogo}
             alt="Hispacon"

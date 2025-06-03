@@ -4,6 +4,7 @@ import { getFormattedDate } from "@/utils/all";
 import Layout from "./Layout.astro";
 
 const { frontmatter } = Astro.props;
+const base =  "/hispacon2025" // FIXME
 ---
 
 <Layout title={frontmatter.title}>
@@ -40,7 +41,7 @@ const { frontmatter } = Astro.props;
     </div>
     <div class="text-center mt-8">
       <a
-        href="/info"
+        href={`${base}/info`}
         class="bg-gray-100 px-5 py-3 rounded-md hover:bg-gray-200 transition"
         >← Info</a
       >
