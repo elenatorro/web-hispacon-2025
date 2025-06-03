@@ -21,15 +21,19 @@ jobs:
           node-version: 18
           cache: 'pnpm'
 
-      # Step 3: Install dependencies
+      # Step 3: Install pnpm
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      # Step 4: Install dependencies
       - name: Install dependencies
         run: pnpm install
 
-      # Step 4: Build the Astro site
+      # Step 5: Build the Astro site
       - name: Build site
         run: pnpm run build
 
-      # Step 5: Upload build output via FTP
+      # Step 6: Upload build output via FTP
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
