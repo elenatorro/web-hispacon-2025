@@ -3,7 +3,7 @@ draft: false
 title: "Casal Pere Quart"
 snippet: "El lugar del evento"
 image: {
-    src: "public/casal.png",
+    src: "public/casal.jpg",
     alt: "alt"
 }
 category: "info"

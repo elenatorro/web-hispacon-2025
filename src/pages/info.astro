@@ -28,13 +28,13 @@ const publishedBlogEntries = await getCollection("info", ({ data }) => {
           publishedBlogEntries.map((infoPostEntry, index) => (
             <li>
               <a href={`${base}/info/${infoPostEntry.slug}`}>
-                <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
+                <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-top">
                   <Picture
                     src={infoPostEntry.data.image.src}
                     alt={infoPostEntry.data.image.alt}
                     sizes="(max-width: 800px) 100vw, 800px"
-                    width={800}
-                    height={600}
+                    //width={800}
+                    height="auto"
                     loading={index <= 2 ? "eager" : "lazy"}
                     decoding={index <= 2 ? "sync" : "async"}
                     class="w-full rounded-md object-cover object-center bg-white"

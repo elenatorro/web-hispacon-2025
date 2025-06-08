@@ -3,7 +3,7 @@ draft: false
 title: "Gala Premios Ignotus"
 snippet: "Toda la información sobre la gala"
 image: {
-    src: "public/gala_ignotus.png",
+    src: "public/ignotus.jpeg",
     alt: "alt"
 }
 category: "info"

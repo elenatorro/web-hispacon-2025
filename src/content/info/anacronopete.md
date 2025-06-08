@@ -3,7 +3,7 @@ draft: false
 title: "Anacronópete"
 snippet: "La antología"
 image: {
-    src: "public/anacronopete.png",
+    src: "public/anacronopete-min.jpg",
     alt: "alt"
 }
 category: "info"
