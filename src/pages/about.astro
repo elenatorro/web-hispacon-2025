@@ -1,16 +1,21 @@
 ---
 import { getCollection } from "astro:content";
-import { Picture } from "astro:assets";
+import { Picture, getImage } from "astro:assets"; // Import getImage
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
 import Link from "@/components/ui/link.astro";
 
-// Filter team entries with 'draft: false' & date before current date
-const publishedTeamMembers = []
-//const publishedTeamMembers = await getCollection("team", ({ data }) => {
-// return !data.draft && data.publishDate < new Date();
-//});
+const publishedTeamMembers = await getCollection("team", ({ data }) => {
+  return !data.draft;
+});
+
+// Convert string-based avatar.src to image objects
+for (const member of publishedTeamMembers) {
+  if (typeof member.data.avatar.src === "string") {
+    member.data.avatar.src = await getImage({ src: member.data.avatar.src });
+  }
+}
 ---
 
 <Layout title="Participantes">
@@ -20,42 +25,35 @@ const publishedTeamMembers = []
       <Fragment slot="desc">Lista de ponentes, talleristas y participantes de actividades</Fragment>
     </Sectionhead>
 
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800">
-        Formulario de recepción de charlas
-      </h2>
-      <p class="text-lg leading-relaxed text-slate-500">Podréis hacernos llegar vuestras propuestas para el programa de charlas. Estamos abiertes a cualquier tipo de propuesta, desde charlas hasta mesas redondas, pasando por exposiciones, proyecciones, entrevistas, podcasts, talleres, performances... ¡Cualquier propuesta es bienvenida!
-      </p>
-        <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="https://docs.google.com/forms/d/e/1FAIpQLScFHpRUepODkJb3fma5gbLEDDmM8WHvAJ2C1TBTcCihLDiYtQ/viewform"
-        class="flex gap-1 items-center justify-center"
-        target="_blank">
-        Formulario
-      </Link>
-    </div>
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
       {
         publishedTeamMembers.map((teamMemberEntry) => (
           <div class="group">
             <div class="w-full aspect-square">
-              <Picture
-                src={teamMemberEntry.data.avatar.src}
-                alt={teamMemberEntry.data.avatar.alt}
-                sizes="(max-width: 800px) 100vw, 400px"
-                width={400}
-                height={400}
-                class="w-full rounded-sm transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
-              />
+              <Link href={`${teamMemberEntry.data.link}`} class="contents" target="_blank">
+                <Picture
+                  src={teamMemberEntry.data.avatar.src}
+                  alt={teamMemberEntry.data.avatar.alt}
+                  sizes="(max-width: 800px) 100vw, 400px"
+                  width={400}
+                  height={400}
+                  class="w-full rounded-sm transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
+                />
+              </Link>
             </div>
 
-            <div class="mt-4 text-center">
-              <h2 class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2>
-              <h3 class="text-sm text-slate-500">
+            <div class="mt-4">
+              <h2 class="pb-2 text-lg text-gray-800 text-center">
+                <Link href={`${teamMemberEntry.data.link}`} class="contents" target="_blank">
+                  {teamMemberEntry.data.name}
+                </Link>
+              </h2>
+              {/* <h3 class="text-sm text-slate-500">
                 {teamMemberEntry.data.title}
-              </h3>
+              </h3> */}
+              <p>
+                {teamMemberEntry.data.description}
+              </p>
             </div>
           </div>
         ))
