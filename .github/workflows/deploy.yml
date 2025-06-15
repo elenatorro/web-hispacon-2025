@@ -32,6 +32,9 @@ jobs:
 
       # Step 5: Build the Astro site
       - name: Build site
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+          BASE_PATH: ${{ secrets.BASE_PATH }}
         run: pnpm run build
 
       # Step 6: Upload build output via FTP

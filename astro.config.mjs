@@ -5,8 +5,8 @@ import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 
 export default defineConfig({
-  site: "https://hispacon.org",
-  base: "/",
+  site: process.env.SITE_URL || "https://hispacon.org",
+  base: process.env.BASE_PATH || "",
   integrations: [mdx(), sitemap(), icon()],
   vite: {
     plugins: [tailwindcss()],

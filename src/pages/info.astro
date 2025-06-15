@@ -5,7 +5,7 @@ import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
 
-const base =  "/" // FIXME
+const base = import.meta.env.BASE_PATH || "";
 
 // Filter info entries with 'draft: false' & date before current date
 const publishedBlogEntries = await getCollection("info", ({ data }) => {

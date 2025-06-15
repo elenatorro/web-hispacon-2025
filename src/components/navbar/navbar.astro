@@ -6,31 +6,31 @@ import hispaconLogo from "@/assets/hispacon-logo.png";
 import { Picture } from "astro:assets";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
-const base =  "/" // FIXME
+const base = import.meta.env.BASE_PATH || "";
 
 const menuitems = [
   {
     title: "Horario",
-    path: `/horario`,
+    path: `${base}/horario`,
   },
   {
     title: "Participantes",
-    path: `/participantes`,
+    path: `${base}/participantes`,
     badge: false
   },
   {
     title: "Contacto",
-    path: `/contact`,
+    path: `${base}/contact`,
   },
   {
     title: "Info",
-    path: `/info`,
+    path: `${base}/info`,
   },
   {
     title: "Más",
     path: "#",
     children: [
-      { title: "Código de Conducta", path: `/info/codigo-de-conducta` },
+      { title: "Código de Conducta", path: `${base}/info/codigo-de-conducta` },
     ],
   }
 ];
