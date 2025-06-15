@@ -5,6 +5,8 @@ import cartel from "@/assets/cartel.jpeg";
 import Link from "@/components/ui/link.astro";
 import { Icon } from "astro-icon/components";
 import hispaconLogo from "@/assets/hispacon-logo.png";
+
+const base = import.meta.env.BASE_PATH || "";
 ---
 
 <section
@@ -41,7 +43,7 @@ import hispaconLogo from "@/assets/hispacon-logo.png";
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link
         href="#"
-        href="info/patreon"
+        href=`${base}/info/patreon`
         target="_blank"
         class="flex gap-1 items-center justify-center"
         rel="noopener">
