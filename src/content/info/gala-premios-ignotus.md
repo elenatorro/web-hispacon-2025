@@ -4,7 +4,7 @@ title: "Gala Premios Ignotus"
 snippet: "Toda la información sobre la gala"
 image: {
     src: "public/ignotus.jpeg",
-    alt: "alt"
+    alt: "Foto del galardón"
 }
 category: "info"
 tags: []

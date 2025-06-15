@@ -4,7 +4,7 @@ title: "Casal Pere Quart"
 snippet: "El lugar del evento"
 image: {
     src: "public/casal.jpg",
-    alt: "alt"
+    alt: "Foto del edificio"
 }
 category: "info"
 tags: []

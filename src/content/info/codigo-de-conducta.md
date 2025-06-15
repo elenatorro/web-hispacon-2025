@@ -4,7 +4,7 @@ title: "Código de Conducta"
 snippet: "Código de conducta y protocolo de actuación para disfrutar de un evento seguro"
 image: {
     src: "public/codigo-conducta-min.jpg",
-    alt: "alt"
+    alt: "Foto de un libro abierto"
 }
 category: "info"
 tags: []

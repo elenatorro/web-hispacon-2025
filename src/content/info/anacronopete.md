@@ -4,7 +4,7 @@ title: "Anacronópete"
 snippet: "La antología"
 image: {
     src: "public/anacronopete-min.jpg",
-    alt: "alt"
+    alt: "Fantasmas de señoras dibujadas bailando"
 }
 category: "info"
 tags: []
