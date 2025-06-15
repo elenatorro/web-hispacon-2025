@@ -5,8 +5,8 @@ import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 
 export default defineConfig({
-  site: "https://asociacionportico.com",
-  base: "/hispacon2025",
+  site: "https://hispacon.org",
+  base: "/",
   integrations: [mdx(), sitemap(), icon()],
   vite: {
     plugins: [tailwindcss()],
