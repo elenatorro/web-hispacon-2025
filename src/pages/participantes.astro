@@ -4,6 +4,7 @@ import { Picture, getImage } from "astro:assets"; // Import getImage
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
+import SectionSub from "@/components/sectionsub.astro";
 import Link from "@/components/ui/link.astro";
 
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
@@ -20,11 +21,18 @@ for (const member of publishedTeamMembers) {
 
 <Layout title="Participantes">
   <Container>
+    <SectionSub>
+      <Fragment slot="title">👷‍♀️ Confirmación de participantes</Fragment>
+      <Fragment slot="desc">Estamos revisando las solicitudes de actividades enviadas. Nos iremos poniendo en contacto poco a poco y revelando las confirmaciones en nuestras redes sociales, y publicándolo en la web.</Fragment>
+    </SectionSub>
+    <SectionSub align="center">
+      <Fragment slot="title">✍️ Formulario de autoedición</Fragment>
+      <Fragment slot="desc">Las personas con libros autopublicados que quieran participar pueden mandar su solicitud a través de <Link href="https://docs.google.com/forms/d/e/1FAIpQLScRG6UIYfadyJ2UXYLy7H-vsLzl7FPwzK0jBWIdyoZrvMVfEQ/viewform" class="contents" target="_blank">este formulario</Link>, donde se detallan los requisitos. Las personas seleccionadas se comprometen a coordinarse con el resto de participantes de manera autónoma para establecer los turnos durante la feria. Los detalles están en el formulario.</Fragment>
+    </SectionSub>
     <Sectionhead>
-      <Fragment slot="title">Participantes</Fragment>
-      <Fragment slot="desc">Lista de ponentes, talleristas y participantes de actividades</Fragment>
+      <Fragment slot="title">✨ Participantes ✨</Fragment>
+      <Fragment slot="desc">Lista de ponentes, talleristas y participantes de actividades que se han confirmado</Fragment>
     </Sectionhead>
-
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
       {
         publishedTeamMembers.map((teamMemberEntry) => (
