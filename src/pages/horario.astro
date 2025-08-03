@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
+import Schedule from "@/components/schedule.astro";
 ---
 
 <Layout title="Horario">
@@ -9,35 +10,39 @@ import Sectionhead from "@/components/sectionhead.astro";
     <Sectionhead>
       <Fragment slot="title">Horario</Fragment>
       <Fragment slot="desc">
-        
-        <p class="mt-8 text-left">
-        El evento dará comienzo el Viernes 19 de Septiembre a las 16:00, cuando tendrá lugar la inauguración oficial. Las ponencias, charlas y actividades las publicaremos en los próximos días. Mientras tanto, os podemos adelantar que el horario será el siguiente:
-        </p>
-
-        <ul class="list-disc p-6 text-left">
-          <li>Viernes 19 de Septiembre: 16:00h a 21:00h</li>
-          <li>Sábado 20 de Septiembre: 11:00h a 14:00h y de 16:00h a 21:00h</li>
-          <li>Domingo 21 de Septiembre: 11:00h a 14:00h</li>
-        </ul>
-
-        <p class="mt-4 text-left">
-          Contamos con dos tracks de conferencias, uno de talleres y de charlas cortas, otro de presentaciones editoriales, y también una sala lúdica.
-          Además de esto, la feria editorial estará abierta durante todo el horario del evento.
-        </p>
-
-        <p class="mt-4 text-left">
-          La gala de los Premios Ignotus tendrá lugar el sábado 20 de Septiembre a las 19:00h, y la entrada será gratuita.
-        </p>
-
-        <p class="mt-4 text-left">
-          El sábado por la noche se celebrará una noche de podcasts, con la participación de varios programas, en una sala habilitada para ello.
-        </p>
-      </Fragment>
-      <Fragment slot="desc">
-        <p class="mt-4 text-left">
-        Publicaremos el horario de actividades definitivo cuando esté disponible.
-        </p>
+        Programa completo de la HispaCón 2025. Horarios y actividades del 19 al 21 de septiembre en Sabadell.
       </Fragment>
     </Sectionhead>
+
+    <div class="mt-12">
+      <Schedule layout="vertical" showDescription={true} />
+    </div>
+
+    <div class="mt-16 bg-gray-50 rounded-lg p-6">
+      <h3 class="text-xl font-bold mb-4">Información adicional</h3>
+      <div class="grid md:grid-cols-2 gap-6 text-sm">
+        <div>
+          <h4 class="font-semibold mb-2">Horarios generales:</h4>
+          <ul class="space-y-1 text-gray-600">
+            <li>• Viernes 19 de Septiembre: 16:00h a 21:00h</li>
+            <li>• Sábado 20 de Septiembre: 11:00h a 14:00h y de 16:00h a 21:00h</li>
+            <li>• Domingo 21 de Septiembre: 11:00h a 14:00h</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-2">Espacios disponibles:</h4>
+          <ul class="space-y-1 text-gray-600">
+            <li>• Sala Principal: Conferencias y eventos especiales</li>
+            <li>• Sala Taller: Talleres y actividades prácticas</li>
+            <li>• Sala Editorial: Presentaciones editoriales</li>
+            <li>• Sala Lúdica: Actividades lúdicas y juegos</li>
+            <li>• Hall Principal: Feria editorial permanente</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-4 text-xs text-gray-500">
+        * Los horarios y actividades pueden estar sujetos a cambios. Consulta las redes sociales para las últimas actualizaciones.
+      </p>
+    </div>
   </Container>
 </Layout>
