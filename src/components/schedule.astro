@@ -1,198 +1,21 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon/components";
+import type { ScheduleEvent, Track, TimeSlot, DaySchedule, ScheduleProps } from "@/types/schedule";
+import { 
+  formatDuration, 
+  getDurationHeight, 
+  getDurationIntensity, 
+  getTimeEndFromDuration,
+  getEventTimeDisplay,
+  getEventTypeStyle,
+  getEventIcon,
+  normalizeEvents,
+  getTotalEventCount
+} from "@/utils/schedule";
+import { scheduleData } from "@/data/schedule";
 
-interface ScheduleEvent {
-  time: string;
-  title: string;
-  description?: string;
-  speaker?: string;
-  location: string;
-  type: "talk" | "workshop" | "panel" | "break" | "special";
-}
-
-interface ScheduleDay {
-  date: string;
-  dayName: string;
-  events: ScheduleEvent[];
-}
-
-const scheduleData: ScheduleDay[] = [
-  {
-    date: "19 Septiembre",
-    dayName: "Viernes",
-    events: [
-      {
-        time: "16:00",
-        title: "Inauguración oficial",
-        description: "Bienvenida a la HispaCón 2025",
-        location: "Sala Principal",
-        type: "special"
-      },
-      {
-        time: "16:30",
-        title: "Mesa redonda: El futuro de la ciencia ficción española",
-        speaker: "Varios autores",
-        location: "Sala Principal",
-        type: "panel"
-      },
-      {
-        time: "17:30",
-        title: "Pausa café",
-        location: "Hall",
-        type: "break"
-      },
-      {
-        time: "18:00",
-        title: "Taller de escritura creativa",
-        speaker: "Por confirmar",
-        location: "Sala Taller",
-        type: "workshop"
-      },
-      {
-        time: "19:00",
-        title: "Presentaciones editoriales",
-        location: "Sala Editorial",
-        type: "talk"
-      },
-      {
-        time: "20:00",
-        title: "Actividades lúdicas",
-        location: "Sala Lúdica",
-        type: "special"
-      }
-    ]
-  },
-  {
-    date: "20 Septiembre",
-    dayName: "Sábado",
-    events: [
-      {
-        time: "11:00",
-        title: "Apertura día 2",
-        location: "Sala Principal",
-        type: "special"
-      },
-      {
-        time: "11:30",
-        title: "Conferencia magistral",
-        speaker: "Por confirmar",
-        location: "Sala Principal",
-        type: "talk"
-      },
-      {
-        time: "12:30",
-        title: "Presentaciones de proyectos",
-        location: "Sala Editorial",
-        type: "talk"
-      },
-      {
-        time: "14:00",
-        title: "Pausa comida",
-        location: "Hall",
-        type: "break"
-      },
-      {
-        time: "16:00",
-        title: "Mesa redonda: Terror contemporáneo",
-        speaker: "Varios autores",
-        location: "Sala Principal",
-        type: "panel"
-      },
-      {
-        time: "17:00",
-        title: "Taller de ilustración fantástica",
-        speaker: "Por confirmar",
-        location: "Sala Taller",
-        type: "workshop"
-      },
-      {
-        time: "18:00",
-        title: "Feria editorial abierta",
-        location: "Hall Principal",
-        type: "special"
-      },
-      {
-        time: "19:00",
-        title: "Gala Premios Ignotus",
-        description: "Entrega de los prestigiosos premios de género",
-        location: "Sala Principal",
-        type: "special"
-      }
-    ]
-  },
-  {
-    date: "21 Septiembre",
-    dayName: "Domingo",
-    events: [
-      {
-        time: "11:00",
-        title: "Apertura día final",
-        location: "Sala Principal",
-        type: "special"
-      },
-      {
-        time: "11:30",
-        title: "Charlas cortas: Nuevas voces",
-        speaker: "Autores emergentes",
-        location: "Sala Principal",
-        type: "talk"
-      },
-      {
-        time: "12:30",
-        title: "Última sesión de la feria",
-        location: "Hall Principal",
-        type: "special"
-      },
-      {
-        time: "13:30",
-        title: "Clausura y despedida",
-        description: "Cierre oficial de la HispaCón 2025",
-        location: "Sala Principal",
-        type: "special"
-      }
-    ]
-  }
-];
-
-const getEventTypeStyle = (type: string) => {
-  switch (type) {
-    case "talk":
-      return "bg-blue-100 text-blue-800 border-blue-200";
-    case "workshop":
-      return "bg-green-100 text-green-800 border-green-200";
-    case "panel":
-      return "bg-purple-100 text-purple-800 border-purple-200";
-    case "break":
-      return "bg-gray-100 text-gray-600 border-gray-200";
-    case "special":
-      return "bg-yellow-100 text-yellow-800 border-yellow-200";
-    default:
-      return "bg-gray-100 text-gray-600 border-gray-200";
-  }
-};
-
-const getEventIcon = (type: string) => {
-  switch (type) {
-    case "talk":
-      return "bx:bxs-microphone";
-    case "workshop":
-      return "bx:bxs-wrench";
-    case "panel":
-      return "bx:bxs-group";
-    case "break":
-      return "bx:bxs-coffee";
-    case "special":
-      return "bx:bxs-star";
-    default:
-      return "bx:bxs-calendar";
-  }
-};
-
-export interface Props {
-  layout?: "vertical" | "horizontal";
-  showDescription?: boolean;
-}
+export interface Props extends ScheduleProps {}
 
 const { layout = "vertical", showDescription = true } = Astro.props;
 ---
@@ -200,7 +23,7 @@ const { layout = "vertical", showDescription = true } = Astro.props;
 <div class="w-full">
   <!-- Tab Navigation -->
   <div class="border-b border-gray-200 mb-8">
-    <nav class="-mb-px flex space-x-8 justify-center" aria-label="Tabs">
+    <nav class="-mb-px flex space-x-8 justify-center flex-wrap" aria-label="Tabs">
       {scheduleData.map((day, index) => (
         <button
           class={`schedule-tab py-2 px-4 border-b-2 font-medium text-sm transition-colors ${
@@ -230,128 +53,308 @@ const { layout = "vertical", showDescription = true } = Astro.props;
         <h3 class="text-2xl font-bold text-gray-900 mb-2">
           {day.dayName}, {day.date}
         </h3>
-        <p class="text-gray-600">
-          {day.events.length} eventos programados
-        </p>
+        
+        <!-- Track Legend -->
+        <div class="flex flex-wrap gap-2 mb-6">
+          {day.tracks.map((track) => (
+            <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-white border text-xs">
+              <div class={`w-3 h-3 rounded-full ${track.color}`}></div>
+              <span class="font-medium">{track.name}</span>
+            </div>
+          ))}
+        </div>
       </div>
 
       {layout === "vertical" ? (
-        <!-- Vertical Layout -->
-        <div class="space-y-6">
-          {day.events.map((event) => (
-            <div class="flex gap-4 group">
-              <!-- Time Column -->
-              <div class="flex-shrink-0 w-20">
-                <div class="text-sm font-medium text-gray-900">
-                  {event.time}
+        <!-- Vertical Multi-Track Layout -->
+        <div class="space-y-8">
+          {day.timeSlots.map((timeSlot) => (
+            <div class="border rounded-lg p-4 bg-gray-50">
+              <!-- Time Header -->
+              <div class="flex items-center gap-3 mb-4">
+                <div class="bg-indigo-600 text-white px-3 py-1 rounded-lg font-bold text-lg">
+                  {timeSlot.time}
                 </div>
               </div>
               
-              <!-- Event Card -->
-              <div class="flex-1">
-                <div class={`rounded-lg border-2 p-4 transition-all duration-200 group-hover:shadow-md ${getEventTypeStyle(event.type)}`}>
-                  <div class="flex items-start gap-3">
-                    <div class="flex-shrink-0 mt-1">
-                      <Icon 
-                        class="w-5 h-5" 
-                        name={getEventIcon(event.type)} 
-                      />
-                    </div>
-                    <div class="flex-1 min-w-0">
-                      <h4 class="text-lg font-semibold mb-1">
-                        {event.title}
-                      </h4>
-                      {event.speaker && (
-                        <p class="text-sm font-medium mb-1">
-                          <Icon class="inline w-4 h-4 mr-1" name="bx:bxs-user" />
-                          {event.speaker}
-                        </p>
+              <!-- Events Grid -->
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                {day.tracks.map((track) => {
+                  const eventData = timeSlot.events[track.id];
+                  const events = normalizeEvents(eventData);
+                  return (
+                    <div class={`min-h-[120px] flex flex-col`}>
+                      {events.length > 0 ? (
+                        <div class="space-y-2">
+                          {events.map((event, eventIndex) => (
+                            <div class={`rounded-lg border-2 p-4 transition-all duration-200 hover:shadow-md relative ${getEventTypeStyle(event.type)} ${getDurationIntensity(event.duration)}`}>
+                              <!-- Duration indicator bar -->
+                              <div class={`absolute left-0 top-0 bottom-0 w-1 rounded-l-lg ${track.color} opacity-80`}></div>
+                              
+                              <!-- Track Header -->
+                              <div class="flex items-center justify-between gap-2 mb-2">
+                                <div class="flex items-center gap-2">
+                                  <div class={`w-3 h-3 rounded-full ${track.color}`}></div>
+                                  <span class="text-xs font-bold text-gray-600">{track.name}</span>
+                                  {/* Indicator for specific start time */}
+                                  {event.startTime && (
+                                    <div class="w-2 h-2 bg-orange-400 rounded-full" title="Horario específico dentro del slot"></div>
+                                  )}
+                                  {/* Multi-event indicator */}
+                                  {events.length > 1 && (
+                                    <div class="text-xs bg-gray-200 text-gray-700 px-1 rounded">{eventIndex + 1}/{events.length}</div>
+                                  )}
+                                </div>
+                                {/* Duration badge */}
+                                <div class={`px-2 py-1 rounded-full text-xs font-medium ${
+                                  event.duration <= 30 ? 'bg-green-100 text-green-700' :
+                                  event.duration <= 60 ? 'bg-blue-100 text-blue-700' :
+                                  event.duration <= 120 ? 'bg-orange-100 text-orange-700' :
+                                  'bg-red-100 text-red-700'
+                                }`}>
+                                  {formatDuration(event.duration)}
+                                </div>
+                              </div>
+
+                              <div class="flex items-start gap-2 mb-2">
+                                <Icon 
+                                  class="w-4 h-4 mt-0.5 flex-shrink-0" 
+                                  name={getEventIcon(event.type)} 
+                                />
+                                <div class="min-w-0 flex-1">
+                                  <h4 class="font-semibold text-sm leading-tight mb-1">
+                                    {event.title}
+                                  </h4>
+                                </div>
+                              </div>
+
+                              <div class="text-xs text-gray-600 mb-2 rounded py-2">
+                                <Icon class="inline w-3 h-3 mr-1" name="bx:bxs-time" />
+                                {getEventTimeDisplay(timeSlot.time, event)}
+                              </div>
+                              
+                              {event.speaker && (
+                                <p class="text-xs mb-1 text-gray-700">
+                                  <Icon class="inline w-3 h-3 mr-1" name="bx:bxs-user" />
+                                  {event.speaker}
+                                </p>
+                              )}
+                              
+                              {showDescription && event.description && (
+                                <p class="text-xs text-gray-600 line-clamp-2 pt-4">
+                                  {event.description}
+                                </p>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <!-- Empty slot -->
+                        <div class="rounded-lg border-2 border-dashed border-gray-200 p-4 h-full flex items-center justify-center">
+                          <div class="text-center text-gray-400">
+                            <div class="flex items-center gap-2 mb-1">
+                              <div class={`w-3 h-3 rounded-full ${track.color}`}></div>
+                              <span class="text-xs font-medium">{track.name}</span>
+                            </div>
+                            <span class="text-xs">Sin programar</span>
+                          </div>
+                        </div>
                       )}
-                      {showDescription && event.description && (
-                        <p class="text-sm mb-2 opacity-90">
-                          {event.description}
-                        </p>
-                      )}
-                      <div class="flex items-center text-sm">
-                        <Icon class="w-4 h-4 mr-1" name="bx:bxs-map" />
-                        {event.location}
-                      </div>
                     </div>
-                  </div>
-                </div>
+                  );
+                })}
               </div>
             </div>
           ))}
         </div>
       ) : (
-        <!-- Horizontal Layout -->
+        <!-- Horizontal Compact Layout -->
         <div class="overflow-x-auto">
-          <div class="min-w-full">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {day.events.map((event) => (
-                <div class={`rounded-lg border-2 p-4 transition-all duration-200 hover:shadow-md ${getEventTypeStyle(event.type)}`}>
-                  <div class="flex items-center gap-2 mb-2">
-                    <Icon 
-                      class="w-5 h-5" 
-                      name={getEventIcon(event.type)} 
-                    />
-                    <span class="text-sm font-bold">
-                      {event.time}
-                    </span>
-                  </div>
-                  <h4 class="font-semibold mb-2 text-sm">
-                    {event.title}
-                  </h4>
-                  {event.speaker && (
-                    <p class="text-xs mb-1 opacity-90">
-                      <Icon class="inline w-3 h-3 mr-1" name="bx:bxs-user" />
-                      {event.speaker}
-                    </p>
-                  )}
-                  {showDescription && event.description && (
-                    <p class="text-xs mb-2 opacity-80">
-                      {event.description}
-                    </p>
-                  )}
-                  <div class="flex items-center text-xs">
-                    <Icon class="w-3 h-3 mr-1" name="bx:bxs-map" />
-                    {event.location}
-                  </div>
-                </div>
+          <table class="min-w-full border-collapse">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border border-gray-300 px-3 py-2 text-left font-bold text-sm">
+                  Hora
+                </th>
+                {day.tracks.map((track) => (
+                  <th class="border border-gray-300 px-3 py-2 text-left font-bold text-sm min-w-[200px]">
+                    <div class="flex items-center gap-2">
+                      <div class={`w-3 h-3 rounded-full ${track.color}`}></div>
+                      {track.name}
+                    </div>
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {day.timeSlots.map((timeSlot) => (
+                <tr class="hover:bg-gray-50">
+                  <td class="border border-gray-300 px-3 py-2 font-bold text-sm bg-indigo-50">
+                    {timeSlot.time}
+                  </td>
+                  {day.tracks.map((track) => {
+                    const eventData = timeSlot.events[track.id];
+                    const events = normalizeEvents(eventData);
+                    return (
+                      <td class="border border-gray-300 px-3 py-2 text-sm align-top">
+                        {events.length > 0 ? (
+                          <div class="space-y-2">
+                            {events.map((event, eventIndex) => (
+                              <div class={`rounded p-2 relative ${getEventTypeStyle(event.type)} ${getDurationIntensity(event.duration)}`}>
+                                {/* Duration indicator bar */}
+                                <div class={`absolute left-0 top-0 bottom-0 w-1 rounded-l ${track.color} opacity-80`}></div>
+                                
+                                <div class="flex items-start justify-between gap-1 mb-1">
+                                  <div class="flex items-start gap-1 flex-1">
+                                    <Icon 
+                                      class="w-3 h-3 mt-0.5 flex-shrink-0" 
+                                      name={getEventIcon(event.type)} 
+                                    />
+                                    <div class="min-w-0 flex-1">
+                                      <div class="font-semibold text-xs leading-tight">
+                                        {event.title}
+                                      </div>
+                                      {/* Multi-event indicator */}
+                                      {events.length > 1 && (
+                                        <div class="text-xs text-gray-500 mt-1">{eventIndex + 1}/{events.length}</div>
+                                      )}
+                                    </div>
+                                  </div>
+                                  {/* Duration badge */}
+                                  <div class={`px-1 py-0.5 rounded text-xs font-medium ml-1 ${
+                                    event.duration <= 30 ? 'bg-green-100 text-green-700' :
+                                    event.duration <= 60 ? 'bg-blue-100 text-blue-700' :
+                                    event.duration <= 120 ? 'bg-orange-100 text-orange-700' :
+                                    'bg-red-100 text-red-700'
+                                  }`}>
+                                    {formatDuration(event.duration)}
+                                  </div>
+                                </div>
+                                
+                                {event.speaker && (
+                                  <p class="text-xs mb-1 opacity-90">
+                                    <Icon class="inline w-3 h-3 mr-1" name="bx:bxs-user" />
+                                    {event.speaker}
+                                  </p>
+                                )}
+                                
+                                {/* Enhanced time information */}
+                                <div class="text-xs opacity-75 bg-gray-100 rounded px-1 py-0.5 mt-1">
+                                  <Icon class="inline w-3 h-3 mr-1" name="bx:bxs-time" />
+                                  {getEventTimeDisplay(timeSlot.time, event)}
+                                  {/* Indicator for specific start time */}
+                                  {event.startTime && (
+                                    <span class="w-2 h-2 bg-orange-400 rounded-full inline-block ml-1" title="Horario específico"></span>
+                                  )}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          <div class="text-gray-400 text-xs text-center py-4">
+                            —
+                          </div>
+                        )}
+                      </td>
+                    );
+                  })}
+                </tr>
               ))}
-            </div>
-          </div>
+            </tbody>
+          </table>
         </div>
       )}
     </div>
   ))}
 
   <!-- Legend -->
-  <div class="mt-8 pt-6 border-t border-gray-200">
+  <!-- <div class="mt-8 pt-6 border-t border-gray-200">
+
     <h4 class="text-sm font-medium text-gray-900 mb-3">Tipos de eventos:</h4>
-    <div class="flex flex-wrap gap-3 text-xs">
-      <div class="flex items-center gap-1">
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 text-xs mb-6">
+      <div class="flex items-center gap-2">
         <Icon class="w-4 h-4 text-blue-600" name="bx:bxs-microphone" />
         <span>Conferencias</span>
       </div>
-      <div class="flex items-center gap-1">
+      <div class="flex items-center gap-2">
         <Icon class="w-4 h-4 text-green-600" name="bx:bxs-wrench" />
         <span>Talleres</span>
       </div>
-      <div class="flex items-center gap-1">
+      <div class="flex items-center gap-2">
         <Icon class="w-4 h-4 text-purple-600" name="bx:bxs-group" />
         <span>Mesas redondas</span>
       </div>
-      <div class="flex items-center gap-1">
+      <div class="flex items-center gap-2">
         <Icon class="w-4 h-4 text-gray-600" name="bx:bxs-coffee" />
         <span>Pausas</span>
       </div>
-      <div class="flex items-center gap-1">
+      <div class="flex items-center gap-2">
         <Icon class="w-4 h-4 text-yellow-600" name="bx:bxs-star" />
-        <span>Eventos especiales</span>
+        <span>Especiales</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <Icon class="w-4 h-4 text-indigo-600" name="bx:bxs-id-card" />
+        <span>Registro</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <Icon class="w-4 h-4 text-pink-600" name="bx:bxs-store" />
+        <span>Feria</span>
       </div>
     </div>
-  </div>
+
+
+    <h4 class="text-sm font-medium text-gray-900 mb-3">Duración de eventos:</h4>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+      <div class="flex items-center gap-2 px-3 py-2 bg-green-50 rounded-lg">
+        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+        <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full font-medium">30m</span>
+        <span>Eventos cortos</span>
+      </div>
+      <div class="flex items-center gap-2 px-3 py-2 bg-blue-50 rounded-lg">
+        <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+        <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full font-medium">1h</span>
+        <span>Eventos estándar</span>
+      </div>
+      <div class="flex items-center gap-2 px-3 py-2 bg-orange-50 rounded-lg">
+        <div class="w-3 h-3 bg-orange-500 rounded-full"></div>
+        <span class="px-2 py-1 bg-orange-100 text-orange-700 rounded-full font-medium">1h 30m</span>
+        <span>Eventos largos</span>
+      </div>
+      <div class="flex items-center gap-2 px-3 py-2 bg-red-50 rounded-lg">
+        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+        <span class="px-2 py-1 bg-red-100 text-red-700 rounded-full font-medium">2h+</span>
+        <span>Eventos extensos</span>
+      </div>
+    </div>
+
+    <h4 class="text-sm font-medium text-gray-900 mb-3 mt-6">Indicadores visuales:</h4>
+    <div class="grid md:grid-cols-2 gap-4 text-xs">
+      <div class="space-y-2">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-6 bg-gray-100 rounded relative">
+            <div class="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 rounded-l"></div>
+          </div>
+          <span>Barra lateral: color de la sala</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-6 bg-gray-100 rounded border-l-4 border-purple-500"></div>
+          <span>Grosor del borde: duración del evento</span>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <div class="flex items-center gap-3">
+          <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full font-medium text-xs">16:00 - 17:30</span>
+          <span>Horario completo con hora de fin</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-6 h-6 bg-blue-500 rounded-full"></div>
+          <span>Punto de color: identificación de sala</span>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
 </div>
 
 <script>
