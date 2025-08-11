@@ -44,7 +44,7 @@ export const getEventTypeStyle = (type: string): string => {
     case "panel":
       return "bg-purple-50 text-purple-900 border-purple-200";
     case "break":
-      return "bg-gray-50 text-gray-600 border-gray-200";
+      return "bg-gray-50 text-black-600 border-gray-200";
     case "special":
       return "bg-yellow-50 text-yellow-900 border-yellow-200";
     case "registration":
@@ -52,7 +52,7 @@ export const getEventTypeStyle = (type: string): string => {
     case "fair":
       return "bg-pink-50 text-pink-900 border-pink-200";
     default:
-      return "bg-gray-50 text-gray-600 border-gray-200";
+      return "bg-gray-50 text-black-600 border-gray-200";
   }
 };
 

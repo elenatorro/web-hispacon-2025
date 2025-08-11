@@ -9,21 +9,40 @@ import Schedule from "@/components/schedule.astro";
   <Container>
     <Sectionhead>
       <Fragment slot="title">Horario</Fragment>
-      <Fragment slot="desc">
+      <!-- <Fragment slot="desc">
         Programa completo de la HispaCón 2025. Horarios y actividades del 19 al 21 de septiembre en Sabadell.
+      </Fragment> -->
+      <Fragment slot="desc">
+        Estamos trabajando en el programa completo de la HispaCón 2025.
       </Fragment>
     </Sectionhead>
 
-    <div class="mt-12">
-      <Schedule layout="vertical" showDescription={true} />
+    <!-- Print version link
+    <div class="m-8 text-center">
+      <a 
+        href="/horario-print" 
+        target="_blank"
+        class="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6,9 6,2 18,2 18,9"></polyline>
+          <path d="M6,18H4a2,2,0,0,1-2-2V11a2,2,0,0,1,2-2H20a2,2,0,0,1,2,2v5a2,2,0,0,1-2,2H18"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        Versión para imprimir / PDF
+      </a>
     </div>
 
+    <div class="mt-12">
+      <Schedule layout="vertical" showDescription={true} />
+    </div> -->
+
     <div class="mt-16 bg-gray-50 rounded-lg p-6">
-      <h3 class="text-xl font-bold mb-4">Información adicional</h3>
+      <h3 class="text-xl font-bold mb-4">Información general</h3>
       <div class="grid md:grid-cols-2 gap-6 text-sm">
         <div>
           <h4 class="font-semibold mb-2">Horarios generales:</h4>
-          <ul class="space-y-1 text-gray-600">
+          <ul class="space-y-1 text-black-600">
             <li>• Viernes 19 de Septiembre: 16:00h a 21:00h</li>
             <li>• Sábado 20 de Septiembre: 11:00h a 14:00h y de 16:00h a 21:00h</li>
             <li>• Domingo 21 de Septiembre: 11:00h a 14:00h</li>
@@ -31,7 +50,7 @@ import Schedule from "@/components/schedule.astro";
         </div>
         <div>
           <h4 class="font-semibold mb-2">Espacios disponibles:</h4>
-          <ul class="space-y-1 text-gray-600">
+          <ul class="space-y-1 text-black-600">
             <li>• Auditorio Lazy: Charlas y paneles</li>
             <li>• Auditorio 2: Charlas y paneles</li>
             <li>• Sala 3 (Planta 1): Charlas cortas y talleres</li>
@@ -41,7 +60,7 @@ import Schedule from "@/components/schedule.astro";
           </ul>
         </div>
       </div>
-      <p class="mt-4 text-xs text-gray-500">
+      <p class="mt-4 text-xs text-black-500">
         * Los horarios y actividades pueden estar sujetos a cambios. Consulta las redes sociales para las últimas actualizaciones.
       </p>
     </div>

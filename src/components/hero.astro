@@ -37,17 +37,23 @@ const base = import.meta.env.BASE_PATH || "";
       Convención nacional de Fantasía, Ciencia Ficción y Terror. Del 19 al 21 de septiembre en Sabadell.
     </h2>
     <div class="mt-6 flex flex-col items-center sm:flex-row">
-      <Icon class="text-gray-400 w-8 h-8" name="uil:map-marker" />
+      <Icon class="text-black-400 w-8 h-8" name="uil:map-marker" />
       <p>Casal Pere Quart - Rambla, 69 - 08202, Sabadell</p>
     </div>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link
         href="#"
         href=`${base}/info/patreon`
-        target="_blank"
         class="flex gap-1 items-center justify-center"
         rel="noopener">
         Hazte mecenas
+      </Link>
+      <Link
+        href="#"
+        href=`${base}/info/inscripciones`
+        class="flex gap-1 items-center justify-center"
+        rel="noopener">
+        Inscripciones
       </Link>
       <Link
         size="lg"

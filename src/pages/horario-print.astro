@@ -1,0 +1,271 @@
+---
+import { scheduleData } from "../data/schedule";
+import { normalizeEvents, formatDuration, getEventTimeDisplay } from "../utils/schedule";
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HispaCón 2025 - Programa para imprimir</title>
+</head>
+<body>
+  <style>
+    /* Print-specific styles */
+    @media print {
+      body {
+        font-size: 10pt;
+        line-height: 1.3;
+        color: black !important;
+        background: white !important;
+      }
+      
+      .no-print {
+        display: none !important;
+      }
+      
+      .print-page {
+        page-break-after: always;
+      }
+      
+      .print-page:last-child {
+        page-break-after: avoid;
+      }
+      
+      .schedule-day {
+        page-break-inside: avoid;
+        margin-bottom: 30px;
+      }
+      
+      .time-slot {
+        page-break-inside: avoid;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+      }
+      
+      .event-card {
+        page-break-inside: avoid;
+        border: 1px solid #ddd;
+        margin-bottom: 5px;
+        padding: 8px;
+      }
+      
+      h1, h2, h3 {
+        color: black !important;
+      }
+      
+      .track-header {
+        background: #f5f5f5 !important;
+        border: 1px solid #ccc !important;
+      }
+      
+      .time-header {
+        background: #e5e5e5 !important;
+        border: 1px solid #999 !important;
+      }
+    }
+    
+    /* Screen styles for preview */
+    @media screen {
+      .print-container {
+        max-width: 210mm;
+        margin: 0 auto;
+        padding: 20mm;
+        background: white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+    }
+    
+    .schedule-day {
+      margin-bottom: 40px;
+    }
+    
+    .day-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+    }
+    
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    
+    .schedule-table th,
+    .schedule-table td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      vertical-align: top;
+      text-align: left;
+    }
+    
+    .time-column {
+      width: 100px;
+      background: #f0f0f0;
+      font-weight: bold;
+      text-align: center;
+    }
+    
+    .track-header {
+      background: #e8e8e8;
+      font-weight: bold;
+      text-align: center;
+      font-size: 12px;
+    }
+    
+    .event-title {
+      font-weight: bold;
+      font-size: 12px;
+      margin-bottom: 3px;
+    }
+    
+    .event-speaker {
+      font-size: 10px;
+      color: #666;
+      margin-bottom: 2px;
+    }
+    
+    .event-duration {
+      font-size: 9px;
+      color: #888;
+      font-style: italic;
+    }
+    
+    .event-type {
+      display: inline-block;
+      padding: 1px 4px;
+      border-radius: 3px;
+      font-size: 8px;
+      font-weight: bold;
+      margin-bottom: 3px;
+    }
+    
+    .type-talk { background: #e3f2fd; }
+    .type-workshop { background: #f3e5f5; }
+    .type-panel { background: #e8f5e8; }
+    .type-special { background: #fff3e0; }
+    .type-presentation { background: #fce4ec; }
+    .type-gaming { background: #fffde7; }
+    
+    .legend {
+      margin-top: 30px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+    }
+    
+    .legend-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .legend-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      font-size: 10px;
+    }
+    
+    .print-info {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
+
+  <!-- <div class="print-container">
+
+    <h1 style="text-align: center; margin-bottom: 10px; font-size: 28px;">HispaCón 2025</h1>
+    <h2 style="text-align: center; margin-bottom: 30px; font-size: 18px; color: #666;">Programa Completo - 19-21 Septiembre, Sabadell</h2>
+
+    {scheduleData.map((day, dayIndex) => (
+      <div class={`schedule-day ${dayIndex > 0 ? 'print-page' : ''}`}>
+        <div class="day-title">
+          {day.dayName} {day.date}
+        </div>
+
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th class="time-column">Horario</th>
+              {day.tracks.map(track => (
+                <th class="track-header">{track.name}</th>
+              ))}
+            </tr>
+          </thead>
+
+          <tbody>
+            {day.timeSlots.map(slot => (
+              <tr>
+                <td class="time-column">{slot.time}</td>
+                {day.tracks.map(track => {
+                  const trackEvents = normalizeEvents(slot.events[track.id] || []);
+                  return (
+                    <td>
+                      {trackEvents.length > 0 ? (
+                        trackEvents.map(event => (
+                          <div class="event-card">
+                            <div class={`event-type type-${event.type}`}>
+                              {event.type.toUpperCase()}
+                            </div>
+                            <div class="event-title">{event.title}</div>
+                            <div class="event-speaker">{event.speaker}</div>
+                            <div class="event-duration">
+                              {getEventTimeDisplay(slot.time, event)} • {formatDuration(event.duration)}
+                              {event.startTime && <span style="color: #ff6b35;"> ⚬</span>}
+                            </div>
+                          </div>
+                        ))
+                      ) : (
+                        <div style="height: 20px;"></div>
+                      )}
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    ))}
+
+    <div class="legend">
+      <div class="legend-title">Leyenda</div>
+      <div class="legend-grid">
+        <div><span class="event-type type-talk">TALK</span> Charla</div>
+        <div><span class="event-type type-workshop">WORKSHOP</span> Taller</div>
+        <div><span class="event-type type-panel">PANEL</span> Mesa redonda</div>
+        <div><span class="event-type type-special">SPECIAL</span> Evento especial</div>
+        <div><span class="event-type type-presentation">PRESENTATION</span> Presentación</div>
+        <div><span class="event-type type-gaming">GAMING</span> Actividad lúdica</div>
+      </div>
+      <div style="margin-top: 10px; font-size: 9px;">
+        <span style="color: #ff6b35;">⚬</span> Indica evento con hora de inicio específica dentro del bloque horario
+      </div>
+    </div>
+
+    <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #ccc; font-size: 10px; color: #666;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div>
+          <strong>Información de contacto:</strong><br>
+          Web: hispacon.org<br>
+          Email: info@hispacon.org<br>
+          Twitter: @HispaCon
+        </div>
+        <div>
+          <strong>Ubicación:</strong><br>
+          Casal Pere Quart<br>
+          Sabadell, Barcelona<br>
+          <em>* Horarios sujetos a cambios</em>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</body>
+</html>

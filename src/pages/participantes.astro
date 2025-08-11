@@ -21,14 +21,6 @@ for (const member of publishedTeamMembers) {
 
 <Layout title="Participantes">
   <Container>
-    <SectionSub>
-      <Fragment slot="title">👷‍♀️ Confirmación de participantes</Fragment>
-      <Fragment slot="desc">Estamos revisando las solicitudes de actividades enviadas. Nos iremos poniendo en contacto poco a poco y revelando las confirmaciones en nuestras redes sociales, y publicándolo en la web.</Fragment>
-    </SectionSub>
-    <SectionSub align="center">
-      <Fragment slot="title">✍️ Formulario de autoedición</Fragment>
-      <Fragment slot="desc">Las personas con libros autopublicados que quieran participar pueden mandar su solicitud a través de <Link href="https://docs.google.com/forms/d/e/1FAIpQLScRG6UIYfadyJ2UXYLy7H-vsLzl7FPwzK0jBWIdyoZrvMVfEQ/viewform" class="contents" target="_blank">este formulario</Link>, donde se detallan los requisitos. Las personas seleccionadas se comprometen a coordinarse con el resto de participantes de manera autónoma para establecer los turnos durante la feria. Los detalles están en el formulario.</Fragment>
-    </SectionSub>
     <Sectionhead>
       <Fragment slot="title">✨ Participantes ✨</Fragment>
       <Fragment slot="desc">Lista de ponentes, talleristas y participantes de actividades que se han confirmado</Fragment>
@@ -51,7 +43,7 @@ for (const member of publishedTeamMembers) {
             </div>
 
             <div class="mt-4">
-              <h2 class="pb-2 text-lg text-gray-800 text-center">
+              <h2 class="pb-2 text-lg text-black-800 text-center">
                 <Link href={`${teamMemberEntry.data.link}`} class="contents" target="_blank">
                   {teamMemberEntry.data.name}
                 </Link>
@@ -67,5 +59,9 @@ for (const member of publishedTeamMembers) {
         ))
       }
     </div>
+    <SectionSub>
+      <Fragment slot="title">👷‍♀️ Confirmación de participantes</Fragment>
+      <Fragment slot="desc">Estamos revisando las solicitudes de actividades enviadas. Nos iremos poniendo en contacto poco a poco y revelando las confirmaciones en nuestras redes sociales, y publicándolo en la web.</Fragment>
+    </SectionSub>
   </Container>
 </Layout>

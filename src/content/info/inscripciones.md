@@ -12,4 +12,4 @@ tags: []
 
 ## Inscripciones
 
-La HispaCón 2025 es un evento gratuito y de libre acceso. No obstante, como en años anterios, tenemos a la disposición de los asistentes acreditaciones para aquellos que deseen inscribirse en el evento. Esta inscripción se hará en la mesa habilitada para ello en persona, en el propio evento, de modo que el nombre de la persona inscrita quedará registrado y tendrá su acreditación correspondiente.
+La HispaCón 2025 es un evento gratuito y de libre acceso. No obstante, como en años anteriores, tenemos a la disposición de los asistentes acreditaciones para aquellos que deseen inscribirse en el evento. Esta inscripción se hará en la mesa habilitada para ello en persona, en el propio evento, de modo que el nombre de la persona inscrita quedará registrado y tendrá su acreditación correspondiente.

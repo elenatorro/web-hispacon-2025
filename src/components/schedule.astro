@@ -29,7 +29,7 @@ const { layout = "vertical", showDescription = true } = Astro.props;
           class={`schedule-tab py-2 px-4 border-b-2 font-medium text-sm transition-colors ${
             index === 0 
               ? 'border-indigo-500 text-indigo-600' 
-              : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              : 'border-transparent text-black-500 hover:text-black-700 hover:border-gray-300'
           }`}
           data-tab={index}
           type="button"
@@ -50,7 +50,7 @@ const { layout = "vertical", showDescription = true } = Astro.props;
       data-content={dayIndex}
     >
       <div class="mb-6">
-        <h3 class="text-2xl font-bold text-gray-900 mb-2">
+        <h3 class="text-2xl font-bold text-black-900 mb-2">
           {day.dayName}, {day.date}
         </h3>
         
@@ -69,7 +69,8 @@ const { layout = "vertical", showDescription = true } = Astro.props;
         <!-- Vertical Multi-Track Layout -->
         <div class="space-y-8">
           {day.timeSlots.map((timeSlot) => (
-            <div class="border rounded-lg p-4 bg-gray-50">
+            // <div class="border rounded-lg p-4 bg-gray-50">
+            <div class="bg-white border-1 border-indigo-200 rounded-lg p-4">
               <!-- Time Header -->
               <div class="flex items-center gap-3 mb-4">
                 <div class="bg-indigo-600 text-white px-3 py-1 rounded-lg font-bold text-lg">
@@ -95,14 +96,14 @@ const { layout = "vertical", showDescription = true } = Astro.props;
                               <div class="flex items-center justify-between gap-2 mb-2">
                                 <div class="flex items-center gap-2">
                                   <div class={`w-3 h-3 rounded-full ${track.color}`}></div>
-                                  <span class="text-xs font-bold text-gray-600">{track.name}</span>
+                                  <span class="text-xs font-bold text-black-600">{track.name}</span>
                                   {/* Indicator for specific start time */}
                                   {event.startTime && (
                                     <div class="w-2 h-2 bg-orange-400 rounded-full" title="Horario específico dentro del slot"></div>
                                   )}
                                   {/* Multi-event indicator */}
                                   {events.length > 1 && (
-                                    <div class="text-xs bg-gray-200 text-gray-700 px-1 rounded">{eventIndex + 1}/{events.length}</div>
+                                    <div class="text-xs bg-gray-200 text-black-700 px-1 rounded">{eventIndex + 1}/{events.length}</div>
                                   )}
                                 </div>
                                 {/* Duration badge */}
@@ -128,20 +129,20 @@ const { layout = "vertical", showDescription = true } = Astro.props;
                                 </div>
                               </div>
 
-                              <div class="text-xs text-gray-600 mb-2 rounded py-2">
+                              <div class="text-xs text-black-600 mb-2 rounded py-2">
                                 <Icon class="inline w-3 h-3 mr-1" name="bx:bxs-time" />
                                 {getEventTimeDisplay(timeSlot.time, event)}
                               </div>
                               
                               {event.speaker && (
-                                <p class="text-xs mb-1 text-gray-700">
+                                <p class="text-xs mb-1 text-black-700">
                                   <Icon class="inline w-3 h-3 mr-1" name="bx:bxs-user" />
                                   {event.speaker}
                                 </p>
                               )}
                               
                               {showDescription && event.description && (
-                                <p class="text-xs text-gray-600 line-clamp-2 pt-4">
+                                <p class="text-xs text-black-600 line-clamp-2 pt-4">
                                   {event.description}
                                 </p>
                               )}
@@ -151,7 +152,7 @@ const { layout = "vertical", showDescription = true } = Astro.props;
                       ) : (
                         <!-- Empty slot -->
                         <div class="rounded-lg border-2 border-dashed border-gray-200 p-4 h-full flex items-center justify-center">
-                          <div class="text-center text-gray-400">
+                          <div class="text-center text-black-400">
                             <div class="flex items-center gap-2 mb-1">
                               <div class={`w-3 h-3 rounded-full ${track.color}`}></div>
                               <span class="text-xs font-medium">{track.name}</span>
@@ -216,7 +217,7 @@ const { layout = "vertical", showDescription = true } = Astro.props;
                                       </div>
                                       {/* Multi-event indicator */}
                                       {events.length > 1 && (
-                                        <div class="text-xs text-gray-500 mt-1">{eventIndex + 1}/{events.length}</div>
+                                        <div class="text-xs text-black-500 mt-1">{eventIndex + 1}/{events.length}</div>
                                       )}
                                     </div>
                                   </div>
@@ -251,7 +252,7 @@ const { layout = "vertical", showDescription = true } = Astro.props;
                             ))}
                           </div>
                         ) : (
-                          <div class="text-gray-400 text-xs text-center py-4">
+                          <div class="text-black-400 text-xs text-center py-4">
                             —
                           </div>
                         )}
@@ -270,7 +271,7 @@ const { layout = "vertical", showDescription = true } = Astro.props;
   <!-- Legend -->
   <!-- <div class="mt-8 pt-6 border-t border-gray-200">
 
-    <h4 class="text-sm font-medium text-gray-900 mb-3">Tipos de eventos:</h4>
+    <h4 class="text-sm font-medium text-black-900 mb-3">Tipos de eventos:</h4>
     <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 text-xs mb-6">
       <div class="flex items-center gap-2">
         <Icon class="w-4 h-4 text-blue-600" name="bx:bxs-microphone" />
@@ -285,7 +286,7 @@ const { layout = "vertical", showDescription = true } = Astro.props;
         <span>Mesas redondas</span>
       </div>
       <div class="flex items-center gap-2">
-        <Icon class="w-4 h-4 text-gray-600" name="bx:bxs-coffee" />
+        <Icon class="w-4 h-4 text-black-600" name="bx:bxs-coffee" />
         <span>Pausas</span>
       </div>
       <div class="flex items-center gap-2">
@@ -303,7 +304,7 @@ const { layout = "vertical", showDescription = true } = Astro.props;
     </div>
 
 
-    <h4 class="text-sm font-medium text-gray-900 mb-3">Duración de eventos:</h4>
+    <h4 class="text-sm font-medium text-black-900 mb-3">Duración de eventos:</h4>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
       <div class="flex items-center gap-2 px-3 py-2 bg-green-50 rounded-lg">
         <div class="w-3 h-3 bg-green-500 rounded-full"></div>
@@ -327,7 +328,7 @@ const { layout = "vertical", showDescription = true } = Astro.props;
       </div>
     </div>
 
-    <h4 class="text-sm font-medium text-gray-900 mb-3 mt-6">Indicadores visuales:</h4>
+    <h4 class="text-sm font-medium text-black-900 mb-3 mt-6">Indicadores visuales:</h4>
     <div class="grid md:grid-cols-2 gap-4 text-xs">
       <div class="space-y-2">
         <div class="flex items-center gap-3">
@@ -368,11 +369,11 @@ const { layout = "vertical", showDescription = true } = Astro.props;
         // Remove active classes from all tabs
         tabs.forEach(t => {
           t.classList.remove('border-indigo-500', 'text-indigo-600');
-          t.classList.add('border-transparent', 'text-gray-500');
+          t.classList.add('border-transparent', 'text-black-500');
         });
         
         // Add active classes to clicked tab
-        tab.classList.remove('border-transparent', 'text-gray-500');
+        tab.classList.remove('border-transparent', 'text-black-500');
         tab.classList.add('border-indigo-500', 'text-indigo-600');
         
         // Hide all content
