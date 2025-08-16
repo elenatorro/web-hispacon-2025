@@ -11,46 +11,72 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
   return !data.draft;
 });
 
-// Convert string-based avatar.src to image objects
 for (const member of publishedTeamMembers) {
   if (typeof member.data.avatar.src === "string") {
-    member.data.avatar.src = await getImage({ src: member.data.avatar.src });
+    // Keep as string for lazy loading
+    // member.data.avatar.src = await getImage({ src: member.data.avatar.src });
   }
 }
+
+publishedTeamMembers.sort((a, b) => {
+  if (a.slug === "stark-holborn") return -1;
+  if (b.slug === "stark-holborn") return 1;
+  return 0;
+});
 ---
 
 <Layout title="Participantes">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">✨ Participantes ✨</Fragment>
-      <Fragment slot="desc">Lista de ponentes, talleristas y participantes de actividades que se han confirmado</Fragment>
+      <Fragment slot="title">Participantes</Fragment>
+      <Fragment slot="desc">Lista de ponentes, talleristas y participantes de actividades</Fragment>
     </Sectionhead>
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+    <div class="space-y-8 mx-auto max-w-4xl mt-12" id="participants-container">
       {
-        publishedTeamMembers.map((teamMemberEntry) => (
-          <div class="group">
-            <div class="w-full aspect-square">
-              <Link href={`${teamMemberEntry.data.link}`} class="contents" target="_blank">
-                <Picture
-                  src={teamMemberEntry.data.avatar.src}
-                  alt={teamMemberEntry.data.avatar.alt}
-                  sizes="(max-width: 800px) 100vw, 400px"
-                  width={400}
-                  height={400}
-                  class="w-full rounded-sm transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
-                />
-              </Link>
+        publishedTeamMembers.map((teamMemberEntry, index) => (
+          <div 
+            class="group flex flex-col sm:flex-row gap-6 items-start participant-card opacity-0 transform translate-y-8 transition-all duration-500"
+            data-index={index}
+          >
+            <div class="flex-shrink-0 w-48 h-48 relative">
+              {teamMemberEntry.data.link ? (
+                <Link href={`${teamMemberEntry.data.link}`} class="contents" target="_blank">
+                  <div class="image-placeholder w-full h-full bg-gray-200 rounded-sm animate-pulse"></div>
+                  <img
+                    src={typeof teamMemberEntry.data.avatar.src === 'string' ? teamMemberEntry.data.avatar.src : teamMemberEntry.data.avatar.src.src}
+                    alt={teamMemberEntry.data.avatar.alt}
+                    width="192"
+                    height="192"
+                    class="participant-image w-full h-full rounded-sm transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center hidden"
+                    loading="lazy"
+                  />
+                </Link>
+              ) : (
+                <>
+                  <div class="image-placeholder w-full h-full bg-gray-200 rounded-sm animate-pulse"></div>
+                  <img
+                    src={typeof teamMemberEntry.data.avatar.src === 'string' ? teamMemberEntry.data.avatar.src : teamMemberEntry.data.avatar.src.src}
+                    alt={teamMemberEntry.data.avatar.alt}
+                    width="192"
+                    height="192"
+                    class="participant-image w-full h-full rounded-sm transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center hidden"
+                    loading="lazy"
+                  />
+                </>
+              )}
+              {teamMemberEntry.slug === "stark-holborn" && (
+                <div class="absolute top-2 right-2 bg-yellow-400 text-yellow-900 rounded-full p-1 shadow-md">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                </div>
+              )}
             </div>
 
-            <div class="mt-4">
-              <h2 class="pb-2 text-lg text-black-800 text-center">
-                <Link href={`${teamMemberEntry.data.link}`} class="contents" target="_blank">
-                  {teamMemberEntry.data.name}
-                </Link>
+            <div class="flex-1">
+              <h2 class="pb-2 text-lg">
+                <span class="participant-name">{teamMemberEntry.data.name}</span>
               </h2>
-              {/* <h3 class="text-sm text-slate-500">
-                {teamMemberEntry.data.title}
-              </h3> */}
               <p>
                 {teamMemberEntry.data.description}
               </p>
@@ -59,9 +85,156 @@ for (const member of publishedTeamMembers) {
         ))
       }
     </div>
-    <SectionSub>
-      <Fragment slot="title">👷‍♀️ Confirmación de participantes</Fragment>
-      <Fragment slot="desc">Estamos revisando las solicitudes de actividades enviadas. Nos iremos poniendo en contacto poco a poco y revelando las confirmaciones en nuestras redes sociales, y publicándolo en la web.</Fragment>
-    </SectionSub>
+
+    <div class="text-center mt-12 mb-8">
+      <p class="text-lg text-gray-600 italic font-medium">... y más por confirmar</p>
+    </div>
   </Container>
 </Layout>
+
+<script>
+  // Lazy loading for participant cards
+  document.addEventListener('DOMContentLoaded', function() {
+    const participantCards = document.querySelectorAll('.participant-card');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const card = entry.target;
+          const placeholder = card.querySelector('.image-placeholder') as HTMLElement;
+          const image = card.querySelector('.participant-image') as HTMLImageElement;
+          
+          // Animate card into view
+          card.classList.remove('opacity-0', 'translate-y-8');
+          card.classList.add('opacity-100', 'translate-y-0');
+          
+          // Load image with a slight delay for better UX
+          setTimeout(() => {
+            if (image && placeholder) {
+              // Hide placeholder and show image
+              placeholder.style.display = 'none';
+              image.classList.remove('hidden');
+              
+              // Add a fade-in effect for the image
+              image.style.opacity = '0';
+              image.style.transition = 'opacity 0.3s ease-in-out';
+              
+              // Trigger fade-in after image loads
+              if (image.complete) {
+                image.style.opacity = '1';
+              } else {
+                image.addEventListener('load', () => {
+                  image.style.opacity = '1';
+                });
+              }
+            }
+          }, 100);
+          
+          // Stop observing this card
+          observer.unobserve(card);
+        }
+      });
+    }, {
+      rootMargin: '50px', // Start loading 50px before entering viewport
+      threshold: 0.1 // Trigger when 10% of the card is visible
+    });
+
+    // Start observing all participant cards
+    participantCards.forEach(card => {
+      imageObserver.observe(card);
+    });
+
+    // Load the first few cards immediately for better perceived performance
+    const firstCards = Array.from(participantCards).slice(0, 3);
+    firstCards.forEach(card => {
+      const placeholder = card.querySelector('.image-placeholder') as HTMLElement;
+      const image = card.querySelector('.participant-image') as HTMLImageElement;
+      
+      // Animate card into view immediately
+      card.classList.remove('opacity-0', 'translate-y-8');
+      card.classList.add('opacity-100', 'translate-y-0');
+      
+      if (image && placeholder) {
+        placeholder.style.display = 'none';
+        image.classList.remove('hidden');
+        image.style.opacity = '1';
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Smooth transitions for lazy loading */
+  .participant-card {
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .image-placeholder {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  
+  /* Participant name styling */
+  .participant-name,
+  .participant-name-link {
+    font-weight: 700;
+    background: linear-gradient(135deg, #0891b2 0%, #1ccad6 50%, #22d3ee 100%);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: gradient-shift 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+  }
+  
+  .participant-name-link:hover {
+    background-size: 150% 150%;
+    transform: scale(1.02);
+    filter: brightness(1.1);
+  }
+  
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .participant-card {
+      transition: none;
+    }
+    
+    .image-placeholder {
+      animation: none;
+      background: #f0f0f0;
+    }
+    
+    .participant-name,
+    .participant-name-link {
+      animation: none;
+      background: linear-gradient(135deg, #0891b2 0%, #1ccad6 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .participant-name-link:hover {
+      transform: none;
+      filter: none;
+    }
+  }
+</style>

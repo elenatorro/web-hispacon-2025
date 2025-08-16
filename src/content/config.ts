@@ -22,7 +22,7 @@ const teamCollection = defineCollection({
   schema: ({ image }) => z.object({
     draft: z.boolean(),
     name: z.string(),
-    link: z.string().url(),
+    link: z.string().url().optional(),
     description: z.string(),
     avatar: z.object({
       src: image(),
