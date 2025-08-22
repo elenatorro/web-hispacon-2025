@@ -38,15 +38,15 @@ publishedTeamMembers.sort((a, b) => {
             class="group flex flex-col sm:flex-row gap-6 items-start participant-card opacity-0 transform translate-y-8 transition-all duration-500"
             data-index={index}
           >
-            <div class="flex-shrink-0 w-48 h-48 relative">
+            <div class="flex-shrink-0 w-56 h-56 relative">
               {teamMemberEntry.data.link ? (
                 <Link href={`${teamMemberEntry.data.link}`} class="contents" target="_blank">
                   <div class="image-placeholder w-full h-full bg-gray-200 rounded-sm animate-pulse"></div>
                   <img
                     src={typeof teamMemberEntry.data.avatar.src === 'string' ? teamMemberEntry.data.avatar.src : teamMemberEntry.data.avatar.src.src}
                     alt={teamMemberEntry.data.avatar.alt}
-                    width="192"
-                    height="192"
+                    width="224"
+                    height="224"
                     class="participant-image w-full h-full rounded-sm transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center hidden"
                     loading="lazy"
                   />
@@ -57,8 +57,8 @@ publishedTeamMembers.sort((a, b) => {
                   <img
                     src={typeof teamMemberEntry.data.avatar.src === 'string' ? teamMemberEntry.data.avatar.src : teamMemberEntry.data.avatar.src.src}
                     alt={teamMemberEntry.data.avatar.alt}
-                    width="192"
-                    height="192"
+                    width="224"
+                    height="224"
                     class="participant-image w-full h-full rounded-sm transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center hidden"
                     loading="lazy"
                   />
