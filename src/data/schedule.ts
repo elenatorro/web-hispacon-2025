@@ -91,7 +91,7 @@ export const scheduleData: DaySchedule[] = [
         time: "18:00 - 19:00",
         events: {
           auditorio_lacy: {
-            title: "Algo pasa en esta nave",
+            title: "La que se Navecina",
             speaker: "Caryanna Reuven, Celia Corral-Vázquez, Rafa Díaz, Alfredo Álamo, Daniel Pérez",
             description: "Mesa redonda sobre Space Opera",
             startTime: "18:00",
