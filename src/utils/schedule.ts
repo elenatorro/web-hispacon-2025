@@ -37,19 +37,19 @@ export const getTimeEndFromDuration = (startTime: string, durationMinutes: numbe
 
 export const getEventTypeStyle = (type: string): string => {
   switch (type) {
-    case "talk":
+    case "charla":
       return "bg-blue-50 text-blue-900 border-blue-200";
-    case "workshop":
+    case "taller":
       return "bg-green-50 text-green-900 border-green-200";
     case "panel":
       return "bg-purple-50 text-purple-900 border-purple-200";
     case "break":
       return "bg-gray-50 text-black-600 border-gray-200";
-    case "special":
+    case "destacada":
       return "bg-yellow-50 text-yellow-900 border-yellow-200";
-    case "registration":
+    case "registro":
       return "bg-indigo-50 text-indigo-900 border-indigo-200";
-    case "fair":
+    case "feria":
       return "bg-pink-50 text-pink-900 border-pink-200";
     default:
       return "bg-gray-50 text-black-600 border-gray-200";
@@ -58,19 +58,19 @@ export const getEventTypeStyle = (type: string): string => {
 
 export const getEventIcon = (type: string): string => {
   switch (type) {
-    case "talk":
+    case "charla":
       return "bx:bxs-microphone";
-    case "workshop":
+    case "taller":
       return "bx:bxs-wrench";
     case "panel":
       return "bx:bxs-group";
     case "break":
       return "bx:bxs-coffee";
-    case "special":
+    case "destacada":
       return "bx:bxs-star";
-    case "registration":
+    case "registro":
       return "bx:bxs-id-card";
-    case "fair":
+    case "feria":
       return "bx:bxs-store";
     default:
       return "bx:bxs-calendar";

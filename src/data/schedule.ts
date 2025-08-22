@@ -22,7 +22,7 @@ export const scheduleData: DaySchedule[] = [
             description: "Bienvenida y presentación de la HispaCón 2025",
             duration: 30,
             startTime: "16:30",
-            type: "special"
+            type: "destacada"
           },
           sala_4: {
             title: "Alicia tiene una tardis. Viajes y regeneraciones de Alicia en el País de las Maravillas en la cultura popular.",
@@ -30,7 +30,7 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             duration: 30,
             startTime: "16:30",
-            type: "talk"
+            type: "charla"
           },
           editorial: {
             title: "Tentacle Pulp",
@@ -46,10 +46,10 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "Nueva ola del teatro fantástico",
-            speaker: "",
+            speaker: "Loredana Volpe, Alba Quintas, Alberto Ramos, Quim Ribalta",
             description: "Mesa redonda",
             duration: 60,
-            type: "talk"
+            type: "panel"
           },
           sala_4: [
             {
@@ -58,15 +58,15 @@ export const scheduleData: DaySchedule[] = [
               description: "",
               duration: 30,
               startTime: "17:00",
-              type: "workshop"
+              type: "taller"
             },
             {
               title: "Audioficciones de género fantástico",
-              speaker: "",
-              description: "David Fdez. Vaamonde (SonosSonoros), Elena Torró (Droids&Druids)",
+              speaker: "David Fdez. Vaamonde (SonosSonoros), Elena Torró (Droids&Druids)",
+              description: "",
               duration: 30,
               startTime: "17:30",
-              type: "talk"
+              type: "charla"
             }
           ],
           editorial: [
@@ -91,12 +91,12 @@ export const scheduleData: DaySchedule[] = [
         time: "18:00 - 19:00",
         events: {
           auditorio_lacy: {
-            title: "Queer in space",
-            speaker: "Caryanna Reuven, Celia Corral-Vázquez",
-            description: "",
+            title: "Algo pasa en esta nave",
+            speaker: "Caryanna Reuven, Celia Corral-Vázquez, Rafa Díaz, Alfredo Álamo, Daniel Pérez",
+            description: "Mesa redonda sobre Space Opera",
             startTime: "18:00",
             duration: 60,
-            type: "talk"
+            type: "charla"
           },
           sala_4: {
             title: "Ride the Laughing",
@@ -104,12 +104,12 @@ export const scheduleData: DaySchedule[] = [
             description: "Taller para escribir humor",
             startTime: "18:00",
             duration: 60,
-            type: "workshop"
+            type: "taller"
           },
           editorial: {
             title: "Presentación Autopublicación",
             speaker: "",
-            description: "",
+            description: "A cargo de sus autores y autoras",
             startTime: "18:00",
             duration: 90,
             type: "panel"
@@ -125,7 +125,7 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             startTime: "19:00",
             duration: 60,
-            type: "talk"
+            type: "charla"
           },
           sala_4: [
             {
@@ -134,7 +134,7 @@ export const scheduleData: DaySchedule[] = [
               description: "",
               duration: 30,
               startTime: "19:00",
-              type: "workshop"
+              type: "taller"
             },
             {
               title: "Escribir un microrrelato usando el Tarot",
@@ -142,7 +142,7 @@ export const scheduleData: DaySchedule[] = [
               description: "",
               duration: 30,
               startTime: "19:30",
-              type: "workshop"
+              type: "taller"
             }
           ],
           editorial: [{
@@ -160,10 +160,10 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "El bizarro en los tiempos del cólera",
-            speaker: "",
+            speaker: "Bea Aguilar, Eduard Martí y Sergi Álvarez",
             description: "",
             duration: 60,
-            type: "talk"
+            type: "panel"
           },
           sala_4: [
             {
@@ -172,7 +172,7 @@ export const scheduleData: DaySchedule[] = [
               description: "",
               duration: 30,
               startTime: "20:00",
-              type: "workshop"
+              type: "taller"
             },
             {
               title: "El género fantástico en la música de los 80: No es serio este cementerio",
@@ -180,7 +180,7 @@ export const scheduleData: DaySchedule[] = [
               description: "",
               duration: 30,
               startTime: "20:30",
-              type: "workshop"
+              type: "taller"
             }
           ],
           editorial: [
@@ -237,7 +237,7 @@ export const scheduleData: DaySchedule[] = [
             speaker: "",
             description: "Toda la mañana",
             duration: 240,
-            type: "workshop"
+            type: "taller"
           },
           editorial: [{
             title: "Estelas de magia",
@@ -275,7 +275,7 @@ export const scheduleData: DaySchedule[] = [
             speaker: "",
             description: "Toda la mañana",
             duration: 240,
-            type: "workshop"
+            type: "taller"
           },
           editorial: [{
             title: "Apache Libros",
@@ -314,7 +314,7 @@ export const scheduleData: DaySchedule[] = [
             speaker: "",
             description: "Toda la mañana",
             duration: 240,
-            type: "workshop"
+            type: "taller"
           },
           editorial: [{
             title: "Obscura Editorial",
@@ -353,7 +353,7 @@ export const scheduleData: DaySchedule[] = [
             speaker: "",
             description: "Toda la mañana",
             duration: 240,
-            type: "workshop"
+            type: "taller"
           },
           editorial: [{
             title: "Suseya Editorial",
@@ -364,7 +364,7 @@ export const scheduleData: DaySchedule[] = [
         }
       },
       {
-        time: "14:00 - 16:00",
+        time: "14:00 - 16:00 🍔 Pausa comida",
         events: {
         }
       },
@@ -385,7 +385,7 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             startTime: "16:00",
             duration: 60,
-            type: "panel"
+            type: "taller"
           },
           sala_4: {
             title: "Cluedo en vivo",
@@ -393,7 +393,7 @@ export const scheduleData: DaySchedule[] = [
             description: "Actividad lúdica",
             startTime: "16:00",
             duration: 180,
-            type: "workshop"
+            type: "taller"
           },
           editorial: [{
             title: "La Biblioteca de Carfax",
@@ -412,7 +412,7 @@ export const scheduleData: DaySchedule[] = [
         time: "17:00 - 18:00",
         events: {
           auditorio_lacy: {
-            title: "Charlando con Shoujospain.",
+            title: "Charlando con Shoujospain",
             speaker: "Asociación Shoujospain",
             description: "",
             startTime: "17:00",
@@ -433,7 +433,7 @@ export const scheduleData: DaySchedule[] = [
             description: "Actividad lúdica",
             startTime: "16:00",
             duration: 180,
-            type: "workshop"
+            type: "taller"
           },
           editorial: [{
             title: "Editorial Magnífica",
@@ -473,7 +473,7 @@ export const scheduleData: DaySchedule[] = [
             description: "Actividad lúdica",
             duration: 180,
             startTime: "16:00",
-            type: "workshop"
+            type: "taller"
           },
           editorial: [{
             title: "Editorial Raven",
@@ -491,12 +491,12 @@ export const scheduleData: DaySchedule[] = [
         time: "19:00 - 21:00",
         events: {
           auditorio_lacy: {
-            title: "Gala de entrega de premios Ignotus 2025",
+            title: "Gala de entrega de Premios Ignotus 2025",
             speaker: "",
             description: "",
             startTime: "19:00",
-            duration: 180,
-            type: "special"
+            duration: 120,
+            type: "destacada"
           },
         }
       }
@@ -536,14 +536,14 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             startTime: "10:00",
             duration: 30,
-            type: "workshop"
+            type: "taller"
           }, {
             title: "Género y fantasía: Personajes heroicos dentro de la fantasía.",
             speaker: "Inés María Martinez Domenech",
             description: "",
             startTime: "10:30",
             duration: 30,
-            type: "workshop"
+            type: "taller"
           }],
           editorial: [{
             title: "Droids & Druids",
@@ -562,7 +562,7 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "Siempre la misma historia: nuevas versiones de viejos arquetipos",
-            speaker: "Clara Díes Valls",
+            speaker: "Clara Diez, Alberto Seijo, Andrea Valeiras, Laura Romea",
             description: "",
             startTime: "11:00",
             duration: 60,
@@ -577,19 +577,19 @@ export const scheduleData: DaySchedule[] = [
             type: "panel"
           },
           sala_3: [{
-            title: "Pon en tu vida un fantasma",
+            title: "¿Quién dijo miedo? Pon un fantasma en tu vida.",
             speaker: "Beatriz Alcaná, Ana Saiz",
             description: "",
             startTime: "11:00",
             duration: 30,
-            type: "panel"
+            type: "charla"
           }, {
             title: "Los cuatro pilares de escribir cifi y fantasía",
             speaker: "Javier Miró",
             description: "",
             startTime: "11:30",
             duration: 30,
-            type: "workshop"
+            type: "taller"
           }],
           editorial: [{
             title: "Editorial Specula",
@@ -607,8 +607,8 @@ export const scheduleData: DaySchedule[] = [
         time: "12:00 - 13:00",
         events: {
           auditorio_lacy: {
-            title: "Conversant amb Stark",
-            speaker: "Stark Holborn",
+            title: "Conversando con Stark",
+            speaker: "Stark Holborn, Elena Torró",
             description: "",
             startTime: "12:00",
             duration: 60,
@@ -628,7 +628,7 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             startTime: "12:00",
             duration: 60,
-            type: "workshop"
+            type: "taller"
           }],
           editorial: [{
             title: "Editorial Transbordador",
@@ -663,18 +663,18 @@ export const scheduleData: DaySchedule[] = [
           },
           sala_3: [{
             title: "La sutil diferencia entre mitologia y misticismo: un dilema en la difusión del fantástico",
-            speaker: "Alfons Mallol Garcia, Karen Madrid",
+            speaker: "Alfons Mallol García, Karen Madrid",
             description: "",
             startTime: "13:00",
             duration: 30,
-            type: "panel"
+            type: "charla"
           }, {
             title: "Protección contra la IA generativa en el mundo editorial",
             speaker: "Andrés Zelada",
             description: "",
             startTime: "13:30",
             duration: 30,
-            type: "workshop"
+            type: "taller"
           }],
           editorial: [{
             title: "Gigamesh",
@@ -691,7 +691,7 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Comité organizador",
             description: "Cierre oficial de HispaCón 2025 y anuncio próxima edición",
             duration: 30,
-            type: "special"
+            type: "destacada"
           }
         }
       }

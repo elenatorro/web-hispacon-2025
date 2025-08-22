@@ -4,9 +4,9 @@ export interface ScheduleEvent {
   title: string;
   speaker?: string;
   description?: string;
-  duration: number; // in minutes
-  startTime?: string; // specific start time within the slot (e.g., "16:30")
-  type: "talk" | "workshop" | "panel" | "break" | "special" | "registration" | "fair";
+  duration: number;
+  startTime?: string;
+  type: "charla" | "taller" | "panel" | "break" | "destacada" | "registro" | "feria";
 }
 
 export interface Track {

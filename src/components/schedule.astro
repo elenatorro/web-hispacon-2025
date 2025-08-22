@@ -36,7 +36,7 @@ const { layout = "vertical", showDescription = true } = Astro.props;
         >
           <div class="text-center">
             <div class="font-bold">{day.dayName}</div>
-            <div class="text-xs">{day.date}</div>
+            <div class="text-lg">{day.date}</div>
           </div>
         </button>
       ))}
@@ -57,7 +57,7 @@ const { layout = "vertical", showDescription = true } = Astro.props;
         <!-- Track Legend -->
         <div class="flex flex-wrap gap-2 mb-6">
           {day.tracks.map((track) => (
-            <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-white border text-xs">
+            <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-white border text-sm">
               <div class={`w-3 h-3 rounded-full ${track.color}`}></div>
               <span class="font-medium">{track.name}</span>
             </div>
@@ -96,10 +96,10 @@ const { layout = "vertical", showDescription = true } = Astro.props;
                               <div class="flex items-center justify-between gap-2 mb-2">
                                 <div class="flex items-center gap-2">
                                   <div class={`w-3 h-3 rounded-full ${track.color}`}></div>
-                                  <span class="text-xs font-bold text-black-600">{track.name}</span>
+                                  <span class="text-sm font-bold text-black-600">{track.name}</span>
                                   {/* Multi-event indicator */}
                                   {events.length > 1 && (
-                                    <div class="text-xs bg-gray-200 text-black-700 px-1 rounded">{eventIndex + 1}/{events.length}</div>
+                                    <div class="text-sm bg-gray-200 text-black-700 px-1 rounded">{eventIndex + 1}/{events.length}</div>
                                   )}
                                 </div>
                                 {/* Duration badge */}
@@ -119,26 +119,26 @@ const { layout = "vertical", showDescription = true } = Astro.props;
                                   name={getEventIcon(event.type)} 
                                 />
                                 <div class="min-w-0 flex-1">
-                                  <h4 class="font-semibold text-sm leading-tight mb-1">
+                                  <h4 class="font-semibold text-base leading-tight mb-1">
                                     {event.title}
                                   </h4>
                                 </div>
                               </div>
 
-                              <div class="text-xs text-black-600 mb-2 rounded py-2">
-                                <Icon class="inline w-3 h-3 mr-1" name="bx:bxs-time" />
+                              <div class="text-sm text-black-600 mb-2 rounded py-2">
+                                <Icon class="inline w-4 h-4 mr-1" name="bx:bxs-time" />
                                 {getEventTimeDisplay(timeSlot.time, event)}
                               </div>
                               
                               {event.speaker && (
-                                <p class="text-xs mb-1 text-black-700">
-                                  <Icon class="inline w-3 h-3 mr-1" name="bx:bxs-user" />
+                                <p class="text-sm mb-1 text-black-700">
+                                  <Icon class="inline w-4 h-4 mr-1" name="bx:bxs-user" />
                                   {event.speaker}
                                 </p>
                               )}
                               
                               {showDescription && event.description && (
-                                <p class="text-xs text-black-600 line-clamp-2 pt-4">
+                                <p class="text-sm text-black-600 line-clamp-2 pt-4">
                                   {event.description}
                                 </p>
                               )}
@@ -151,9 +151,9 @@ const { layout = "vertical", showDescription = true } = Astro.props;
                           <div class="text-center text-black-400">
                             <div class="flex items-center gap-2 mb-1">
                               <div class={`w-3 h-3 rounded-full ${track.color}`}></div>
-                              <span class="text-xs font-medium">{track.name}</span>
+                              <span class="text-sm font-medium">{track.name}</span>
                             </div>
-                            <span class="text-xs">Sin programar</span>
+                            <span class="text-sm">Sin programar</span>
                           </div>
                         </div>
                       )}
@@ -193,7 +193,7 @@ const { layout = "vertical", showDescription = true } = Astro.props;
                     const eventData = timeSlot.events[track.id];
                     const events = normalizeEvents(eventData);
                     return (
-                      <td class="border border-gray-300 px-3 py-2 text-sm align-top">
+                      <td class="border border-gray-300 px-3 py-2 text-base align-top">
                         {events.length > 0 ? (
                           <div class="space-y-2">
                             {events.map((event, eventIndex) => (
@@ -204,21 +204,21 @@ const { layout = "vertical", showDescription = true } = Astro.props;
                                 <div class="flex items-start justify-between gap-1 mb-1">
                                   <div class="flex items-start gap-1 flex-1">
                                     <Icon 
-                                      class="w-3 h-3 mt-0.5 flex-shrink-0" 
+                                      class="w-4 h-4 mt-0.5 flex-shrink-0" 
                                       name={getEventIcon(event.type)} 
                                     />
                                     <div class="min-w-0 flex-1">
-                                      <div class="font-semibold text-xs leading-tight">
+                                      <div class="font-semibold text-sm leading-tight">
                                         {event.title}
                                       </div>
                                       {/* Multi-event indicator */}
                                       {events.length > 1 && (
-                                        <div class="text-xs text-black-500 mt-1">{eventIndex + 1}/{events.length}</div>
+                                        <div class="text-sm text-black-500 mt-1">{eventIndex + 1}/{events.length}</div>
                                       )}
                                     </div>
                                   </div>
                                   {/* Duration badge */}
-                                  <div class={`px-1 py-0.5 rounded text-xs font-medium ml-1 ${
+                                  <div class={`px-1 py-0.5 rounded text-sm font-medium ml-1 ${
                                     event.duration <= 30 ? 'bg-green-100 text-green-700' :
                                     event.duration <= 60 ? 'bg-blue-100 text-blue-700' :
                                     event.duration <= 120 ? 'bg-orange-100 text-orange-700' :
@@ -229,15 +229,15 @@ const { layout = "vertical", showDescription = true } = Astro.props;
                                 </div>
                                 
                                 {event.speaker && (
-                                  <p class="text-xs mb-1 opacity-90">
-                                    <Icon class="inline w-3 h-3 mr-1" name="bx:bxs-user" />
+                                  <p class="text-sm mb-1 opacity-90">
+                                    <Icon class="inline w-4 h-4 mr-1" name="bx:bxs-user" />
                                     {event.speaker}
                                   </p>
                                 )}
                                 
                                 {/* Enhanced time information */}
-                                <div class="text-xs opacity-75 bg-gray-100 rounded px-1 py-0.5 mt-1">
-                                  <Icon class="inline w-3 h-3 mr-1" name="bx:bxs-time" />
+                                <div class="text-sm opacity-75 bg-gray-100 rounded px-1 py-0.5 mt-1">
+                                  <Icon class="inline w-4 h-4 mr-1" name="bx:bxs-time" />
                                   {getEventTimeDisplay(timeSlot.time, event)}
                                   {/* Indicator for specific start time */}
                                   {event.startTime && (
@@ -248,7 +248,7 @@ const { layout = "vertical", showDescription = true } = Astro.props;
                             ))}
                           </div>
                         ) : (
-                          <div class="text-black-400 text-xs text-center py-4">
+                          <div class="text-black-400 text-sm text-center py-4">
                             —
                           </div>
                         )}
@@ -396,6 +396,7 @@ const { layout = "vertical", showDescription = true } = Astro.props;
   
   .schedule-tab:hover {
     transform: translateY(-1px);
+    cursor: pointer;
   }
   
   .schedule-content {
