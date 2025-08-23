@@ -34,7 +34,7 @@ export const scheduleData: DaySchedule[] = [
           },
           editorial: {
             title: "Tentacle Pulp",
-            description: "Presentación Editorial",
+            description: "",
             duration: 30,
             startTime: "16:30",
             type: "panel"
@@ -72,14 +72,14 @@ export const scheduleData: DaySchedule[] = [
           editorial: [
             {
                 title: "Fénix Literario",
-                description: "Presentación Editorial",
+                description: "",
                 duration: 30,
                 startTime: "18:00",
                 type: "panel"
             },
             {
-                title: "Medhusa",
-                description: "Presentación Editorial",
+                title: "Medusa Books",
+                description: "Presentación de 'Matermorfosi', de Laura Tomàs Mora",
                 duration: 30,
                 startTime: "18:30",
                 type: "panel"
@@ -92,7 +92,7 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "La que se Navecina",
-            speaker: "Caryanna Reuven, Celia Corral-Vázquez, Rafa Díaz, Alfredo Álamo, Daniel Pérez",
+            speaker: "Caryanna Reuven, Celia Corral-Vázquez, Rafa Díaz, Alfredo Álamo, David Fdez. Vaamonde",
             description: "Mesa redonda sobre Space Opera",
             startTime: "18:00",
             duration: 60,
@@ -122,7 +122,7 @@ export const scheduleData: DaySchedule[] = [
           auditorio_lacy: {
             title: "Más que Final Girls",
             speaker: "Mariló Álvarez, Celia Corral, JV Gachs, Aitziber Saldias, Katherine Vega",
-            description: "",
+            description: "Mesa redonda sobre terror escrito por mujeres",
             startTime: "19:00",
             duration: 60,
             type: "charla"
@@ -160,7 +160,7 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "El bizarro en los tiempos del cólera",
-            speaker: "Bea Aguilar, Eduard Martí y Sergi Álvarez",
+            speaker: "Bea Aguilar, Eduard Martí, Sergi Álvarez, Sergi Viciana",
             description: "",
             duration: 60,
             type: "panel"
@@ -169,7 +169,7 @@ export const scheduleData: DaySchedule[] = [
             {
               title: "Escribir a varias manos",
               speaker: "",
-              description: "",
+              description: "Alejandro Marín, Borja Alonso",
               duration: 30,
               startTime: "20:00",
               type: "taller"
@@ -186,14 +186,14 @@ export const scheduleData: DaySchedule[] = [
           editorial: [
             {
                 title: "Sugaar Editorial",
-                description: "Presentación Editorial",
+                description: "",
                 duration: 30,
                 startTime: "20:00",
                 type: "panel"
             },
             {
                 title: "LES Editorial",
-                description: "Presentación Editorial",
+                description: "",
                 duration: 30,
                 startTime: "20:30",
                 type: "panel"
@@ -412,8 +412,8 @@ export const scheduleData: DaySchedule[] = [
         time: "17:00 - 18:00",
         events: {
           auditorio_lacy: {
-            title: "Charlando con Shoujospain",
-            speaker: "Asociación Shoujospain",
+            title: "Situación de la mujer mangaka",
+            speaker: "Sheila Malchirant, Asociación Pro Shōjo Spain",
             description: "",
             startTime: "17:00",
             duration: 60,
