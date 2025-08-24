@@ -182,6 +182,26 @@ import { normalizeEvents, formatDuration, getEventTimeDisplay } from "../utils/s
 
   <div class="print-container">
 
+    <!-- Print controls - hidden when printing -->
+    <div class="no-print" style="text-align: center; margin-bottom: 20px; padding: 15px; background: #f0f0f0; border-radius: 8px;">
+      <button 
+        id="print-button"
+        style="background: #007acc; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 14px; margin-right: 10px;"
+        onmouseover="this.style.background='#005999'" 
+        onmouseout="this.style.background='#007acc'"
+      >
+        🖨️ Imprimir programa
+      </button>
+      <button 
+        onclick="window.close()"
+        style="background: #666; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 14px;"
+        onmouseover="this.style.background='#444'" 
+        onmouseout="this.style.background='#666'"
+      >
+        ✕ Cerrar
+      </button>
+    </div>
+
     <h1 style="text-align: center; margin-bottom: 10px; font-size: 28px;">HispaCón 2025</h1>
     <h2 style="text-align: center; margin-bottom: 30px; font-size: 18px; color: #666;">Programa Completo - 19-21 Septiembre, Sabadell</h2>
 
@@ -304,5 +324,26 @@ import { normalizeEvents, formatDuration, getEventTimeDisplay } from "../utils/s
       </div>
     </div>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const printButton = document.getElementById('print-button');
+      
+      // Add click event to print button
+      if (printButton) {
+        printButton.addEventListener('click', function() {
+          window.print();
+        });
+      }
+      
+      // Auto-print when page loads (optional - can be removed if not desired)
+      // Uncomment the lines below if you want automatic printing on page load
+      /*
+      setTimeout(() => {
+        window.print();
+      }, 1000);
+      */
+    });
+  </script>
 </body>
 </html>
