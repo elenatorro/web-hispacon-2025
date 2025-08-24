@@ -303,7 +303,7 @@ export const scheduleData: DaySchedule[] = [
           },
           auditorio_2: {
             title: "El humor en el género y el género en el humor",
-            speaker: "Mónica Gutiérrez, Andrea Valeiras, Inés Galiano, Sergi Álvarez y Noemí Riesco",
+            speaker: "Mónica Gutiérrez, Andrea Valeiras, Inés Galiano, Sergi Álvarez",
             description: "",
             startTime: "12:00",
             duration: 60,
@@ -553,7 +553,7 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "Hablando de literatura infantil",
-            speaker: "Susana Vallejo, Alba Quintas, Bruno Puelles, Marina Tena",
+            speaker: "Susana Vallejo, Bruno Puelles, Marina Tena",
             description: "",
             duration: 60,
             type: "panel"
