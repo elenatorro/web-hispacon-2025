@@ -145,7 +145,11 @@ const { layout = "vertical", showDescription = true } = Astro.props;
                 </div>
               ) : (
                 <!-- Regular Events Grid -->
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              <div class={`grid grid-cols-1 gap-4 ${
+                day.tracks.length === 3 
+                  ? 'md:grid-cols-2 lg:grid-cols-3' 
+                  : 'md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
+              }`}>
                 {day.tracks.map((track) => {
                   const eventData = timeSlot.events[track.id];
                   const events = normalizeEvents(eventData);

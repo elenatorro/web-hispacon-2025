@@ -58,15 +58,15 @@ export const scheduleData: DaySchedule[] = [
               description: "",
               duration: 30,
               startTime: "17:00",
-              type: "taller"
+              type: "charla"
             },
             {
               title: "Audioficciones de género fantástico",
-              speaker: "David Fdez. Vaamonde (SonosSonoros), Elena Torró (Droids&Druids)",
+              speaker: "David Fdez. Vaamonde (SonosSonoros), Elena Torró (Droids&Druids), Aleix Valverde (Transmitiendo a Ciegas)",
               description: "",
               duration: 30,
               startTime: "17:30",
-              type: "charla"
+              type: "panel"
             }
           ],
           editorial: [
@@ -176,7 +176,7 @@ export const scheduleData: DaySchedule[] = [
             },
             {
               title: "El género fantástico en la música de los 80: No es serio este cementerio",
-              speaker: "David Fdez. Vahamonde",
+              speaker: "David Fdez. Vaamonde",
               description: "",
               duration: 30,
               startTime: "20:30",
