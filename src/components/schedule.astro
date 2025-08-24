@@ -23,8 +23,48 @@ const { layout = "vertical", showDescription = true } = Astro.props;
 ---
 
 <div class="w-full">
-  <!-- Tab Navigation -->
-  <div class="border-b border-gray-200 mb-8">
+  <!-- Mobile Dropdown Navigation -->
+  <div class="md:hidden mb-8">
+    <div class="relative">
+      <button 
+        type="button" 
+        class="schedule-dropdown-toggle w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-left focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+        aria-expanded="false"
+      >
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="font-bold text-gray-900 schedule-dropdown-selected-day">
+              {scheduleData[0].dayName}
+            </div>
+            <div class="text-sm text-gray-500 schedule-dropdown-selected-date">
+              {scheduleData[0].date}
+            </div>
+          </div>
+          <svg class="h-5 w-5 text-gray-400 schedule-dropdown-chevron transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+      </button>
+      
+      <div class="schedule-dropdown-menu absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none hidden">
+        {scheduleData.map((day, index) => (
+          <button
+            type="button"
+            class={`schedule-dropdown-item w-full text-left px-4 py-3 hover:bg-gray-100 transition-colors ${
+              index === 0 ? 'bg-indigo-50 text-indigo-600' : 'text-gray-900'
+            }`}
+            data-tab={index}
+          >
+            <div class="font-bold">{day.dayName}</div>
+            <div class="text-sm text-gray-500">{day.date}</div>
+          </button>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Desktop Tab Navigation -->
+  <div class="hidden md:block border-b border-gray-200 mb-8">
     <nav class="-mb-px flex space-x-8 justify-center flex-wrap" aria-label="Tabs">
       {scheduleData.map((day, index) => (
         <button
@@ -426,34 +466,117 @@ const { layout = "vertical", showDescription = true } = Astro.props;
 </div>
 
 <script>
-  // Tab functionality
+  // Tab and dropdown functionality
   document.addEventListener('DOMContentLoaded', function() {
     const tabs = document.querySelectorAll('.schedule-tab');
     const contents = document.querySelectorAll('.schedule-content');
-    
+    const dropdownToggle = document.querySelector('.schedule-dropdown-toggle');
+    const dropdownMenu = document.querySelector('.schedule-dropdown-menu');
+    const dropdownItems = document.querySelectorAll('.schedule-dropdown-item');
+    const dropdownChevron = document.querySelector('.schedule-dropdown-chevron') as HTMLElement;
+    const selectedDay = document.querySelector('.schedule-dropdown-selected-day');
+    const selectedDate = document.querySelector('.schedule-dropdown-selected-date');
+
+    function switchTab(index) {
+      // Update desktop tabs
+      tabs.forEach(t => {
+        t.classList.remove('border-indigo-500', 'text-indigo-600');
+        t.classList.add('border-transparent', 'text-black-500');
+      });
+      
+      if (tabs[index]) {
+        tabs[index].classList.remove('border-transparent', 'text-black-500');
+        tabs[index].classList.add('border-indigo-500', 'text-indigo-600');
+      }
+
+      // Update dropdown items
+      dropdownItems.forEach(item => {
+        item.classList.remove('bg-indigo-50', 'text-indigo-600');
+        item.classList.add('text-gray-900');
+      });
+      
+      if (dropdownItems[index]) {
+        dropdownItems[index].classList.remove('text-gray-900');
+        dropdownItems[index].classList.add('bg-indigo-50', 'text-indigo-600');
+      }
+
+      // Update dropdown selected text
+      const dayData = Array.from(dropdownItems)[index];
+      if (dayData && selectedDay && selectedDate) {
+        const dayElement = dayData.querySelector('div:first-child');
+        const dateElement = dayData.querySelector('div:last-child');
+        if (dayElement && dateElement) {
+          selectedDay.textContent = dayElement.textContent;
+          selectedDate.textContent = dateElement.textContent;
+        }
+      }
+      
+      // Hide all content
+      contents.forEach(content => {
+        content.classList.add('hidden');
+        content.classList.remove('block');
+      });
+      
+      // Show corresponding content
+      const targetContent = document.querySelector(`[data-content="${index}"]`);
+      if (targetContent) {
+        targetContent.classList.remove('hidden');
+        targetContent.classList.add('block');
+      }
+    }
+
+    // Desktop tab functionality
     tabs.forEach((tab, index) => {
       tab.addEventListener('click', function() {
-        // Remove active classes from all tabs
-        tabs.forEach(t => {
-          t.classList.remove('border-indigo-500', 'text-indigo-600');
-          t.classList.add('border-transparent', 'text-black-500');
-        });
+        switchTab(index);
+      });
+    });
+
+    // Mobile dropdown functionality
+    if (dropdownToggle && dropdownMenu) {
+      dropdownToggle.addEventListener('click', function() {
+        const isOpen = !dropdownMenu.classList.contains('hidden');
         
-        // Add active classes to clicked tab
-        tab.classList.remove('border-transparent', 'text-black-500');
-        tab.classList.add('border-indigo-500', 'text-indigo-600');
-        
-        // Hide all content
-        contents.forEach(content => {
-          content.classList.add('hidden');
-          content.classList.remove('block');
-        });
-        
-        // Show corresponding content
-        const targetContent = document.querySelector(`[data-content="${index}"]`);
-        if (targetContent) {
-          targetContent.classList.remove('hidden');
-          targetContent.classList.add('block');
+        if (isOpen) {
+          dropdownMenu.classList.add('hidden');
+          if (dropdownChevron) {
+            dropdownChevron.style.transform = 'rotate(0deg)';
+          }
+          dropdownToggle.setAttribute('aria-expanded', 'false');
+        } else {
+          dropdownMenu.classList.remove('hidden');
+          if (dropdownChevron) {
+            dropdownChevron.style.transform = 'rotate(180deg)';
+          }
+          dropdownToggle.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function(event) {
+        const target = event.target as Node;
+        if (target && dropdownToggle && dropdownMenu && 
+            !dropdownToggle.contains(target) && !dropdownMenu.contains(target)) {
+          dropdownMenu.classList.add('hidden');
+          if (dropdownChevron) {
+            dropdownChevron.style.transform = 'rotate(0deg)';
+          }
+          dropdownToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // Dropdown item functionality
+    dropdownItems.forEach((item, index) => {
+      item.addEventListener('click', function() {
+        switchTab(index);
+        // Close dropdown
+        if (dropdownMenu && dropdownToggle) {
+          dropdownMenu.classList.add('hidden');
+          if (dropdownChevron) {
+            dropdownChevron.style.transform = 'rotate(0deg)';
+          }
+          dropdownToggle.setAttribute('aria-expanded', 'false');
         }
       });
     });
