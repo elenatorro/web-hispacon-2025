@@ -264,7 +264,7 @@ export const scheduleData: DaySchedule[] = [
           },
           auditorio_2: {
             title: "Tiempos que fueron y que pudieron ser: género fantástico de inspiración histórica",
-            speaker: "Isabel Pedrero, Beatriz Alcaná y Virginia Orive de la Rosa, Bruno Puelles, Africa Vázquez",
+            speaker: "Isabel Pedrero, Beatriz Alcaná, Virginia Orive de la Rosa, Bruno Puelles, África Vázquez",
             startTime: "11:00",
             description: "",
             duration: 60,
@@ -461,7 +461,7 @@ export const scheduleData: DaySchedule[] = [
           },
           auditorio_2: {
             title: "Menos IA, más fantasía",
-            speaker: "Marina Vidal, Clara Díez Valls, Sara Soler, Andrés Zelada",
+            speaker: "Marina Vidal, Clara Dies Valls, Sara Soler, Andrés Zelada",
             description: "",
             startTime: "18:00",
             duration: 60,
@@ -574,7 +574,7 @@ export const scheduleData: DaySchedule[] = [
             type: "taller"
           }, {
             title: "Género y fantasía: Personajes heroicos dentro de la fantasía",
-            speaker: "Inés María Martinez Domenech",
+            speaker: "Inés María Martínez Domenech",
             description: "",
             startTime: "10:30",
             duration: 30,
@@ -597,7 +597,7 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "Siempre la misma historia: nuevas versiones de viejos arquetipos",
-            speaker: "Clara Diez, Alberto Seijo, Andrea Valeiras, Laura Romea",
+            speaker: "Clara Dies Valls, Alberto Seijo, Andrea Valeiras, Laura Romea",
             description: "",
             startTime: "11:00",
             duration: 60,
