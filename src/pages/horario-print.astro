@@ -1,4 +1,4 @@
-<!-- ---
+---
 import { scheduleData } from "../data/schedule";
 import { normalizeEvents, formatDuration, getEventTimeDisplay } from "../utils/schedule";
 ---
@@ -149,6 +149,7 @@ import { normalizeEvents, formatDuration, getEventTimeDisplay } from "../utils/s
     .type-taller { background: #f3e5f5; }
     .type-panel { background: #e8f5e8; }
     .type-destacada { background: #fff3e0; }
+    .type-especial { background: #e5e5e5; }
     .type-presentation { background: #fce4ec; }
     .type-gaming { background: #fffde7; }
     
@@ -204,30 +205,65 @@ import { normalizeEvents, formatDuration, getEventTimeDisplay } from "../utils/s
             {day.timeSlots.map(slot => (
               <tr>
                 <td class="time-column">{slot.time}</td>
-                {day.tracks.map(track => {
-                  const trackEvents = normalizeEvents(slot.events[track.id] || []);
-                  return (
-                    <td>
-                      {trackEvents.length > 0 ? (
-                        trackEvents.map(event => (
-                          <div class="event-card">
-                            <div class={`event-type type-${event.type}`}>
-                              {event.type.toUpperCase()}
+                {slot.isSpecialEvent ? (
+                  // Special event handling (like podcast night)
+                  <td colspan={day.tracks.length}>
+                    <div style="text-align: left; padding: 15px; background: #f5f5f5;">
+                      <div style="font-weight: bold; font-size: 14px; margin-bottom: 10px; color: #000;">
+                        Sala El Ciervo
+                      </div>
+                      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 600px;">
+                        {Object.entries(slot.events).map(([eventKey, eventData]) => {
+                          const events = normalizeEvents(eventData);
+                          return events.map(event => (
+                            <div class="event-card" style="background: #ffffff;">
+                              <div class={`event-type type-${event.type}`} style="background: #e5e5e5; color: #000;">
+                                PODCAST
+                              </div>
+                              <div class="event-title" style="color: #000;">{event.title}</div>
+                              <div class="event-speaker">{event.speaker}</div>
+                              <div class="event-duration">
+                                {getEventTimeDisplay(slot.time, event)} • {formatDuration(event.duration)}
+                                {event.startTime && <span style="color: #ff6b35;"> ⚬</span>}
+                              </div>
+                              {event.description && (
+                                <div style="font-size: 9px; color: #666; margin-top: 2px;">
+                                  {event.description}
+                                </div>
+                              )}
                             </div>
-                            <div class="event-title">{event.title}</div>
-                            <div class="event-speaker">{event.speaker}</div>
-                            <div class="event-duration">
-                              {getEventTimeDisplay(slot.time, event)} • {formatDuration(event.duration)}
-                              {event.startTime && <span style="color: #ff6b35;"> ⚬</span>}
+                          ));
+                        })}
+                      </div>
+                    </div>
+                  </td>
+                ) : (
+                  // Regular events
+                  day.tracks.map(track => {
+                    const trackEvents = normalizeEvents(slot.events[track.id] || []);
+                    return (
+                      <td>
+                        {trackEvents.length > 0 ? (
+                          trackEvents.map(event => (
+                            <div class="event-card">
+                              <div class={`event-type type-${event.type}`}>
+                                {event.type.toUpperCase()}
+                              </div>
+                              <div class="event-title">{event.title}</div>
+                              <div class="event-speaker">{event.speaker}</div>
+                              <div class="event-duration">
+                                {getEventTimeDisplay(slot.time, event)} • {formatDuration(event.duration)}
+                                {event.startTime && <span style="color: #ff6b35;"> ⚬</span>}
+                              </div>
                             </div>
-                          </div>
-                        ))
-                      ) : (
-                        <div style="height: 20px;"></div>
-                      )}
-                    </td>
-                  );
-                })}
+                          ))
+                        ) : (
+                          <div style="height: 20px;"></div>
+                        )}
+                      </td>
+                    );
+                  })
+                )}
               </tr>
             ))}
           </tbody>
@@ -242,6 +278,7 @@ import { normalizeEvents, formatDuration, getEventTimeDisplay } from "../utils/s
         <div><span class="event-type type-taller">TALLER</span> Taller</div>
         <div><span class="event-type type-panel">PANEL</span> Mesa redonda</div>
         <div><span class="event-type type-destacada">DESTACADA</span> Evento especial</div>
+        <div><span class="event-type type-especial">ESPECIAL</span> Podcast/Evento nocturno</div>
         <div><span class="event-type type-presentation">PRESENTATION</span> Presentación</div>
         <div><span class="event-type type-gaming">GAMING</span> Actividad lúdica</div>
       </div>
@@ -268,4 +305,4 @@ import { normalizeEvents, formatDuration, getEventTimeDisplay } from "../utils/s
     </div>
   </div>
 </body>
-</html> -->
+</html>

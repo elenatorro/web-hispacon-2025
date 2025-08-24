@@ -51,6 +51,8 @@ export const getEventTypeStyle = (type: string): string => {
       return "bg-indigo-50 text-indigo-900 border-indigo-200";
     case "feria":
       return "bg-pink-50 text-pink-900 border-pink-200";
+    case "especial":
+      return "bg-gradient-to-r from-purple-100 to-pink-100 text-purple-900 border-purple-300";
     default:
       return "bg-gray-50 text-black-600 border-gray-200";
   }
@@ -72,6 +74,8 @@ export const getEventIcon = (type: string): string => {
       return "bx:bxs-id-card";
     case "feria":
       return "bx:bxs-store";
+    case "especial":
+      return "bx:bxs-microphone-alt";
     default:
       return "bx:bxs-calendar";
   }

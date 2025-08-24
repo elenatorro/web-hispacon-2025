@@ -25,7 +25,7 @@ export const scheduleData: DaySchedule[] = [
             type: "destacada"
           },
           sala_4: {
-            title: "Alicia tiene una tardis. Viajes y regeneraciones de Alicia en el País de las Maravillas en la cultura popular.",
+            title: "Alicia tiene una tardis. Viajes y regeneraciones de Alicia en el País de las Maravillas en la cultura popular",
             speaker: "Andrea Valeiras",
             description: "",
             duration: 30,
@@ -146,7 +146,7 @@ export const scheduleData: DaySchedule[] = [
             }
           ],
           editorial: [{
-            title: "Aqui hay Dragonas",
+            title: "Aquí hay Dragonas",
             speaker: "",
             description: "",
             duration: 30,
@@ -341,8 +341,8 @@ export const scheduleData: DaySchedule[] = [
             type: "panel"
           },
           auditorio_2: {
-            title: "Tendencias actuales del terror: del papel a lo audiovisual.",
-            speaker: "Chris T.Nash, Cristina P. Amuedo, Gemma Solsona, Isabel del Río.",
+            title: "Tendencias actuales del terror: del papel a lo audiovisual",
+            speaker: "Chris T.Nash, Cristina P. Amuedo, Gemma Solsona, Isabel del Río",
             description: "",
             startTime: "13:00",
             duration: 60,
@@ -372,7 +372,7 @@ export const scheduleData: DaySchedule[] = [
         time: "16:00 - 17:00",
         events: {
           auditorio_lacy: {
-            title: "Escribir en formato breve: el mundo del relato.",
+            title: "Escribir en formato breve: el mundo del relato",
             speaker: "Autoras Anacronópete 2025: Gemma Solsona, Ana Saiz y Alba Quintas",
             description: "",
             startTime: "16:00",
@@ -390,7 +390,7 @@ export const scheduleData: DaySchedule[] = [
           sala_4: {
             title: "Cluedo en vivo",
             speaker: "Bruno Puelles",
-            description: "Actividad lúdica",
+            description: "Actividad lúdica (inscripción previa)",
             startTime: "16:00",
             duration: 180,
             type: "taller"
@@ -412,16 +412,16 @@ export const scheduleData: DaySchedule[] = [
         time: "17:00 - 18:00",
         events: {
           auditorio_lacy: {
-            title: "Situación de la mujer mangaka",
-            speaker: "Sheila Malchirant, Asociación Pro Shōjo Spain",
+            title: "Worldbuilding en Català",
+            speaker: "Karen Madrid, Ricard Efa, Ricard Ruiz, Albert Font, Isa J. González",
             description: "",
             startTime: "17:00",
             duration: 60,
             type: "panel"
           },
           auditorio_2: {
-            title: "Worldbuilding en Català",
-            speaker: "Karen Madrid, Ricard Efa, Ricard Ruiz, Albert Font, Isa J. González",
+            title: "Situación de la mujer mangaka",
+            speaker: "Sheila Malchirant, Asociación Pro Shōjo Spain",
             description: "",
             startTime: "17:00",
             duration: 60,
@@ -430,7 +430,7 @@ export const scheduleData: DaySchedule[] = [
           sala_4: {
             title: "Cluedo en vivo",
             speaker: "Bruno Puelles",
-            description: "Actividad lúdica",
+            description: "Actividad lúdica (inscripción previa)",
             startTime: "16:00",
             duration: 180,
             type: "taller"
@@ -470,7 +470,7 @@ export const scheduleData: DaySchedule[] = [
           sala_4: {
             title: "Cluedo en vivo",
             speaker: "Bruno Puelles",
-            description: "Actividad lúdica",
+            description: "Actividad lúdica (inscripción previa)",
             duration: 180,
             startTime: "16:00",
             type: "taller"
@@ -499,6 +499,41 @@ export const scheduleData: DaySchedule[] = [
             type: "destacada"
           },
         }
+      }, {
+        time: "22:30 - 00:30 🎙️ Nit de Podcasts",
+        events: {
+          podcast_night: [
+            {
+              title: "Narranación",
+              description: "CAT",
+              startTime: "22:30",
+              duration: 30,
+              type: "especial"
+            },
+            {
+              title: "idíliQ",
+              description: "CAT",
+              startTime: "23:00",
+              duration: 30,
+              type: "especial"
+            },
+            {
+              title: "La Estantería Sáfica",
+              description: "ES",
+              startTime: "23:30",
+              duration: 30,
+              type: "especial"
+            },
+            {
+              title: "Furia en la Librería",
+              description: "ES",
+              startTime: "00:00",
+              duration: 30,
+              type: "especial"
+            }
+          ]
+        },
+        isSpecialEvent: true
       }
     ]
   },
@@ -538,7 +573,7 @@ export const scheduleData: DaySchedule[] = [
             duration: 30,
             type: "taller"
           }, {
-            title: "Género y fantasía: Personajes heroicos dentro de la fantasía.",
+            title: "Género y fantasía: Personajes heroicos dentro de la fantasía",
             speaker: "Inés María Martinez Domenech",
             description: "",
             startTime: "10:30",
@@ -577,7 +612,7 @@ export const scheduleData: DaySchedule[] = [
             type: "panel"
           },
           sala_3: [{
-            title: "¿Quién dijo miedo? Pon un fantasma en tu vida.",
+            title: "¿Quién dijo miedo? Pon un fantasma en tu vida",
             speaker: "Beatriz Alcaná, Ana Saiz",
             description: "",
             startTime: "11:00",

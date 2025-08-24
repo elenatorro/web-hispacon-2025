@@ -8,17 +8,16 @@ import Schedule from "@/components/schedule.astro";
 <Layout title="Horario">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Horario</Fragment>
+      <Fragment slot="title">Programa</Fragment>
       <Fragment slot="desc">
-        Estamos trabajando en el programa completo de la HispaCón 2025
+        Programa completo de la HispaCón 2025
+        <br>
+        <sub>* Los horarios y actividades están sujetos a cambios. Consulta la web para las últimas actualizaciones.</sub>
       </Fragment>
-      <!-- <Fragment slot="desc">
-        Programa completo de la HispaCón 2025.
-      </Fragment> -->
     </Sectionhead>
 
     <!-- Print version link -->
-    <!-- <div class="m-8 text-center">
+    <div class="m-8 text-center">
       <a 
         href="/horario-print" 
         target="_blank"
@@ -31,7 +30,7 @@ import Schedule from "@/components/schedule.astro";
         </svg>
         Versión para imprimir / PDF
       </a>
-    </div> -->
+    </div>
 
     <div class="mt-12">
       <Schedule layout="vertical" showDescription={true} />
@@ -49,18 +48,24 @@ import Schedule from "@/components/schedule.astro";
           </ul>
         </div>
         <div>
+          <h4 class="font-semibold mb-2">Feria editorial</h4>
+          <p class="text-black-600">
+            La feria editorial estará abierta durante todo el evento
+          </p>
+        </div>
+        <div>
           <h4 class="font-semibold mb-2">Espacios disponibles:</h4>
           <ul class="space-y-1 text-black-600">
             <li>• Auditorio Lazy: Charlas y paneles</li>
             <li>• Auditorio 2: Charlas y paneles</li>
             <li>• Sala 4: Actividades lúdicas y juegos</li>
-            <li>• Sala 5: Presentación Editoriales</li>
+            <li>• Sala 5: Presentaciónes Editoriales</li>
             <li>• Otras salas: Talleres y actividades</li>
           </ul>
         </div>
       </div>
       <p class="mt-4 text-xs text-black-500">
-        * Los horarios y actividades pueden estar sujetos a cambios. Consulta las redes sociales para las últimas actualizaciones.
+       * Los horarios y actividades están sujetos a cambios. Consulta la web para las últimas actualizaciones.
       </p>
     </div>
   </Container>

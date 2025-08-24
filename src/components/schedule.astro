@@ -1,7 +1,9 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon/components";
-import type { ScheduleEvent, Track, TimeSlot, DaySchedule, ScheduleProps } from "@/types/schedule";
+import type { ScheduleProps } from "@/types/schedule";
+import Link from "@/components/ui/link.astro";
+
 import { 
   formatDuration, 
   getDurationHeight, 
@@ -78,7 +80,71 @@ const { layout = "vertical", showDescription = true } = Astro.props;
                 </div>
               </div>
               
-              <!-- Events Grid -->
+              {/* Check if this is a special event */}
+              {timeSlot.isSpecialEvent ? (
+                <!-- Special Event Layout -->
+                <div class="w-full max-w-lg">
+                  {Object.entries(timeSlot.events).map(([eventKey, eventData]) => {
+                    const events = normalizeEvents(eventData);
+                    return events.map((event) => (
+                      <div class={`rounded-lg border-2 p-4 my-4 transition-all duration-200 hover:shadow-md relative ${getEventTypeStyle(event.type)} ${getDurationIntensity(event.duration)}`}>
+                        <!-- Special event indicator -->
+                        <div class="absolute left-0 top-0 bottom-0 w-1 rounded-l-lg bg-gradient-to-b from-purple-500 to-pink-500"></div>
+                        
+                        <!-- Event Header -->
+                        <div class="flex items-center justify-between gap-2 mb-1">
+                          <div class="flex items-center gap-2">
+                            <span class="text-sm font-bold">
+                              <a href="https://maps.app.goo.gl/EjkEVs2uvpnuyVWW8" target="_blank" class="text-purple-800 hover:text-purple-600 underline underline-offset-2 hover:underline-offset-4 transition-all duration-200">
+                                Sala El Ciervo
+                              </a>
+                            </span>
+                          </div>
+                          <div class={`px-2 py-1 rounded-full text-xs font-medium ${
+                            event.duration <= 30 ? 'bg-green-100 text-green-700' :
+                            event.duration <= 60 ? 'bg-blue-100 text-blue-700' :
+                            event.duration <= 120 ? 'bg-orange-100 text-orange-700' :
+                            'bg-red-100 text-red-700'
+                          }`}>
+                            {formatDuration(event.duration)}
+                          </div>
+                        </div>
+
+                        <div class="flex items-start gap-2 mb-1">
+                          <Icon 
+                            class="w-4 h-4 mt-0.5 flex-shrink-0 text-purple-600" 
+                            name={getEventIcon(event.type)} 
+                          />
+                          <div class="min-w-0 flex-1">
+                            <h4 class="font-semibold text-base leading-tight mb-1 text-purple-900">
+                              {event.title}
+                            </h4>
+                          </div>
+                        </div>
+
+                        <div class="text-sm text-purple-800 mb-1 rounded py-1">
+                          <Icon class="inline w-4 h-4 mr-1" name="bx:bxs-time" />
+                          {getEventTimeDisplay(timeSlot.time, event)}
+                        </div>
+                        
+                        {event.speaker && (
+                          <p class="text-sm mb-1 text-purple-700">
+                            <Icon class="inline w-4 h-4 mr-1" name="bx:bxs-user" />
+                            {event.speaker}
+                          </p>
+                        )}
+                        
+                        {showDescription && event.description && (
+                          <p class="text-sm text-purple-600 line-clamp-2 pt-2">
+                            {event.description}
+                          </p>
+                        )}
+                      </div>
+                    ));
+                  })}
+                </div>
+              ) : (
+                <!-- Regular Events Grid -->
               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {day.tracks.map((track) => {
                   const eventData = timeSlot.events[track.id];
@@ -161,6 +227,7 @@ const { layout = "vertical", showDescription = true } = Astro.props;
                   );
                 })}
               </div>
+              )}
             </div>
           ))}
         </div>

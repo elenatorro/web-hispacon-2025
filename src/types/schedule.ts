@@ -6,7 +6,7 @@ export interface ScheduleEvent {
   description?: string;
   duration: number;
   startTime?: string;
-  type: "charla" | "taller" | "panel" | "break" | "destacada" | "registro" | "feria";
+  type: "charla" | "taller" | "panel" | "break" | "destacada" | "registro" | "feria" | "especial";
 }
 
 export interface Track {
@@ -18,6 +18,7 @@ export interface Track {
 export interface TimeSlot {
   time: string;
   events: Record<string, ScheduleEvent | ScheduleEvent[]>;
+  isSpecialEvent?: boolean;
 }
 
 export interface DaySchedule {
