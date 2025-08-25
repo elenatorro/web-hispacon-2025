@@ -334,7 +334,7 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "Grimdark vs Hopepunk",
-            speaker: "Ari Soler, Javier Miró, Carlos di Uriarte, Andrea Valeiras, Laura Maquilón, Ricard Efa",
+            speaker: "Ari Soler, Javier Miró, Carlos di Urarte, Andrea Valeiras, Laura Maquilón, Ricard Efa",
             description: "",
             startTime: "13:00",
             duration: 60,
@@ -358,6 +358,11 @@ export const scheduleData: DaySchedule[] = [
           editorial: [{
             title: "Suseya Editorial",
             startTime: "13:00",
+            duration: 30,
+            type: "panel"
+          }, {
+            title: "Pórtico",
+            startTime: "13:30",
             duration: 30,
             type: "panel"
           }]
