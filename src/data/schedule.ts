@@ -257,7 +257,7 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "Narrar a través del cómic",
-            speaker: "Marina Vidal, Ricard Efa, Sara Soler",
+            speaker: "Marina Vidal, Ricard Efa, Sara Soler, Genie Espinosa",
             description: "",
             duration: 60,
             type: "panel"
@@ -560,7 +560,7 @@ export const scheduleData: DaySchedule[] = [
           },
           auditorio_2: {
             title: "El romantasy es mi pasión",
-            speaker: "Carla Plumed, Mireia Pérez, Ari Soler, Jessica Frías",
+            speaker: "Carla Plumed, Jessica Frías",
             description: "",
             duration: 60,
             type: "panel"
