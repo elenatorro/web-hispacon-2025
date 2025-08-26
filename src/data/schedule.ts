@@ -200,6 +200,21 @@ export const scheduleData: DaySchedule[] = [
             }
           ],
         }
+      },
+      {
+        time: "22:30 - 00:30 🎭 Nit de Teatre",
+        events: {
+          nit_teatre: [
+            {
+              title: "Lectura dramatizada de RUR",
+              description: "Escrita en 1920 por Karel Čapek, R.U.R. es la obra que introdujo el término “robot” y una reflexión visionaria sobre los límites de la tecnología. El Ciervo Teatre propone una lectura dramatizada en la HispaCon 2025 para redescubrir este clásico de la ciencia ficción.",
+              startTime: "22:30",
+              duration: 120,
+              type: "especial"
+            }
+          ]
+        },
+        isSpecialEvent: true
       }
     ]
   },
