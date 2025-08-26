@@ -61,8 +61,8 @@ export const scheduleData: DaySchedule[] = [
               type: "charla"
             },
             {
-              title: "Audioficciones de género fantástico",
-              speaker: "David Fdez. Vaamonde (SonosSonoros), Elena Torró (Droids&Druids), Aleix Valverde (Transmitiendo a Ciegas)",
+              title: "El romantasy es mi pasión",
+              speaker: "Carla Plumed, Jessica Frías",
               description: "",
               duration: 30,
               startTime: "17:30",
@@ -226,7 +226,7 @@ export const scheduleData: DaySchedule[] = [
             type: "panel"
           },
           auditorio_2: {
-            title: "Cómo hacer ucronías en Españita",
+            title: "Cómo hacer ucronías en España",
             speaker: "Andrea Valeiras, Talita Isla, Javier Miró",
             description: "",
             duration: 60,
@@ -417,9 +417,9 @@ export const scheduleData: DaySchedule[] = [
         time: "17:00 - 18:00",
         events: {
           auditorio_lacy: {
-            title: "Worldbuilding en Català",
+            title: "Construint mons",
             speaker: "Karen Madrid, Ricard Efa, Ricard Ruiz, Albert Font, Isa J. González",
-            description: "",
+            description: "Worldbuilding en català",
             startTime: "17:00",
             duration: 60,
             type: "panel"
@@ -563,12 +563,14 @@ export const scheduleData: DaySchedule[] = [
             duration: 60,
             type: "panel"
           },
+
           auditorio_2: {
-            title: "El romantasy es mi pasión",
-            speaker: "Carla Plumed, Jessica Frías",
-            description: "",
-            duration: 60,
-            type: "panel"
+              title: "Audioficciones de género fantástico",
+              speaker: "David Fdez. Vaamonde (SonosSonoros), Elena Torró (Droids&Druids), Aleix Valverde (Transmitiendo a Ciegas)",
+              description: "",
+              duration: 30,
+              startTime: "11:00",
+              type: "panel"
           },
           sala_3: [{
             title: "Realismo y verosimilitud en la literatura de género",
