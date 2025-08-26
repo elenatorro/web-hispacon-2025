@@ -569,7 +569,7 @@ export const scheduleData: DaySchedule[] = [
               speaker: "David Fdez. Vaamonde (SonosSonoros), Elena Torró (Droids&Druids), Aleix Valverde (Transmitiendo a Ciegas)",
               description: "",
               duration: 30,
-              startTime: "11:00",
+              startTime: "10:00",
               type: "panel"
           },
           sala_3: [{
@@ -588,11 +588,6 @@ export const scheduleData: DaySchedule[] = [
             type: "taller"
           }],
           editorial: [{
-            title: "Droids & Druids",
-            startTime: "10:00",
-            duration: 30,
-            type: "panel"
-          }, {
             title: "Editorial Minotauro",
             startTime: "10:30",
             duration: 30,
@@ -721,6 +716,11 @@ export const scheduleData: DaySchedule[] = [
           editorial: [{
             title: "Gigamesh",
             startTime: "13:00",
+            duration: 30,
+            type: "panel"
+          },{
+            title: "Droids & Druids",
+            startTime: "13:30",
             duration: 30,
             type: "panel"
           }]
