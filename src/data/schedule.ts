@@ -79,9 +79,10 @@ export const scheduleData: DaySchedule[] = [
             },
             {
                 title: "Medusa Books",
-                description: "Presentación de 'Matermorfosi', de Laura Tomàs Mora",
+                description: "Presentació de Matermorfosi, de Laura Tomàs Mora",
                 duration: 30,
                 startTime: "18:30",
+                lang: 'ca',
                 type: "panel"
             }
           ],
@@ -121,7 +122,7 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "Más que Final Girls",
-            speaker: "Nerea Bosch, Mariló Álvarez, Celia Corral (y más por confirmar)",
+            speaker: "Nerea Bosch, Mariló Álvarez, Celia Corral-Vázquez, Aitziber Saldias",
             description: "Mesa redonda sobre terror escrito por mujeres",
             startTime: "19:00",
             duration: 60,
@@ -202,14 +203,16 @@ export const scheduleData: DaySchedule[] = [
         }
       },
       {
-        time: "22:30 - 00:30 🎭 Nit de Teatre",
+        time: "21:30 - 11:30 🎭 Nit de Teatre",
         events: {
           nit_teatre: [
             {
-              title: "Lectura dramatizada de RUR",
-              description: "Escrita en 1920 por Karel Čapek, R.U.R. es la obra que introdujo el término “robot” y una reflexión visionaria sobre los límites de la tecnología. El Ciervo Teatre propone una lectura dramatizada en la HispaCon 2025 para redescubrir este clásico de la ciencia ficción.",
-              startTime: "22:30",
+              title: "Lectura dramatizada de R.U.R.",
+              description: "El Ciervo Teatre presenta una lectura dramatizada de R.U.R., escrita en 1920 por Karel Čapek. Esta obra introdujo el término “robot” y ofrece una reflexión visionaria sobre los límites de la tecnología. Gestión a cargo de El Ciervo Teatre. Entrada libre hasta completar aforo.",
+              startTime: "21:30",
+              speaker: "Manel Jara, Laia Oliveras, Ricardo García, Carles Ventura, Sergi Rosa, Aleix Bistuer, Joan Carles Cusidó, Pepi Molla, Pol De Miguel i Nora Saavedra. Dirigida por Quim Ribalta",
               duration: 120,
+              lang: "ca",
               type: "especial"
             }
           ]
@@ -434,8 +437,9 @@ export const scheduleData: DaySchedule[] = [
           auditorio_lacy: {
             title: "Construint mons",
             speaker: "Karen Madrid, Ricard Efa, Ricard Ruiz, Albert Font, Isa J. González",
-            description: "Worldbuilding en català",
+            description: "Worldbuilding en la narrativa fantàstica",
             startTime: "17:00",
+            lang: "ca",
             duration: 60,
             type: "panel"
           },
@@ -525,16 +529,16 @@ export const scheduleData: DaySchedule[] = [
           podcast_night: [
             {
               title: "Narranación",
-              description: "CAT",
               startTime: "22:30",
               duration: 30,
+              lang: "ca",
               type: "especial"
             },
             {
               title: "idíliQ",
-              description: "CAT",
               startTime: "23:00",
               duration: 30,
+              lang: "ca",
               type: "especial"
             },
             {
@@ -622,7 +626,7 @@ export const scheduleData: DaySchedule[] = [
           },
           auditorio_2: {
             title: "La edad de oro del fantástico en España (1989-2009)",
-            speaker: "Juan Manuel Santiago, Armando Boix, Félix J. Palma, Susana Vallejo y Manuel Díez Román",
+            speaker: "Juan Manuel Santiago, Armando Boix, Félix J. Palma, M.ª Concepción Regueiro Digón",
             description: "",
             startTime: "11:00",
             duration: 60,
@@ -711,7 +715,8 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             startTime: "13:00",
             duration: 60,
-            type: "panel"
+            type: "panel",
+            lang: "ca"
           },
           sala_3: [{
             title: "La sutil diferencia entre mitologia y misticismo: un dilema en la difusión del fantástico",

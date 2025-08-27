@@ -7,6 +7,7 @@ export interface ScheduleEvent {
   duration: number;
   startTime?: string;
   type: "charla" | "taller" | "panel" | "break" | "destacada" | "registro" | "feria" | "especial";
+  lang?: string; // Language code, e.g., 'ca' for Catalan
 }
 
 export interface Track {

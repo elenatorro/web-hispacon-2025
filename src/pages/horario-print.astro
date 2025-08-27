@@ -238,9 +238,16 @@ import { normalizeEvents, formatDuration, getEventTimeDisplay } from "../utils/s
                           return events.map(event => (
                             <div class="event-card" style="background: #ffffff;">
                               <div class={`event-type type-${event.type}`} style="background: #e5e5e5; color: #000;">
-                                PODCAST
+                                {event.type === 'especial'
+                                  ? (event.title.toLowerCase().includes('teatre') || event.title.toLowerCase().includes('r.u.r.') ? 'TEATRE' : 'PODCAST')
+                                  : event.type.toUpperCase()}
                               </div>
-                              <div class="event-title" style="color: #000;">{event.title}</div>
+                              <div class="event-title" style="color: #000;">
+                                {event.title}
+                                {event.lang === 'ca' && (
+                                  <span style="margin-left: 6px; padding: 2px 6px; border-radius: 4px; background: #ffe066; color: #7c5c00; font-size: 10px; font-weight: bold; vertical-align: middle;">Català</span>
+                                )}
+                              </div>
                               <div class="event-speaker">{event.speaker}</div>
                               <div class="event-duration">
                                 {getEventTimeDisplay(slot.time, event)} • {formatDuration(event.duration)}
@@ -269,7 +276,12 @@ import { normalizeEvents, formatDuration, getEventTimeDisplay } from "../utils/s
                               <div class={`event-type type-${event.type}`}>
                                 {event.type.toUpperCase()}
                               </div>
-                              <div class="event-title">{event.title}</div>
+                              <div class="event-title">
+                                {event.title}
+                                {event.lang === 'ca' && (
+                                  <span style="margin-left: 6px; padding: 2px 6px; border-radius: 4px; background: #ffe066; color: #7c5c00; font-size: 10px; font-weight: bold; vertical-align: middle;">Català</span>
+                                )}
+                              </div>
                               <div class="event-speaker">{event.speaker}</div>
                               <div class="event-duration">
                                 {getEventTimeDisplay(slot.time, event)} • {formatDuration(event.duration)}
