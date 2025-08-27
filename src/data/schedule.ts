@@ -74,14 +74,14 @@ export const scheduleData: DaySchedule[] = [
                 title: "Fénix Literario",
                 description: "",
                 duration: 30,
-                startTime: "18:00",
+                startTime: "17:00",
                 type: "panel"
             },
             {
                 title: "Medusa Books",
                 description: "Presentació de Matermorfosi, de Laura Tomàs Mora",
                 duration: 30,
-                startTime: "18:30",
+                startTime: "17:30",
                 lang: 'ca',
                 type: "panel"
             }
@@ -587,7 +587,7 @@ export const scheduleData: DaySchedule[] = [
               title: "Audioficciones de género fantástico",
               speaker: "David Fdez. Vaamonde (SonosSonoros), Elena Torró (Droids&Druids), Aleix Valverde (Transmitiendo a Ciegas)",
               description: "",
-              duration: 30,
+              duration: 60,
               startTime: "10:00",
               type: "panel"
           },
