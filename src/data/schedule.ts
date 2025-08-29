@@ -618,7 +618,7 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "Siempre la misma historia: nuevas versiones de viejos arquetipos",
-            speaker: "Clara Dies Valls, Alberto Seijo, Andrea Valeiras, Laura Romea",
+            speaker: "Clara Dies Valls, Alberto Seijo, Andrea Valeiras, Laura Romea, G. G. Lapresa",
             description: "",
             startTime: "11:00",
             duration: 60,
