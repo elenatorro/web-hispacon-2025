@@ -209,7 +209,7 @@ export const scheduleData: DaySchedule[] = [
             {
               title: "Lectura dramatizada de R.U.R.",
               description: "El Ciervo Teatre presenta una lectura dramatizada de R.U.R., escrita en 1920 por Karel Čapek. Esta obra introdujo el término “robot” y ofrece una reflexión visionaria sobre los límites de la tecnología. Gestión a cargo de El Ciervo Teatre. Entrada libre hasta completar aforo.",
-              startTime: "21:30",
+              startTime: "22:00",
               speaker: "Manel Jara, Laia Oliveras, Ricardo García, Carles Ventura, Sergi Rosa, Aleix Bistuer, Joan Carles Cusidó, Pepi Molla, Pol De Miguel i Nora Saavedra. Dirigida por Quim Ribalta",
               duration: 120,
               lang: "ca",
@@ -352,7 +352,7 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "Grimdark vs Hopepunk",
-            speaker: "Ari Soler, Javier Miró, Carlos di Urarte, Andrea Valeiras, Laura Maquilón, Ricard Efa",
+            speaker: "Ari R. Soler, Javier Miró, Carlos di Urarte, Andrea Valeiras, Laura Maquilón, Ricard Efa",
             description: "",
             startTime: "13:00",
             duration: 60,
@@ -710,13 +710,12 @@ export const scheduleData: DaySchedule[] = [
             type: "panel"
           },
           auditorio_2: {
-            title: "Terror en català",
-            speaker: "Edgar Cotes, Carlos J. Sánchez",
+            title: "Charla por confirmar 👀",
+            speaker: "",
             description: "",
             startTime: "13:00",
             duration: 60,
             type: "panel",
-            lang: "ca"
           },
           sala_3: [{
             title: "La sutil diferencia entre mitologia y misticismo: un dilema en la difusión del fantástico",
