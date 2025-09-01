@@ -14,16 +14,31 @@ export const scheduleData: DaySchedule[] = [
     ],
     timeSlots: [
       {
+        time: "16:00 - 16:30",
+        events: {
+          auditorio_lacy: [
+            {
+            title: "Concierto de bienvenida",
+            speaker: "Sandra Hunter",
+            description: "Concierto en directo a cargo de la artista Sandra Hunter",
+            duration: 30,
+            startTime: "16:00",
+            type: "destacada"
+          }]
+        },
+      },
+      {
         time: "16:30 - 17:00",
         events: {
-          auditorio_lacy: {
+          auditorio_lacy: [
+          {
             title: "Inauguración",
             speaker: "Comité organizador",
             description: "Bienvenida y presentación de la HispaCón 2025",
             duration: 30,
             startTime: "16:30",
             type: "destacada"
-          },
+          }],
           sala_4: {
             title: "Alicia tiene una tardis. Viajes y regeneraciones de Alicia en el País de las Maravillas en la cultura popular",
             speaker: "Andrea Valeiras",
