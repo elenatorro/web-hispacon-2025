@@ -711,7 +711,7 @@ export const scheduleData: DaySchedule[] = [
           },
           auditorio_2: {
             title: "Terror en català",
-            speaker: "Antonio Torrubia, Edgar Cotes, Carlos J. Sánchez",
+            speaker: "Edgar Cotes, Carlos J. Sánchez",
             description: "",
             startTime: "13:00",
             duration: 60,
