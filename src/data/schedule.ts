@@ -375,7 +375,7 @@ export const scheduleData: DaySchedule[] = [
           },
           auditorio_2: {
             title: "Tendencias actuales del terror: del papel a lo audiovisual",
-            speaker: "Chris T.Nash, Cristina P. Amuedo, Gemma Solsona, Isabel del Río, Iván Ledesma",
+            speaker: "Chris T.Nash, Cristina P. Amuedo, Gemma Solsona, Isabel del Río, Iván Ledesma, Carlos J. Sanchez",
             description: "",
             startTime: "13:00",
             duration: 60,
