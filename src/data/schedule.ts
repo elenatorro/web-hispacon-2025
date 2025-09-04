@@ -451,7 +451,7 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "Construint mons",
-            speaker: "Karen Madrid, Ricard Efa, Ricard Ruiz, Albert Font, Isa J. González, Edgar Cotes",
+            speaker: "Karen Madrid, Ricard Ruiz, Albert Font, Isa J. González, Edgar Cotes",
             description: "Worldbuilding en la narrativa fantàstica",
             startTime: "17:00",
             lang: "ca",
@@ -720,7 +720,7 @@ export const scheduleData: DaySchedule[] = [
             type: "panel"
           },
           auditorio_2: {
-            title: "Charla por confirmar 👀",
+            title: "Mesa redonda sobre editoriales independientes",
             speaker: "",
             description: "",
             startTime: "13:00",
