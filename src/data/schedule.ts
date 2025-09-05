@@ -6,11 +6,11 @@ export const scheduleData: DaySchedule[] = [
     dayName: "Viernes",
     tracks: [
       { id: 'auditorio_lacy', name: 'Auditorio Lacy', color: 'bg-blue-500' },
-      // { id: 'auditorio_2', name: 'Auditorio 2', color: 'bg-green-500' },
-      // { id: 'sala_3', name: 'Sala 3 (Planta 1)', color: 'bg-pink-500' },
+      // { id: 'auditorio_2', name: 'Auditorio Planta 2', color: 'bg-green-500' },
+      { id: 'sala_3', name: 'Sala 3 (Planta 1)', color: 'bg-pink-500' },
       { id: 'sala_4', name: 'Sala 4 (Planta 2)', color: 'bg-purple-500' },
       // { id: 'ludica', name: 'Sala Lúdica', color: 'bg-yellow-500' },
-      { id: 'editorial', name: 'Sala 5 - Presentaciones', color: 'bg-orange-500' },
+      { id: 'editorial', name: 'Sala 5 (Planta 2)', color: 'bg-orange-500' },
     ],
     timeSlots: [
       {
@@ -61,7 +61,7 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "Nueva ola del teatro fantástico",
-            speaker: "Loredana Volpe, Alba Quintas, Alberto Ramos, Quim Ribalta",
+            speaker: "Loredana Volpe, Alba Quintas, Alberto Ramos, Quim Ribalta, Cristina Xifra",
             description: "Mesa redonda",
             duration: 60,
             type: "panel"
@@ -375,7 +375,7 @@ export const scheduleData: DaySchedule[] = [
           },
           auditorio_2: {
             title: "Tendencias actuales del terror: del papel a lo audiovisual",
-            speaker: "Chris T.Nash, Cristina P. Amuedo, Gemma Solsona, Isabel del Río, Iván Ledesma, Carlos J. Sanchez",
+            speaker: "Chris T.Nash, Gemma Solsona, Isabel del Río, Iván Ledesma, Carlos J. Sanchez",
             description: "",
             startTime: "13:00",
             duration: 60,
@@ -720,9 +720,9 @@ export const scheduleData: DaySchedule[] = [
             type: "panel"
           },
           auditorio_2: {
-            title: "Mesa redonda sobre editoriales independientes",
-            speaker: "",
-            description: "",
+            title: "Editar género: dando voz a autores y autoras",
+            speaker: "Shaila Correa (La Biblioteca de Carfax), Christian Rodríguez (Insólita Editorial), Job Peró (Obscura), Claudia Casanova (Ático de los libros), Mariló Álvarez (Minotauro)",
+            description: "Mesa redonda con editores y editoras de género fantástico",
             startTime: "13:00",
             duration: 60,
             type: "panel",
