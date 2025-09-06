@@ -363,7 +363,7 @@ export const scheduleData: DaySchedule[] = [
         }
       },
       {
-        time: "13:00 - 14:00",
+        time: "13:00 - 14:30",
         events: {
           auditorio_lacy: {
             title: "Grimdark vs Hopepunk",
@@ -375,10 +375,10 @@ export const scheduleData: DaySchedule[] = [
           },
           auditorio_2: {
             title: "Tendencias actuales del terror: del papel a lo audiovisual",
-            speaker: "Chris T.Nash, Gemma Solsona, Isabel del Río, Iván Ledesma, Carlos J. Sanchez",
+            speaker: "Chris T.Nash, Gemma Solsona, Isabel del Río, Iván Ledesma, Carlos J. Sanchez, Antonio Torrubia",
             description: "",
             startTime: "13:00",
-            duration: 60,
+            duration: 90,
             type: "panel"
           },
           sala_4: {
