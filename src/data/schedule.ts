@@ -137,7 +137,7 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "Más que Final Girls",
-            speaker: "Nerea Bosch, Mariló Álvarez, Celia Corral-Vázquez, Aitziber Saldias",
+            speaker: "Nerea Bosch, Mariló Álvarez, Celia Corral-Vázquez, Aitziber Saldias, Katherine Vega",
             description: "Mesa redonda sobre terror escrito por mujeres",
             startTime: "19:00",
             duration: 60,
