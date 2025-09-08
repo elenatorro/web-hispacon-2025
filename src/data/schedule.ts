@@ -328,7 +328,7 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "Hablando de Distopías con Stark Holborn",
-            speaker: "Stark Holborn, Caryanna Reuven, Alba Quintas, Isabel del Río",
+            speaker: "Stark Holborn, Caryanna Reuven, Alba Quintas, Isabel del Río, Marta Armengol",
             description: "",
             startTime: "12:00",
             duration: 60,
@@ -492,7 +492,7 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "Piratas, soldados y fugitivas con Stark Holborn",
-            speaker: "Stark Holborn, Susana Vallejo, África Vázquez, Daniel Pérez",
+            speaker: "Stark Holborn, Susana Vallejo, África Vázquez, Daniel Pérez, Marta Armengol",
             description: "",
             startTime: "18:00",
             duration: 60,
@@ -674,7 +674,7 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "Conversando con Stark",
-            speaker: "Stark Holborn, Elena Torró",
+            speaker: "Stark Holborn, Elena Torró, Marta Armengol",
             description: "",
             startTime: "12:00",
             duration: 60,
