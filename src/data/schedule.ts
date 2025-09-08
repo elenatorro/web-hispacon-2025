@@ -61,7 +61,7 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "Nueva ola del teatro fantástico",
-            speaker: "Loredana Volpe, Alba Quintas, Alberto Ramos, Quim Ribalta, Cristina Xifra",
+            speaker: "Loredana Volpe, Alberto Ramos, Quim Ribalta, Cristina Xifra",
             description: "Mesa redonda",
             duration: 60,
             type: "panel"
@@ -491,7 +491,7 @@ export const scheduleData: DaySchedule[] = [
         time: "18:00 - 19:00",
         events: {
           auditorio_lacy: {
-            title: "Piratas, soldados y fugitivas con Stark Hollborn",
+            title: "Piratas, soldados y fugitivas con Stark Holborn",
             speaker: "Stark Holborn, Susana Vallejo, África Vázquez, Daniel Pérez",
             description: "",
             startTime: "18:00",
@@ -721,7 +721,7 @@ export const scheduleData: DaySchedule[] = [
           },
           auditorio_2: {
             title: "Editar género: dando voz a autores y autoras",
-            speaker: "Shaila Correa (La Biblioteca de Carfax), Christian Rodríguez (Insólita Editorial), Job Peró (Obscura), Claudia Casanova (Ático de los libros), Mariló Álvarez (Minotauro)",
+            speaker: "Shaila Correa (La Biblioteca de Carfax), Christian Rodríguez (Insólita Editorial), Job Peró (Obscura), Claudia Casanova (Oz Editorial), Mariló Álvarez (Minotauro)",
             description: "Mesa redonda con editores y editoras de género fantástico",
             startTime: "13:00",
             duration: 60,
