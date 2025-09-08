@@ -297,7 +297,7 @@ export const scheduleData: DaySchedule[] = [
           },
           auditorio_2: {
             title: "Tiempos que fueron y que pudieron ser: género fantástico de inspiración histórica",
-            speaker: "Isabel Pedrero, Beatriz Alcaná, Virginia Orive de la Rosa, Bruno Puelles, África Vázquez",
+            speaker: "Isabel Pedrero, Beatriz Alcaná, Virginia Orive de la Rosa, Bruno Puelles",
             startTime: "11:00",
             description: "",
             duration: 60,
@@ -439,7 +439,7 @@ export const scheduleData: DaySchedule[] = [
             duration: 30,
             type: "panel"
           }, {
-            title: "Isphania",
+            title: "Isphanya",
             startTime: "16:30",
             duration: 30,
             type: "panel"
@@ -492,7 +492,7 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "Piratas, soldados y fugitivas con Stark Holborn",
-            speaker: "Stark Holborn, Susana Vallejo, África Vázquez, Daniel Pérez, Marta Armengol",
+            speaker: "Stark Holborn, Susana Vallejo, Daniel Pérez, Beatriz Alcaná, Marta Armengol",
             description: "",
             startTime: "18:00",
             duration: 60,
