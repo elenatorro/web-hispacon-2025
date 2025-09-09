@@ -21,7 +21,7 @@ export const scheduleData: DaySchedule[] = [
             title: "Concierto de bienvenida",
             speaker: "Sandra Hunter",
             description: "Concierto en directo a cargo de la artista Sandra Hunter",
-            duration: 30,
+            duration: 20,
             startTime: "16:00",
             type: "destacada"
           }]
@@ -35,7 +35,7 @@ export const scheduleData: DaySchedule[] = [
             title: "Inauguración",
             speaker: "Comité organizador",
             description: "Bienvenida y presentación de la HispaCón 2025",
-            duration: 30,
+            duration: 20,
             startTime: "16:30",
             type: "destacada"
           }],
@@ -43,14 +43,14 @@ export const scheduleData: DaySchedule[] = [
             title: "Alicia tiene una tardis. Viajes y regeneraciones de Alicia en el País de las Maravillas en la cultura popular",
             speaker: "Andrea Valeiras",
             description: "",
-            duration: 30,
+            duration: 20,
             startTime: "16:30",
             type: "charla"
           },
           editorial: {
             title: "Tentacle Pulp",
             description: "",
-            duration: 30,
+            duration: 20,
             startTime: "16:30",
             type: "panel"
           },
@@ -63,7 +63,7 @@ export const scheduleData: DaySchedule[] = [
             title: "Nueva ola del teatro fantástico",
             speaker: "Loredana Volpe, Alberto Ramos, Quim Ribalta, Cristina Xifra",
             description: "Mesa redonda",
-            duration: 60,
+            duration: 50,
             type: "panel"
           },
           sala_4: [
@@ -71,7 +71,7 @@ export const scheduleData: DaySchedule[] = [
               title: "Videojuegos y libros. Libros y videojuegos",
               speaker: "Darkor_LF",
               description: "",
-              duration: 30,
+              duration: 20,
               startTime: "17:00",
               type: "charla"
             },
@@ -79,7 +79,7 @@ export const scheduleData: DaySchedule[] = [
               title: "El romantasy es mi pasión",
               speaker: "Carla Plumed, Jessica Frías",
               description: "",
-              duration: 30,
+              duration: 20,
               startTime: "17:30",
               type: "panel"
             }
@@ -88,14 +88,14 @@ export const scheduleData: DaySchedule[] = [
             {
                 title: "Fénix Literario",
                 description: "",
-                duration: 30,
+                duration: 20,
                 startTime: "17:00",
                 type: "panel"
             },
             {
                 title: "Medusa Books",
                 description: "Presentació de Matermorfosi, de Laura Tomàs Mora",
-                duration: 30,
+                duration: 20,
                 startTime: "17:30",
                 lang: 'ca',
                 type: "panel"
@@ -111,7 +111,7 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Caryanna Reuven, Celia Corral-Vázquez, Rafa Díaz, Alfredo Álamo, David Fdez. Vaamonde",
             description: "Mesa redonda sobre Space Opera",
             startTime: "18:00",
-            duration: 60,
+            duration: 50,
             type: "charla"
           },
           sala_4: {
@@ -119,7 +119,7 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Sergi Álvarez",
             description: "Taller para escribir humor",
             startTime: "18:00",
-            duration: 60,
+            duration: 50,
             type: "taller"
           },
           editorial: {
@@ -137,10 +137,10 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "Más que Final Girls",
-            speaker: "Nerea Bosch, Mariló Álvarez, Celia Corral-Vázquez, Aitziber Saldias, Katherine Vega",
+            speaker: "Nerea Bosch, Mariló Álvarez, Celia Corral-Vázquez, Aitziber Saldias, Katherine Vega, Paula Peralta",
             description: "Mesa redonda sobre terror escrito por mujeres",
             startTime: "19:00",
-            duration: 60,
+            duration: 50,
             type: "charla"
           },
           sala_4: [
@@ -148,7 +148,7 @@ export const scheduleData: DaySchedule[] = [
               title: "Cómo (intentar) ganar un concurso literario",
               speaker: "Alba Quintas",
               description: "",
-              duration: 30,
+              duration: 20,
               startTime: "19:00",
               type: "taller"
             },
@@ -156,7 +156,7 @@ export const scheduleData: DaySchedule[] = [
               title: "Escribir un microrrelato usando el Tarot",
               speaker: "Mireia Pérez",
               description: "",
-              duration: 30,
+              duration: 20,
               startTime: "19:30",
               type: "taller"
             }
@@ -165,7 +165,7 @@ export const scheduleData: DaySchedule[] = [
             title: "Aquí hay Dragonas",
             speaker: "",
             description: "",
-            duration: 30,
+            duration: 20,
             startTime: "19:30",
             type: "panel"
           }]
@@ -178,7 +178,7 @@ export const scheduleData: DaySchedule[] = [
             title: "El bizarro en los tiempos del cólera",
             speaker: "Bea Aguilar, Eduard Martí, Sergi Álvarez, Sergi Viciana",
             description: "",
-            duration: 60,
+            duration: 50,
             type: "panel"
           },
           sala_4: [
@@ -186,7 +186,7 @@ export const scheduleData: DaySchedule[] = [
               title: "Escribir a varias manos",
               speaker: "",
               description: "Alejandro Marín, Borja Alonso",
-              duration: 30,
+              duration: 20,
               startTime: "20:00",
               type: "taller"
             },
@@ -194,7 +194,7 @@ export const scheduleData: DaySchedule[] = [
               title: "El género fantástico en la música de los 80: No es serio este cementerio",
               speaker: "David Fdez. Vaamonde",
               description: "",
-              duration: 30,
+              duration: 20,
               startTime: "20:30",
               type: "taller"
             }
@@ -203,36 +203,19 @@ export const scheduleData: DaySchedule[] = [
             {
                 title: "Sugaar Editorial",
                 description: "",
-                duration: 30,
+                duration: 20,
                 startTime: "20:00",
                 type: "panel"
             },
             {
                 title: "LES Editorial",
                 description: "",
-                duration: 30,
+                duration: 20,
                 startTime: "20:30",
                 type: "panel"
             }
           ],
         }
-      },
-      {
-        time: "21:30 - 11:30 🎭 Nit de Teatre",
-        events: {
-          nit_teatre: [
-            {
-              title: "Lectura dramatizada de R.U.R.",
-              description: "El Ciervo Teatre presenta una lectura dramatizada de R.U.R., escrita en 1920 por Karel Čapek. Esta obra introdujo el término “robot” y ofrece una reflexión visionaria sobre los límites de la tecnología. Gestión a cargo de El Ciervo Teatre. Entrada libre hasta completar aforo.",
-              startTime: "22:00",
-              speaker: "Manel Jara, Laia Oliveras, Ricardo García, Carles Ventura, Sergi Rosa, Aleix Bistuer, Joan Carles Cusidó, Pepi Molla, Pol De Miguel i Nora Saavedra. Dirigida por Quim Ribalta",
-              duration: 120,
-              lang: "ca",
-              type: "especial"
-            }
-          ]
-        },
-        isSpecialEvent: true
       }
     ]
   },
@@ -255,14 +238,14 @@ export const scheduleData: DaySchedule[] = [
             title: "Antibelicismo en la literatura fantástica",
             speaker: "Carla Campos, Gemma Solsona, Cristina Xifra",
             description: "Mesa antibélica: Pratchett, Leguin, Rodoreda y sus obras antibélicas",
-            duration: 60,
+            duration: 50,
             type: "panel"
           },
           auditorio_2: {
             title: "Cómo hacer ucronías en España",
             speaker: "Andrea Valeiras, Talita Isla, Javier Miró",
             description: "",
-            duration: 60,
+            duration: 50,
             type: "panel"
           },
           sala_4: {
@@ -275,12 +258,12 @@ export const scheduleData: DaySchedule[] = [
           editorial: [{
             title: "Estelas de magia",
             startTime: "10:00",
-            duration: 30,
+            duration: 20,
             type: "panel"
           },{
             title: "Algar Editorial",
             startTime: "10:30",
-            duration: 30,
+            duration: 20,
             type: "panel"
           }]
         }
@@ -292,7 +275,7 @@ export const scheduleData: DaySchedule[] = [
             title: "Narrar a través del cómic",
             speaker: "Marina Vidal, Ricard Efa, Sara Soler, Genie Espinosa",
             description: "",
-            duration: 60,
+            duration: 50,
             type: "panel"
           },
           auditorio_2: {
@@ -300,7 +283,7 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Isabel Pedrero, Beatriz Alcaná, Virginia Orive de la Rosa, Bruno Puelles",
             startTime: "11:00",
             description: "",
-            duration: 60,
+            duration: 50,
             type: "panel"
           },
           sala_4: {
@@ -313,12 +296,12 @@ export const scheduleData: DaySchedule[] = [
           editorial: [{
             title: "Apache Libros",
             startTime: "11:00",
-            duration: 30,
+            duration: 20,
             type: "panel"
           },{
             title: "Esqueleto Negro",
             startTime: "11:30",
-            duration: 30,
+            duration: 20,
             type: "panel"
           }]
         }
@@ -331,7 +314,7 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Stark Holborn, Caryanna Reuven, Alba Quintas, Isabel del Río, Marta Armengol",
             description: "",
             startTime: "12:00",
-            duration: 60,
+            duration: 50,
             type: "panel"
           },
           auditorio_2: {
@@ -339,7 +322,7 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Mónica Gutiérrez, Andrea Valeiras, Inés Galiano, Sergi Álvarez",
             description: "",
             startTime: "12:00",
-            duration: 60,
+            duration: 50,
             type: "panel"
           },
           sala_4: {
@@ -352,12 +335,12 @@ export const scheduleData: DaySchedule[] = [
           editorial: [{
             title: "Obscura Editorial",
             startTime: "12:00",
-            duration: 30,
+            duration: 20,
             type: "panel"
           },{
             title: "Editorial Numak",
             startTime: "12:30",
-            duration: 30,
+            duration: 20,
             type: "panel"
           }]
         }
@@ -370,7 +353,7 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Ari R. Soler, Javier Miró, Carlos di Urarte, Andrea Valeiras, Laura Maquilón, Ricard Efa",
             description: "",
             startTime: "13:00",
-            duration: 60,
+            duration: 50,
             type: "panel"
           },
           auditorio_2: {
@@ -391,12 +374,12 @@ export const scheduleData: DaySchedule[] = [
           editorial: [{
             title: "Suseya Editorial",
             startTime: "13:00",
-            duration: 30,
+            duration: 20,
             type: "panel"
           }, {
             title: "Pórtico",
             startTime: "13:30",
-            duration: 30,
+            duration: 20,
             type: "panel"
           }]
         }
@@ -414,7 +397,7 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Autoras Anacronópete 2025: Gemma Solsona, Ana Saiz y Alba Quintas",
             description: "",
             startTime: "16:00",
-            duration: 60,
+            duration: 50,
             type: "panel"
           },
           auditorio_2: {
@@ -422,7 +405,7 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Susana Vallejo y Sergi Viciana",
             description: "",
             startTime: "16:00",
-            duration: 60,
+            duration: 50,
             type: "taller"
           },
           sala_4: {
@@ -436,12 +419,12 @@ export const scheduleData: DaySchedule[] = [
           editorial: [{
             title: "La Biblioteca de Carfax",
             startTime: "16:00",
-            duration: 30,
+            duration: 20,
             type: "panel"
           }, {
             title: "Isphanya",
             startTime: "16:30",
-            duration: 30,
+            duration: 20,
             type: "panel"
           }]
         }
@@ -455,7 +438,7 @@ export const scheduleData: DaySchedule[] = [
             description: "Worldbuilding en la narrativa fantàstica",
             startTime: "17:00",
             lang: "ca",
-            duration: 60,
+            duration: 50,
             type: "panel"
           },
           auditorio_2: {
@@ -463,7 +446,7 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Sheila Malchirant, Asociación Pro Shōjo Spain",
             description: "",
             startTime: "17:00",
-            duration: 60,
+            duration: 50,
             type: "panel"
           },
           sala_4: {
@@ -477,12 +460,12 @@ export const scheduleData: DaySchedule[] = [
           editorial: [{
             title: "Editorial Magnífica",
             startTime: "17:00",
-            duration: 30,
+            duration: 20,
             type: "panel"
           }, {
             title: "Editorial Raven",
             startTime: "17:30",
-            duration: 30,
+            duration: 20,
             type: "panel"
           }]
         }
@@ -495,7 +478,7 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Stark Holborn, Susana Vallejo, Daniel Pérez, Beatriz Alcaná, Marta Armengol",
             description: "",
             startTime: "18:00",
-            duration: 60,
+            duration: 50,
             type: "panel"
           },
           auditorio_2: {
@@ -503,7 +486,7 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Marina Vidal, Clara Dies Valls, Sara Soler, Andrés Zelada",
             description: "",
             startTime: "18:00",
-            duration: 60,
+            duration: 50,
             type: "panel"
           },
           sala_4: {
@@ -517,7 +500,7 @@ export const scheduleData: DaySchedule[] = [
           editorial: [{
             title: "Editorial Crononauta",
             startTime: "18:00",
-            duration: 30,
+            duration: 20,
             type: "panel"
           }]
         }
@@ -589,7 +572,7 @@ export const scheduleData: DaySchedule[] = [
             title: "Hablando de literatura infantil",
             speaker: "Susana Vallejo, Bruno Puelles, Marina Tena",
             description: "",
-            duration: 60,
+            duration: 50,
             type: "panel"
           },
 
@@ -597,7 +580,7 @@ export const scheduleData: DaySchedule[] = [
               title: "Audioficciones de género fantástico",
               speaker: "David Fdez. Vaamonde (SonosSonoros), Elena Torró (Droids&Druids), Aleix Valverde (Transmitiendo a Ciegas)",
               description: "",
-              duration: 60,
+              duration: 50,
               startTime: "10:00",
               type: "panel"
           },
@@ -606,20 +589,20 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Javier Saborido",
             description: "",
             startTime: "10:00",
-            duration: 30,
+            duration: 20,
             type: "taller"
           }, {
             title: "Género y fantasía: Personajes heroicos dentro de la fantasía",
             speaker: "Inés María Martínez Domenech",
             description: "",
             startTime: "10:30",
-            duration: 30,
+            duration: 20,
             type: "taller"
           }],
           editorial: [{
             title: "Editorial Minotauro",
             startTime: "10:30",
-            duration: 30,
+            duration: 20,
             type: "panel"
           }]
         }
@@ -631,15 +614,15 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Clara Dies Valls, Alberto Seijo, Andrea Valeiras, Laura Romea, G. G. Lapresa",
             description: "",
             startTime: "11:00",
-            duration: 60,
+            duration: 50,
             type: "panel"
           },
           auditorio_2: {
             title: "La edad de oro del fantástico en España (1989-2009)",
-            speaker: "Juan Manuel Santiago, Armando Boix, Félix J. Palma, M.ª Concepción Regueiro Digón",
+            speaker: "Juan Manuel Santiago, Armando Boix, Félix J. Palma, M.ª Concepción Regueiro Digón, José Antonio Bonilla",
             description: "",
             startTime: "11:00",
-            duration: 60,
+            duration: 50,
             type: "panel"
           },
           sala_3: [{
@@ -647,25 +630,25 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Beatriz Alcaná, Ana Saiz",
             description: "",
             startTime: "11:00",
-            duration: 30,
+            duration: 20,
             type: "charla"
           }, {
             title: "Los cuatro pilares de escribir cifi y fantasía",
             speaker: "Javier Miró",
             description: "",
             startTime: "11:30",
-            duration: 30,
+            duration: 20,
             type: "taller"
           }],
           editorial: [{
             title: "Editorial Specula",
             startTime: "11:00",
-            duration: 30,
+            duration: 20,
             type: "panel"
           }, {
-            title: "Editorial LiterUp",
+            title: "Editorial Literup",
             startTime: "11:30",
-            duration: 30,
+            duration: 20,
             type: "panel"
           }]
         }
@@ -677,7 +660,7 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Stark Holborn, Elena Torró, Marta Armengol",
             description: "",
             startTime: "12:00",
-            duration: 60,
+            duration: 50,
             type: "panel"
           },
           auditorio_2: {
@@ -685,7 +668,7 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Laura G.W. Messer, Talita Isla, Beatriz Alcaná, Ana Saiz",
             description: "",
             startTime: "12:00",
-            duration: 60,
+            duration: 50,
             type: "panel"
           },
           sala_3: [{
@@ -693,18 +676,18 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Natalia Sánchez y Manel Medina",
             description: "",
             startTime: "12:00",
-            duration: 60,
+            duration: 50,
             type: "taller"
           }],
           editorial: [{
             title: "Editorial Transbordador",
             startTime: "12:00",
-            duration: 30,
+            duration: 20,
             type: "panel"
           }, {
             title: "Insólita Editorial",
             startTime: "12:00",
-            duration: 30,
+            duration: 20,
             type: "panel"
           }]
         }
@@ -716,7 +699,7 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Maeva Nieto, Marina Tena, Isa J. González, Mireia Pérez",
             description: "",
             startTime: "13:00",
-            duration: 60,
+            duration: 50,
             type: "panel"
           },
           auditorio_2: {
@@ -724,7 +707,7 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Shaila Correa (La Biblioteca de Carfax), Christian Rodríguez (Insólita Editorial), Job Peró (Obscura), Claudia Casanova (Oz Editorial), Mariló Álvarez (Minotauro)",
             description: "Mesa redonda con editores y editoras de género fantástico",
             startTime: "13:00",
-            duration: 60,
+            duration: 50,
             type: "panel",
           },
           sala_3: [{
@@ -732,25 +715,25 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Alfons Mallol García, Karen Madrid",
             description: "",
             startTime: "13:00",
-            duration: 30,
+            duration: 20,
             type: "charla"
           }, {
             title: "Protección contra la IA generativa en el mundo editorial",
             speaker: "Andrés Zelada",
             description: "",
             startTime: "13:30",
-            duration: 30,
+            duration: 20,
             type: "taller"
           }],
           editorial: [{
             title: "Gigamesh",
             startTime: "13:00",
-            duration: 30,
+            duration: 20,
             type: "panel"
           },{
             title: "Droids & Druids",
             startTime: "13:30",
-            duration: 30,
+            duration: 20,
             type: "panel"
           }]
         }
@@ -761,7 +744,7 @@ export const scheduleData: DaySchedule[] = [
             title: "Clausura y despedida",
             speaker: "Comité organizador",
             description: "Cierre oficial de HispaCón 2025 y anuncio próxima edición",
-            duration: 30,
+            duration: 20,
             type: "destacada"
           }
         }
