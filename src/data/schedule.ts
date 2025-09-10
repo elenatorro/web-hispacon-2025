@@ -310,12 +310,12 @@ export const scheduleData: DaySchedule[] = [
         time: "12:00 - 13:00",
         events: {
           auditorio_lacy: {
-            title: "Hablando de Distopías con Stark Holborn",
+            title: "Hablando de Distopías",
             speaker: "Stark Holborn, Caryanna Reuven, Alba Quintas, Isabel del Río, Marta Armengol",
-            description: "",
+            description: "Mesa redonda sobre literatura distópica",
             startTime: "12:00",
             duration: 50,
-            type: "panel"
+            type: "destacada"
           },
           auditorio_2: {
             title: "El humor en el género y el género en el humor",
@@ -474,12 +474,12 @@ export const scheduleData: DaySchedule[] = [
         time: "18:00 - 19:00",
         events: {
           auditorio_lacy: {
-            title: "Piratas, soldados y fugitivas con Stark Holborn",
+            title: "Piratas, soldados y fugitivas",
             speaker: "Stark Holborn, Susana Vallejo, Daniel Pérez, Beatriz Alcaná, Marta Armengol",
             description: "",
             startTime: "18:00",
             duration: 50,
-            type: "panel"
+            type: "destacada"
           },
           auditorio_2: {
             title: "Menos IA, más fantasía",
@@ -661,7 +661,7 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             startTime: "12:00",
             duration: 50,
-            type: "panel"
+            type: "destacada"
           },
           auditorio_2: {
             title: "Fantasía se escribe con ñ",
