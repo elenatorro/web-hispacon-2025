@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 name: "África Vázquez"
 avatar: {
     src: "public/africa-vazquez.jpg",
