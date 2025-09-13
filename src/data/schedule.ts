@@ -570,7 +570,7 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "Hablando de literatura infantil",
-            speaker: "Susana Vallejo, Bruno Puelles, Marina Tena",
+            speaker: "Susana Vallejo, Marina Tena",
             description: "",
             duration: 50,
             type: "panel"
@@ -726,7 +726,7 @@ export const scheduleData: DaySchedule[] = [
             type: "taller"
           }],
           editorial: [{
-            title: "Gigamesh",
+            title: "40 aniversario de Gigamesh",
             startTime: "13:00",
             duration: 20,
             type: "panel"
