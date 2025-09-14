@@ -21,7 +21,7 @@ export const scheduleData: DaySchedule[] = [
             title: "Concierto de bienvenida",
             speaker: "Sandra Hunter",
             description: "Concierto en directo a cargo de la artista Sandra Hunter",
-            duration: 20,
+            duration: 30,
             startTime: "16:00",
             type: "destacada"
           }]
