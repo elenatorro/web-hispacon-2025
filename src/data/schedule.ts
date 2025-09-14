@@ -411,7 +411,8 @@ export const scheduleData: DaySchedule[] = [
           sala_4: {
             title: "Cluedo en vivo",
             speaker: "Bruno Puelles",
-            description: "Actividad lúdica (inscripción previa)",
+            description: "'Fiesta en el Hotel Jardín de Odette'. Actividad a cargo de Bruno Puelles, 3h de duración. Requiere inscripción previa.",
+            link: "https://docs.google.com/forms/d/e/1FAIpQLSeb9Hp7tjR_wEpqj2vnfPAlo1C5ZK-o05q5N3e28OfkN0losQ/viewform",
             startTime: "16:00",
             duration: 180,
             type: "taller"
@@ -452,7 +453,8 @@ export const scheduleData: DaySchedule[] = [
           sala_4: {
             title: "Cluedo en vivo",
             speaker: "Bruno Puelles",
-            description: "Actividad lúdica (inscripción previa)",
+            description: "'Fiesta en el Hotel Jardín de Odette'. Actividad a cargo de Bruno Puelles, 3h de duración. Requiere inscripción previa.",
+            link: "https://docs.google.com/forms/d/e/1FAIpQLSeb9Hp7tjR_wEpqj2vnfPAlo1C5ZK-o05q5N3e28OfkN0losQ/viewform",
             startTime: "16:00",
             duration: 180,
             type: "taller"
@@ -492,7 +494,8 @@ export const scheduleData: DaySchedule[] = [
           sala_4: {
             title: "Cluedo en vivo",
             speaker: "Bruno Puelles",
-            description: "Actividad lúdica (inscripción previa)",
+            description: "'Fiesta en el Hotel Jardín de Odette'. Actividad a cargo de Bruno Puelles, 3h de duración. Requiere inscripción previa.",
+            link: "https://docs.google.com/forms/d/e/1FAIpQLSeb9Hp7tjR_wEpqj2vnfPAlo1C5ZK-o05q5N3e28OfkN0losQ/viewform",
             duration: 180,
             startTime: "16:00",
             type: "taller"
@@ -575,7 +578,6 @@ export const scheduleData: DaySchedule[] = [
             duration: 50,
             type: "panel"
           },
-
           auditorio_2: {
               title: "Audioficciones de género fantástico",
               speaker: "David Fdez. Vaamonde (SonosSonoros), Elena Torró (Droids&Druids), Aleix Valverde (Transmitiendo a Ciegas)",

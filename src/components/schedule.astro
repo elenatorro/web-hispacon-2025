@@ -124,6 +124,12 @@ const { layout = "vertical", showDescription = true } = Astro.props;
               {timeSlot.isSpecialEvent ? (
                 <!-- Special Event Layout -->
                 <div class="w-full max-w-lg">
+                  <div class="text-m text-purple-700 font-semibold mb-2">
+                    <a href="https://www.entrapolis.com/entradas/nit-de-podcasts-a-la-hispacon-2025" target="_blank" class="text-purple-800 hover:text-purple-600 underline underline-offset-2 hover:underline-offset-4 transition-all duration-200">
+                      <Icon class="inline w-4 h-4 mr-1" name="bx:link-external" />
+                      Reserva tu entrada aquí
+                    </a>
+                  </div>
                   {Object.entries(timeSlot.events).map(([eventKey, eventData]) => {
                     const events = normalizeEvents(eventData);
                     return events.map((event) => (
@@ -241,6 +247,13 @@ const { layout = "vertical", showDescription = true } = Astro.props;
                                 </div>
                               </div>
 
+                              {event.link && (
+                                <a href={event.link} target="_blank" rel="noopener" class="text-sm text-blue-600 hover:underline inline-flex items-center gap-1">
+                                  <Icon name="bx:link-external" class="inline w-4 h-4" />
+                                  Inscripción
+                                </a>
+                              )}
+
                               <div class="text-sm text-black-600 mb-2 rounded py-2">
                                 <Icon class="inline w-4 h-4 mr-1" name="bx:bxs-time" />
                                 {getEventTimeDisplay(timeSlot.time, event)}
@@ -347,6 +360,13 @@ const { layout = "vertical", showDescription = true } = Astro.props;
                                     {formatDuration(event.duration)}
                                   </div>
                                 </div>
+
+                                {event.link && (
+                                  <a href={event.link} target="_blank" rel="noopener" class="text-sm text-blue-600 hover:underline inline-flex items-center gap-1">
+                                    <Icon name="bx:link-external" class="inline w-4 h-4" />
+                                    Inscripción
+                                  </a>
+                                )}
                                 
                                 {event.speaker && (
                                   <p class="text-sm mb-1 opacity-90">

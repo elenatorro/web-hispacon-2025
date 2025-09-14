@@ -8,6 +8,7 @@ export interface ScheduleEvent {
   startTime?: string;
   type: "charla" | "taller" | "panel" | "break" | "destacada" | "registro" | "feria" | "especial";
   lang?: string; // Language code, e.g., 'ca' for Catalan
+  link?: string; // Optional link for the activity
 }
 
 export interface Track {
