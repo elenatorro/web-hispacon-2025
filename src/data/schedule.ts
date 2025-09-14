@@ -183,9 +183,9 @@ export const scheduleData: DaySchedule[] = [
           },
           sala_4: [
             {
-              title: "Escribir a varias manos",
-              speaker: "",
-              description: "Alejandro Marín, Borja Alonso",
+              title: "Escribir a varias manos: personas, no engranajes",
+              speaker: "Alejandro Marín, Borja Alonso",
+              description: "",
               duration: 20,
               startTime: "20:00",
               type: "taller"
@@ -528,7 +528,7 @@ export const scheduleData: DaySchedule[] = [
               type: "especial"
             },
             {
-              title: "idíliQ",
+              title: "idíl•liQ",
               startTime: "23:00",
               duration: 30,
               lang: "ca",
