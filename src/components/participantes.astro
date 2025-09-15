@@ -1,0 +1,70 @@
+---
+import { getCollection } from "astro:content";
+import { Picture, getImage } from "astro:assets";
+import Container from "@/components/container.astro";
+import Sectionhead from "@/components/sectionhead.astro";
+import SectionSub from "@/components/sectionsub.astro";
+import Link from "@/components/ui/link.astro";
+
+export interface Props {
+  title: string;
+  desc: string;
+}
+
+const publishedTeamMembers = await getCollection("team", ({ data }) => {
+  return !data.draft;
+});
+
+for (const member of publishedTeamMembers) {
+  if (typeof member.data.avatar.src === "string") {
+    // Keep as string for lazy loading
+    // member.data.avatar.src = await getImage({ src: member.data.avatar.src });
+  }
+}
+
+publishedTeamMembers.sort((a, b) => {
+  if (a.slug === "stark-holborn") return -1;
+  if (b.slug === "stark-holborn") return 1;
+  return 0;
+});
+---
+
+<Container>
+  <Sectionhead>
+    <Fragment slot="title">{Astro.props.title}</Fragment>
+    <Fragment slot="desc">{Astro.props.desc}</Fragment>
+  </Sectionhead>
+  <div class="space-y-8 mx-auto max-w-4xl mt-12" id="participants-container">
+    {
+      publishedTeamMembers.map((teamMemberEntry, index) => (
+        <div class="group flex flex-col sm:flex-row gap-6 items-start participant-card transition-all duration-500" data-index={index}>
+          <div class="flex-shrink-0 w-56 h-56 relative">
+            {teamMemberEntry.data.link ? (
+              <Link href={`${teamMemberEntry.data.link}`} class="contents" target="_blank">
+                <img
+                  src={typeof teamMemberEntry.data.avatar.src === 'string' ? teamMemberEntry.data.avatar.src : teamMemberEntry.data.avatar.src.src}
+                  alt={teamMemberEntry.data.avatar.alt}
+                  width="224"
+                  height="224"
+                  class="participant-image w-full h-full rounded-sm transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center"
+                />
+              </Link>
+            ) : (
+              <img
+                src={typeof teamMemberEntry.data.avatar.src === 'string' ? teamMemberEntry.data.avatar.src : teamMemberEntry.data.avatar.src.src}
+                alt={teamMemberEntry.data.avatar.alt}
+                width="224"
+                height="224"
+                class="participant-image w-full h-full rounded-sm transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center"
+              />
+            )}
+          </div>
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold mb-2">{teamMemberEntry.data.name}</h3>
+            <p class="text-black-600 mb-2">{teamMemberEntry.data.description}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Container>

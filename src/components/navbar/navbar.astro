@@ -5,6 +5,7 @@ import Dropdown from "./dropdown.astro";
 import hispaconLogo from "@/assets/hispacon-logo.png";
 import { Picture } from "astro:assets";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import { Astro } from "astro";
 
 const base = import.meta.env.BASE_PATH || "";
 
@@ -47,7 +48,7 @@ const menuitems = [
           <MenuIcon class="w-4 h-4 text-white-800" />
         </div>
       </div>
-      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0 text-lg uppercase">
+      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0 text-lg uppercase justify-between items-center">
         <ul class="flex flex-col lg:flex-row lg:gap-3">
           {
             menuitems.map((item, index) => (
@@ -80,10 +81,11 @@ const menuitems = [
         </ul>
       </MenuItems>
     </Astronav>
-    <div>
-      <div class="hidden lg:flex items-center gap-4">
-        <Link href="https://patreon.com/Hispacon2025" class="" size="md" target="_blank">Patreon</Link>
+    <div class="flex items-center gap-4">
+      <div class="ml-4 flex gap-2">
+        <a href="/" class={`w-14 text-center px-2 py-1 rounded font-semibold transition ${Astro.url.pathname.startsWith('/ca') ? 'bg-(--main-color) text-(--font-secondary-color) hover:bg-(--font-hover-color)' : 'bg-blue-600 text-white hover:bg-blue-700'}`}>ES</a>
+        <a href="/ca/" class={`w-14 text-center px-2 py-1 rounded font-semibold transition ${Astro.url.pathname.startsWith('/ca') ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-(--main-color) text-(--font-secondary-color) hover:bg-(--font-hover-color)'}`}>CAT</a>
       </div>
-    </div>
+  </div>
   </header>
 <!-- </Container> -->

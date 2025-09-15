@@ -1,15 +1,14 @@
 ---
 import { getCollection } from "astro:content";
 import { Picture } from "astro:assets";
-import Layout from "@/layouts/Layout.astro";
+import Layout from "@/layouts/Layout.ca.astro";
 import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
 
 const base = import.meta.env.BASE_PATH || "";
 
-// Only load Spanish info entries
 const publishedBlogEntries = await getCollection("info", ({ data }) => {
-  return !data.draft && (!data.lang || data.lang === "es");
+  return !data.draft && (data.lang === "ca" && data.lang);
 });
 
 ---
@@ -17,7 +16,7 @@ const publishedBlogEntries = await getCollection("info", ({ data }) => {
 <Layout title="Blog">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Sobre el evento</Fragment>
+      <Fragment slot="title">Sobre l’esdeveniment</Fragment>
       <Fragment slot="desc">
         Toda la información sobre el evento
       </Fragment>
@@ -27,7 +26,7 @@ const publishedBlogEntries = await getCollection("info", ({ data }) => {
         {
           publishedBlogEntries.map((infoPostEntry, index) => (
             <li>
-              <a href={`${base}/info/${infoPostEntry.slug}`}>
+              <a href={`/ca/info/${infoPostEntry.slug.replace(/^ca\//, '').replace(/^info\//, '')}`}>
                 <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-top">
                   <Picture
                     src={infoPostEntry.data.image.src}
@@ -47,13 +46,6 @@ const publishedBlogEntries = await getCollection("info", ({ data }) => {
                     <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1 ">
                       {infoPostEntry.data.title}
                     </h2>
-
-                    {/* <div class="flex gap-2 mt-3">
-                      <span class="text-black-400">
-                        {infoPostEntry.data.author}
-                      </span>
-                      <span class="text-black-400">• </span>
-                    </div> */}
                   </div>
                 </div>
               </a>

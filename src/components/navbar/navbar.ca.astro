@@ -1,0 +1,88 @@
+---
+import Container from "@/components/container.astro";
+import Link from "@/components/ui/link.astro";
+import Dropdown from "./dropdown.astro";
+import hispaconLogo from "@/assets/hispacon-logo.png";
+import { Picture } from "astro:assets";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+
+const base = import.meta.env.BASE_PATH || "";
+
+const menuitems = [
+  {
+    title: "Programa",
+    path: `${base}/ca/horario`,
+  },
+  {
+    title: "Participants",
+    path: `${base}/ca/participantes`,
+    badge: false
+  },
+  {
+    title: "Contacte",
+    path: `${base}/ca/contact`,
+  },
+  {
+    title: "Info",
+    path: `${base}/ca/info`,
+  },
+];
+---
+
+<header class="flex flex-col lg:flex-row justify-around items-center py-5 px-8 bg-(--main-color) text-(--font-secondary-color)">
+  <Astronav>
+    <div class="flex w-full lg:w-auto items-center justify-between">
+      <a href=`${base}/ca` class="text-lg">
+        <Picture
+          src={hispaconLogo}
+          alt="Hispacon"
+          widths={[200, 400, 600]}
+          sizes="(max-width: 800px) 100vw, 620px"
+          loading="eager"
+          format="avif"
+        />
+      </a>
+      <div class="block lg:hidden">
+        <MenuIcon class="w-4 h-4 text-white-800" />
+      </div>
+    </div>
+    <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0 text-lg uppercase">
+      <ul class="flex flex-col lg:flex-row lg:gap-3">
+        {
+          menuitems.map((item, index) => (
+            <>
+              {item.children && (
+                <Dropdown
+                  title={item.title}
+                  children={item.children}
+                  lastItem={index === menuitems.length - 1}
+                />
+              )}
+
+              {!item.children && (
+                <li>
+                  <a
+                    href={item.path}
+                    class="flex lg:px-3 py-2 items-center text-(--font-secondary-color) hover:text-(--font-hover-color)">
+                    <span> {item.title}</span>
+                    {item.badge && (
+                      <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
+                        Nou
+                      </span>
+                    )}
+                  </a>
+                </li>
+              )}
+            </>
+          ))
+        }
+      </ul>
+    </MenuItems>
+  </Astronav>
+  <div class="flex items-center gap-4">
+      <div class="ml-4 flex gap-2">
+        <a href="/" class={`w-14 text-center px-2 py-1 rounded font-semibold transition ${Astro.url.pathname.startsWith('/ca') ? 'bg-(--main-color) text-(--font-secondary-color) hover:bg-(--font-hover-color)' : 'bg-blue-600 text-white hover:bg-blue-700'}`}>ES</a>
+        <a href="/ca/" class={`w-14 text-center px-2 py-1 rounded font-semibold transition ${Astro.url.pathname.startsWith('/ca') ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-(--main-color) text-(--font-secondary-color) hover:bg-(--font-hover-color)'}`}>CAT</a>
+      </div>
+  </div>
+</header>

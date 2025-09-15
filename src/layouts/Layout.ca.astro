@@ -1,0 +1,67 @@
+---
+import { SEO } from "astro-seo";
+import Footer from "@/components/footer.astro";
+import Navbar from "@/components/navbar/navbar.ca.astro";
+import "@fontsource-variable/inter/index.css";
+import "@fontsource/turret-road";
+import "@fontsource-variable/bricolage-grotesque";
+import "../styles/global.css";
+
+export interface Props {
+  title: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const resolvedImageWithDomain = new URL(
+  "/banner.png",
+  Astro.site
+).toString();
+const { title } = Astro.props;
+const makeTitle = title
+  ? title + " | " + "Hispacon 2025"
+  : "HispaCon 2025 - La convenció anual de Ciència Ficció, Fantasia i Terror de l'Associació Pòrtic";
+---
+
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <base href={import.meta.env.BASE_URL} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧅</text></svg>">
+    <meta name="generator" content={Astro.generator} />
+    <SEO
+      title={makeTitle}
+      description="HispaCon 2025 - La convenció anual de Ciència Ficció, Fantasia i Terror de l'Associació Pòrtic. 19, 20 i 21 de setembre a Sabadell."
+      canonical={canonicalURL}
+      twitter={{
+        creator: "@surjithctly",
+        site: "@web3templates",
+        card: "summary_large_image",
+      }}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: `HispaCon 2025 - La convenció anual de Ciència Ficció, Fantasia i Terror de l'Associació Pòrtic`,
+          image: resolvedImageWithDomain,
+        },
+        image: {
+          alt: "HispaCon 2025",
+        },
+      }}
+    />
+  </head>
+  <body class="w-full bg-(--main-bg-color)">
+    <Navbar />
+    <main class="min-h-screen flex flex-col justify-between">
+      <slot />
+      <Footer />
+    </main>
+    <style is:global>
+      img {
+        content-visibility: auto;
+      }
+    </style>
+  </body>
+</html>

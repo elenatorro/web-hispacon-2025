@@ -15,6 +15,7 @@ const infoCollection = defineCollection({
     author: z.string().default('HispaCón'),
     category: z.string().default('Info'),
     tags: z.array(z.string()),
+    lang: z.string().optional(),
   }),
 });
 

@@ -1,0 +1,61 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.ca.astro";
+import Container from "@/components/container.astro";
+import { Picture } from "astro:assets";
+
+const base = import.meta.env.BASE_PATH || "";
+
+// Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const infoEntries = await getCollection("info", ({ data }) => data.lang === "ca");
+  return infoEntries.map((entry) => ({
+    params: { slug: entry.slug.replace(/^ca\//, '').replace(/^info\//, '') },
+    props: { entry },
+  }));
+}
+
+// Get the entry directly from the prop on render
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+  <Container>
+    <div class="mx-auto max-w-3xl mt-14">
+      <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+        {entry.data.category}
+      </span>
+      <h1
+        class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
+        {entry.data.title}
+      </h1>
+      <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap">
+        <!-- <span class="text-black-400">
+          {entry.data.author}
+        </span> -->
+        <!-- <span class="text-black-400">•</span> -->
+        <div class="w-full md:w-auto flex flex-wrap gap-3">
+          {
+            entry.data.tags.map((tag) => (
+              <span class="text-sm text-black-500">#{tag}</span>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-auto prose prose-lg mt-6 max-w-3xl">
+      <Picture
+        src={entry.data.image.src}
+        alt={entry.data.image.alt}
+        class="rounded-lg"
+        width={entry.data.image.width}
+        height={entry.data.image.height}
+        loading="lazy"
+        decoding="async"
+      />
+      <Content />
+    </div>
+  </Container>
+</Layout>

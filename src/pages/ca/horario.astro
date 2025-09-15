@@ -1,0 +1,67 @@
+---
+import Layout from "@/layouts/Layout.ca.astro";
+import Container from "@/components/container.astro";
+import Sectionhead from "@/components/sectionhead.astro";
+import Schedule from "@/components/schedule.astro";
+---
+
+<Layout title="Horario">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Programa</Fragment>
+      <Fragment slot="desc">
+        Programa complet de la HispaCón 2025
+        <br>
+        <sub>*  Els horaris i activitats estan subjectes a canvis. Consulta la web per a les últimes actualitzacions.</sub>
+      </Fragment>
+    </Sectionhead>
+
+    <!-- Print version link -->
+    <div class="m-8 text-center">
+      <a
+        href="/horario-print"
+        target="_blank"
+        class="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+      >
+        Versión per imprimir
+      </a>
+      <a href="https://www.entrapolis.com/entradas/nit-de-podcasts-a-la-hispacon-2025" target="_blank"class="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+        Reserva entrades "Nit de podcasts"
+      </a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeb9Hp7tjR_wEpqj2vnfPAlo1C5ZK-o05q5N3e28OfkN0losQ/viewform" target="_blank" class="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+        Reserva "Cluedo en Vivo"
+      </a>
+    </div>
+
+    <div>
+
+    </div>
+
+    <div class="mt-12">
+      <Schedule layout="vertical" showDescription={true} />
+    </div>
+
+    <div class="mt-16 bg-gray-50 rounded-lg p-6">
+      <h3 class="text-xl font-bold mb-4">Informació general</h3>
+      <div class="grid md:grid-cols-2 gap-6 text-sm">
+        <div>
+          <h4 class="font-semibold mb-2">Horaris generals:</h4>
+          <ul class="space-y-1 text-black-600">
+            <li>• Divendres 19 de Septembre: 16:00h a 21:00h</li>
+            <li>• Dissabte 20 de Septembre: 11:00h a 14:00h i de 16:00h a 21:00h</li>
+            <li>• Diumenge 21 de Septembre: 11:00h a 14:00h</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-2">Fira editorial</h4>
+          <p class="text-black-600">
+            La fira editorial estarà oberta durant tot l'esdeveniment
+          </p>
+        </div>
+      </div>
+      <p class="mt-4 text-xs text-black-500">
+       * Els horaris i activitats estan subjectes a canvis. Consulta la web per a les últimes actualitzacions.
+      </p>
+    </div>
+  </Container>
+</Layout>

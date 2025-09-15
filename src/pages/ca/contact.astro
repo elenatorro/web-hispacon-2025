@@ -1,0 +1,40 @@
+---
+import Container from "@/components/container.astro";
+import Sectionhead from "@/components/sectionhead.astro";
+import Layout from "@/layouts/Layout.ca.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout title="Contacte">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Contacte</Fragment>
+      <Fragment slot="desc">Si tens qualsevol dubte, escriu-nos.</Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
+      <div>
+        <h2 class="font-medium text-2xl text-black-800">Contacta amb l'organització</h2>
+        <div class="mt-5">
+          <div class="flex items-center mt-2 space-x-2 text-black-600">
+          </div>
+          <div class="flex items-center mt-2 space-x-2 text-black-600">
+            <Icon class="text-black-400 w-4 h-4" name="uil:envelope" />
+            <a href="mailto:hispacon2025@gmail.com">hispacon2025@gmail.com</a>
+          </div>
+          <div class="flex items-center mt-2 space-x-2 text-black-600">
+            <Icon class="text-black-400 w-4 h-4" name="uil:edit"/>
+            <a href="https://bsky.app/profile/porticohispacon.bsky.social">BlueSky</a>
+          </div>
+          <div class="flex items-center mt-2 space-x-2 text-black-600">
+            <Icon class="text-black-400 w-4 h-4" name="uil:instagram"/>
+            <a href="https://www.instagram.com/porticohispacon">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div>
+      </div>
+    </div>
+  </Container>
+</Layout>
+

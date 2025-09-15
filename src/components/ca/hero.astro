@@ -1,0 +1,69 @@
+---
+import { Picture } from "astro:assets";
+import { Image } from "astro:assets";
+import cartel from "@/assets/cartel.jpeg";
+import Link from "@/components/ui/link.astro";
+import { Icon } from "astro-icon/components";
+import hispaconLogo from "@/assets/hispacon-logo.png";
+
+const base = import.meta.env.BASE_PATH || "";
+---
+
+<section
+  class="grid lg:grid-cols-2 place-items-center lg:pt-12 pb-8 sm:pt-8 md:pb-24">
+  <div class="md:order-1 md:block mt-5">
+    <Picture
+      src={cartel}
+      alt="Cartell de la HispaCon"
+      loading="eager"
+      format="avif"
+    />
+  </div>
+  <div class="py-5 pb-12">
+    <h1
+      class="text-2xl lg:text-2xl xl:text-5xl font-bold lg:tracking-tight xl:tracking-tighter flex items-center gap-2">
+      <Picture
+        src={hispaconLogo}
+        alt="HISPACON"
+        width="200"
+        widths={[200, 400, 600]}
+        sizes="(max-width: 800px) 100vw, 620px"
+        loading="eager"
+        format="avif"
+      />
+      <span class="sr-only">Hispacon 2025</span>
+    </h1>
+    <h2 class="text-4xl text-black-800 font-bold max-w-xl">
+        Convenció nacional de Fantasia, Ciència-ficció i Terror. Del 19 al 21 de setembre a Sabadell.
+    </h2>
+    <div class="mt-6 flex flex-col items-center sm:flex-row">
+      <Icon class="text-black-400 w-8 h-8" name="uil:map-marker" />
+      <p>Casal Pere Quart - Rambla, 69 - 08202, Sabadell</p>
+    </div>
+    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+      <Link
+        href="#"
+        href=`${base}/ca/info/manifiesto-contra-la-ia`
+        class="flex gap-1 items-center justify-center"
+        rel="noopener">
+        Manifest contra la IA
+      </Link>
+      <Link
+        href="#"
+        href=`${base}/ca/info/inscripciones`
+        class="flex gap-1 items-center justify-center"
+        rel="noopener">
+        Inscripcions
+      </Link>
+      <Link
+        size="lg"
+        style="outline"
+        rel="noopener"
+        href="https://bsky.app/profile/porticohispacon.bsky.social"
+        class="flex gap-1 items-center justify-center"
+        target="_blank">
+        BlueSky
+      </Link>
+    </div>
+  </div>
+</section>

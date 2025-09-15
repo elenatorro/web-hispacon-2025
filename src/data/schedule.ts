@@ -2,8 +2,8 @@ import type { DaySchedule } from "@/types/schedule";
 
 export const scheduleData: DaySchedule[] = [
   {
-    date: "19 Septiembre",
-    dayName: "Viernes",
+    date: "Viernes 19",
+    dayName: "Divendres 19",
     tracks: [
       { id: 'auditorio_lacy', name: 'Auditorio Lacy', color: 'bg-blue-500' },
       // { id: 'auditorio_2', name: 'Auditorio Planta 2', color: 'bg-green-500' },
@@ -220,8 +220,8 @@ export const scheduleData: DaySchedule[] = [
     ]
   },
   {
-    date: "20 Septiembre", 
-    dayName: "Sábado",
+    date: "Sábado 20", 
+    dayName: "Dissabte 20",
     tracks: [
       { id: 'auditorio_lacy', name: 'Auditorio Lacy', color: 'bg-blue-500' },
       { id: 'auditorio_2', name: 'Auditorio 2', color: 'bg-green-500' },
@@ -235,10 +235,11 @@ export const scheduleData: DaySchedule[] = [
         time: "10:00 - 11:00",
         events: {
           auditorio_lacy: {
-            title: "Antibelicismo en la literatura fantástica",
+            title: "Antibel·licisme a la literatura fantàstica",
             speaker: "Carla Campos, Gemma Solsona, Cristina Xifra",
-            description: "Mesa antibélica: Pratchett, Leguin, Rodoreda y sus obras antibélicas",
+            description: "",
             duration: 50,
+            lang: "ca",
             type: "panel"
           },
           auditorio_2: {
@@ -280,7 +281,7 @@ export const scheduleData: DaySchedule[] = [
           },
           auditorio_2: {
             title: "Tiempos que fueron y que pudieron ser: género fantástico de inspiración histórica",
-            speaker: "Isabel Pedrero, Beatriz Alcaná, Virginia Orive de la Rosa, Bruno Puelles",
+            speaker: "Ana Saiz, Isabel Pedrero, Beatriz Alcaná, Bruno Puelles",
             startTime: "11:00",
             description: "",
             duration: 50,
@@ -319,7 +320,7 @@ export const scheduleData: DaySchedule[] = [
           },
           auditorio_2: {
             title: "El humor en el género y el género en el humor",
-            speaker: "Mónica Gutiérrez, Andrea Valeiras, Inés Galiano, Sergi Álvarez",
+            speaker: "Mónica Gutiérrez, Andrea Valeiras, Inés Galiano, Alejandro Rodríguez, Sergi Álvarez",
             description: "",
             startTime: "12:00",
             duration: 50,
@@ -505,6 +506,11 @@ export const scheduleData: DaySchedule[] = [
             startTime: "18:00",
             duration: 20,
             type: "panel"
+          }, {
+            title: "Editorial Minotauro",
+            startTime: "18:30",
+            duration: 20,
+            type: "panel"
           }]
         }
       }, {
@@ -558,8 +564,8 @@ export const scheduleData: DaySchedule[] = [
     ]
   },
   {
-    date: "21 Septiembre",
-    dayName: "Domingo", 
+    date: "Domingo 21",
+    dayName: "Diumenge 21", 
     tracks: [
       { id: 'auditorio_lacy', name: 'Auditorio Lacy', color: 'bg-blue-500' },
       { id: 'auditorio_2', name: 'Auditorio 2', color: 'bg-green-500' },
@@ -573,7 +579,7 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: {
             title: "Hablando de literatura infantil",
-            speaker: "Susana Vallejo, Marina Tena",
+            speaker: "Susana Vallejo, Marina Tena, Mariló Álvarez",
             description: "",
             duration: 50,
             type: "panel"
@@ -601,12 +607,7 @@ export const scheduleData: DaySchedule[] = [
             duration: 20,
             type: "taller"
           }],
-          editorial: [{
-            title: "Editorial Minotauro",
-            startTime: "10:30",
-            duration: 20,
-            type: "panel"
-          }]
+          editorial: []
         }
       }, {
         time: "11:00 - 12:00",
