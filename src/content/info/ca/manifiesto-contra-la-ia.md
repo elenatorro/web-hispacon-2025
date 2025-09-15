@@ -2,6 +2,7 @@
 draft: false
 title: "Manifest contra la IA"
 snippet: ""
+slug: "ca-manifest-contra-la-ia"
 lang: "ca"
 image: {
     src: "public/manifiesto-ia.png",

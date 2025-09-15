@@ -2,6 +2,7 @@
 draft: false
 title: "Inscripcions"
 snippet: "Inscripcions"
+slug: "ca-inscripcions"
 lang: "ca"
 image: {
     src: "public/inscripciones.png",

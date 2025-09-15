@@ -3,6 +3,7 @@ draft: false
 title: "Gala Premis Ignotus"
 snippet: "Tota la informació sobre la gala"
 lang: "ca"
+slug: "ca-gala-premis"
 image: {
     src: "public/ignotus.jpeg",
     alt: "Foto del guardó"

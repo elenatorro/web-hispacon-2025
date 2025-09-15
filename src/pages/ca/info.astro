@@ -26,7 +26,7 @@ const publishedBlogEntries = await getCollection("info", ({ data }) => {
         {
           publishedBlogEntries.map((infoPostEntry, index) => (
             <li>
-              <a href={`/ca/info/${infoPostEntry.slug.replace(/^ca\//, '').replace(/^info\//, '')}`}>
+              <a href={`/ca/info/${infoPostEntry.slug.replace(/^ca-/, '').replace(/^info\//, '')}`}>
                 <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-top">
                   <Picture
                     src={infoPostEntry.data.image.src}

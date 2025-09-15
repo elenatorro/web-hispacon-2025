@@ -2,6 +2,7 @@
 draft: false
 title: "Anacronòpete"
 snippet: "La antologia"
+slug: "ca-anacronopete"
 lang: "ca"
 image: {
     src: "public/anacronopete-min.jpg",

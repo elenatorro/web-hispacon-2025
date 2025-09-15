@@ -2,6 +2,7 @@
 draft: false
 title: "Casal Pere Quart"
 snippet: "El lloc de l'esdeveniment"
+slug: "ca-casal-pere-quart"
 lang: "ca"
 image: {
     src: "public/casal.jpg",

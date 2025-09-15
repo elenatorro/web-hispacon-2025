@@ -3,6 +3,7 @@ draft: false
 title: "Codi de Conducta"
 snippet: "Codi de conducta i protocol d'actuació per gaudir d'un esdeveniment segur"
 lang: "ca"
+slug: "ca-codi-de-conducta"
 image: {
     src: "public/codigo-conducta-min.jpg",
     alt: "Foto d'un llibre obert"
