@@ -614,7 +614,7 @@ export const scheduleData: DaySchedule[] = [
           },
           auditorio_2: {
             title: "La edad de oro del fantástico en España (1989-2009)",
-            speaker: "Juan Manuel Santiago, Armando Boix, Félix J. Palma, M.ª Concepción Regueiro Digón, José Antonio Bonilla",
+            speaker: "Juan Manuel Santiago, Armando Boix, M.ª Concepción Regueiro Digón, José Antonio Bonilla",
             description: "",
             startTime: "11:00",
             duration: 50,

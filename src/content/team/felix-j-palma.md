@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 name: "Félix J. Palma"
 avatar: {
     src: "public/felix-j-palma.jpg",
