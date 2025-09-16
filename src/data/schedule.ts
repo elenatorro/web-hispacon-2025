@@ -68,19 +68,11 @@ export const scheduleData: DaySchedule[] = [
           },
           sala_4: [
             {
-              title: "Videojuegos y libros. Libros y videojuegos",
-              speaker: "Darkor_LF",
-              description: "",
-              duration: 20,
-              startTime: "17:00",
-              type: "charla"
-            },
-            {
               title: "El romantasy es mi pasión",
               speaker: "Carla Plumed, Jessica Frías",
               description: "",
-              duration: 20,
-              startTime: "17:30",
+              duration: 50,
+              startTime: "17:00",
               type: "panel"
             }
           ],
