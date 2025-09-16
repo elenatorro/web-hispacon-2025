@@ -1,0 +1,21 @@
+---
+const { pathname } = Astro.url;
+---
+<div class="flex justify-end pl-12">
+  <a href="/"
+        class={`w-14 text-sm text-center rounded font-semibold transition
+            ${pathname.startsWith('/ca')
+                ? 'text-white hover:bg-(--font-hover-color)'
+                : 'bg-orange-500 text-(--font-secondary-color)'
+            }`}>
+            ES
+        </a>
+  <a href="/ca/"
+        class={`w-14 text-sm text-center rounded font-semibold transition
+            ${pathname.startsWith('/ca')
+                ? 'bg-orange-500 text-(--font-secondary-color)'
+                : 'text-white hover:bg-(--font-hover-color)'
+            }`}>
+            CAT
+        </a>
+</div>

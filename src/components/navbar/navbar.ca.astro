@@ -5,6 +5,7 @@ import Dropdown from "./dropdown.astro";
 import hispaconLogo from "@/assets/hispacon-logo.png";
 import { Picture } from "astro:assets";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
 
 const base = import.meta.env.BASE_PATH || "";
 
@@ -76,13 +77,10 @@ const menuitems = [
             </>
           ))
         }
+        <li>
+            <LanguageSwitcher />
+        </li>
       </ul>
     </MenuItems>
   </Astronav>
-  <div class="flex items-center gap-4">
-      <div class="ml-4 flex gap-2">
-        <a href="/" class={`w-14 text-center px-2 py-1 rounded font-semibold transition ${Astro.url.pathname.startsWith('/ca') ? 'bg-(--main-color) text-(--font-secondary-color) hover:bg-(--font-hover-color)' : 'bg-blue-600 text-white hover:bg-blue-700'}`}>ES</a>
-        <a href="/ca/" class={`w-14 text-center px-2 py-1 rounded font-semibold transition ${Astro.url.pathname.startsWith('/ca') ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-(--main-color) text-(--font-secondary-color) hover:bg-(--font-hover-color)'}`}>CAT</a>
-      </div>
-  </div>
 </header>
