@@ -14,6 +14,7 @@ export interface ScheduleEvent {
 export interface Track {
   id: string;
   name: string;
+  nameCa?: string; // Catalan name for the track
   color: string;
 }
 

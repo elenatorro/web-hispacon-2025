@@ -5,7 +5,7 @@ export const scheduleData: DaySchedule[] = [
     date: "Viernes 19",
     dayName: "Divendres 19",
     tracks: [
-      { id: 'auditorio_lacy', name: 'Auditorio Lacy', color: 'bg-blue-500' },
+      { id: 'auditorio_lacy', name: 'Auditorio Lacy', nameCa: 'Auditori Lacy', color: 'bg-blue-500' },
       // { id: 'auditorio_2', name: 'Auditorio Planta 2', color: 'bg-green-500' },
       { id: 'sala_3', name: 'Sala 3 (Planta 1)', color: 'bg-pink-500' },
       { id: 'sala_4', name: 'Sala 4 (Planta 2)', color: 'bg-purple-500' },
@@ -18,9 +18,9 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: [
             {
-            title: "Concierto de bienvenida",
+            title: "Concierto de bienvenida | Concert de benvinguda",
             speaker: "Sandra Hunter",
-            description: "Concierto en directo a cargo de la artista Sandra Hunter",
+            description: "Concierto en directo a cargo de la artista Sandra Hunter | Concert en directe a càrrec de l'artista Sandra Hunter",
             duration: 30,
             startTime: "16:00",
             type: "destacada"
@@ -32,9 +32,9 @@ export const scheduleData: DaySchedule[] = [
         events: {
           auditorio_lacy: [
           {
-            title: "Inauguración",
-            speaker: "Comité organizador",
-            description: "Bienvenida y presentación de la HispaCón 2025",
+            title: "Inauguración | Inauguració",
+            speaker: "Comité organizador | Comitè organitzador",
+            description: "Bienvenida y presentación de la HispaCón 2025 | Benvinguda i presentació de la HispaCón 2025",
             duration: 20,
             startTime: "16:30",
             type: "destacada"
@@ -215,8 +215,8 @@ export const scheduleData: DaySchedule[] = [
     date: "Sábado 20", 
     dayName: "Dissabte 20",
     tracks: [
-      { id: 'auditorio_lacy', name: 'Auditorio Lacy', color: 'bg-blue-500' },
-      { id: 'auditorio_2', name: 'Auditorio 2', color: 'bg-green-500' },
+      { id: 'auditorio_lacy', name: 'Auditorio Lacy', nameCa: 'Auditori Lacy', color: 'bg-blue-500' },
+      { id: 'auditorio_2', name: 'Auditorio 2', nameCa: 'Auditori 2', color: 'bg-green-500' },
       // { id: 'sala_3', name: 'Sala 3 (Planta 1)', color: 'bg-pink-500' },
       { id: 'sala_4', name: 'Sala 4 (Planta 2)', color: 'bg-purple-500' },
       // { id: 'ludica', name: 'Sala Lúdica', color: 'bg-yellow-500' },
@@ -378,7 +378,7 @@ export const scheduleData: DaySchedule[] = [
         }
       },
       {
-        time: "14:00 - 16:00 🍔 Pausa comida",
+        time: "14:00 - 16:00 🍔 Pausa",
         events: {
         }
       },
@@ -509,7 +509,7 @@ export const scheduleData: DaySchedule[] = [
         time: "19:00 - 21:00",
         events: {
           auditorio_lacy: {
-            title: "Gala de entrega de Premios Ignotus 2025",
+            title: "Gala de entrega de Premios Ignotus 2025 | Gala de lliurament de Premis Ignotus 2025",
             speaker: "",
             description: "",
             startTime: "19:00",
@@ -559,11 +559,11 @@ export const scheduleData: DaySchedule[] = [
     date: "Domingo 21",
     dayName: "Diumenge 21", 
     tracks: [
-      { id: 'auditorio_lacy', name: 'Auditorio Lacy', color: 'bg-blue-500' },
-      { id: 'auditorio_2', name: 'Auditorio 2', color: 'bg-green-500' },
+      { id: 'auditorio_lacy', name: 'Auditorio Lacy', nameCa: 'Auditori Lacy', color: 'bg-blue-500' },
+      { id: 'auditorio_2', name: 'Auditorio 2', nameCa: 'Auditori 2', color: 'bg-green-500' },
       // { id: 'sala_3', name: 'Sala 3 (Planta 1)', color: 'bg-pink-500' },
       { id: 'sala_3', name: 'Sala 3 (Planta 2)', color: 'bg-pink-500' },
-      { id: 'editorial', name: 'Sala 5 - Presentaciones', color: 'bg-orange-500' },
+      { id: 'editorial', name: 'Sala 5 - Presentaciones', nameCa: 'Sala 5 - Presentacions', color: 'bg-orange-500' },
     ],
     timeSlots: [
       {
@@ -736,9 +736,9 @@ export const scheduleData: DaySchedule[] = [
         time: "14:00 - 14:30",
         events: {
           auditorio_lacy: {
-            title: "Clausura y despedida",
-            speaker: "Comité organizador",
-            description: "Cierre oficial de HispaCón 2025 y anuncio próxima edición",
+            title: "Clausura",
+            speaker: "Comité organizador | Comitè organitzador",
+            description: "Cierre oficial de HispaCón 2025 y anuncio próxima edición | Tancament oficial de HispaCón 2025 i anunci pròxima edició",
             duration: 20,
             type: "destacada"
           }
