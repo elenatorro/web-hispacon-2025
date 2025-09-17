@@ -69,7 +69,7 @@ export const scheduleData: DaySchedule[] = [
           sala_4: [
             {
               title: "El romantasy es mi pasión",
-              speaker: "Carla Plumed, Jessica Frías",
+              speaker: "Carla Plumed, Jessica Frías, Antonio Torrubia",
               description: "",
               duration: 50,
               startTime: "17:00",
