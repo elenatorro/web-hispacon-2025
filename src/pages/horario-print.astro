@@ -190,7 +190,7 @@ import { normalizeEvents, formatDuration, getEventTimeDisplay } from "../utils/s
         onmouseover="this.style.background='#005999'" 
         onmouseout="this.style.background='#007acc'"
       >
-        🖨️ Imprimir programa
+        🖨️ Imprimir
       </button>
       <button 
         onclick="window.close()"
@@ -198,23 +198,23 @@ import { normalizeEvents, formatDuration, getEventTimeDisplay } from "../utils/s
         onmouseover="this.style.background='#444'" 
         onmouseout="this.style.background='#666'"
       >
-        ✕ Cerrar
+        ✕
       </button>
     </div>
 
     <h1 style="text-align: center; margin-bottom: 10px; font-size: 28px;">HispaCón 2025</h1>
-    <h2 style="text-align: center; margin-bottom: 30px; font-size: 18px; color: #666;">Programa Completo - 19-21 Septiembre, Sabadell</h2>
+    <h2 style="text-align: center; margin-bottom: 30px; font-size: 18px; color: #666;">Programa Completo - 19-21 Septiembre, Sabadell | Programa Complet - 19-21 Setembre, Sabadell</h2>
 
     {scheduleData.map((day, dayIndex) => (
       <div class={`schedule-day ${dayIndex > 0 ? 'print-page' : ''}`}>
         <div class="day-title">
-          {day.dayName} {day.date}
+          {day.dayName} | {day.date}
         </div>
 
         <table class="schedule-table">
           <thead>
             <tr>
-              <th class="time-column">Horario</th>
+              <th class="time-column">Horario | Horari</th>
               {day.tracks.map(track => (
                 <th class="track-header">{track.name}</th>
               ))}
@@ -273,9 +273,9 @@ import { normalizeEvents, formatDuration, getEventTimeDisplay } from "../utils/s
                         {trackEvents.length > 0 ? (
                           trackEvents.map(event => (
                             <div class="event-card">
-                              <div class={`event-type type-${event.type}`}>
-                                {event.type.toUpperCase()}
-                              </div>
+                                <span class={`event-type type-${event.type}`}>
+                                  {event.typeCa ? `${event.type} / ${event.typeCa}` : event.type}
+                                </span>
                               <div class="event-title">
                                 {event.title}
                                 {event.lang === 'ca' && (
@@ -302,36 +302,17 @@ import { normalizeEvents, formatDuration, getEventTimeDisplay } from "../utils/s
         </table>
       </div>
     ))}
-
-    <div class="legend">
-      <div class="legend-title">Leyenda</div>
-      <div class="legend-grid">
-        <div><span class="event-type type-charla">CHARLA</span> Charla</div>
-        <div><span class="event-type type-taller">TALLER</span> Taller</div>
-        <div><span class="event-type type-panel">PANEL</span> Mesa redonda</div>
-        <div><span class="event-type type-destacada">DESTACADA</span> Evento especial</div>
-        <div><span class="event-type type-especial">ESPECIAL</span> Podcast/Evento nocturno</div>
-        <div><span class="event-type type-presentation">PRESENTATION</span> Presentación</div>
-        <div><span class="event-type type-gaming">GAMING</span> Actividad lúdica</div>
-      </div>
-      <div style="margin-top: 10px; font-size: 9px;">
-        <span style="color: #ff6b35;">⚬</span> Indica evento con hora de inicio específica dentro del bloque horario
-      </div>
-    </div>
-
     <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #ccc; font-size: 10px; color: #666;">
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
         <div>
-          <strong>Información de contacto:</strong><br>
+          <strong>Información de contacto | Informació de contacte:</strong><br>
           Web: hispacon.org<br>
-          Email: info@hispacon.org<br>
-          Twitter: @HispaCon
+          Email: hispacon2025@gmail.com<br>
         </div>
         <div>
-          <strong>Ubicación:</strong><br>
+          <strong>Ubicación | Ubicació:</strong><br>
           Casal Pere Quart<br>
           Sabadell, Barcelona<br>
-          <em>* Horarios sujetos a cambios</em>
         </div>
       </div>
     </div>

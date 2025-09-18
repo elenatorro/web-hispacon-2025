@@ -1,9 +1,5 @@
 import type { DaySchedule } from "@/types/schedule";
 
-const TRACKS_LLUVIA = {
-
-}
-
 export const scheduleData: DaySchedule[] = [
   {
     date: "Viernes 19",
@@ -11,10 +7,10 @@ export const scheduleData: DaySchedule[] = [
     tracks: [
       { id: 'auditorio_lacy', name: 'Auditorio Lacy', nameCa: 'Auditori Lacy', color: 'bg-blue-500' },
       // { id: 'auditorio_2', name: 'Auditorio Planta 2', color: 'bg-green-500' },
-      { id: 'sala_3', name: 'Sala 3 (Planta 1)', color: 'bg-pink-500' },
+      // { id: 'sala_3', name: 'Sala 3 (Planta 1)', color: 'bg-pink-500' },
       { id: 'sala_4', name: 'Sala 4 (Planta 2)', color: 'bg-purple-500' },
       // { id: 'ludica', name: 'Sala Lúdica', color: 'bg-yellow-500' },
-      { id: 'editorial', name: 'Sala 5 (Planta 2)', color: 'bg-orange-500' },
+      { id: 'editorial', name: 'Sala 5 (Planta 2) Presentaciones', nameCa: 'Presentacions', color: 'bg-orange-500' },
     ],
     timeSlots: [
       {
@@ -27,7 +23,8 @@ export const scheduleData: DaySchedule[] = [
             description: "Concierto en directo a cargo de la artista Sandra Hunter | Concert en directe a càrrec de l'artista Sandra Hunter",
             duration: 30,
             startTime: "16:00",
-            type: "destacada"
+            type: "destacada",
+            typeCa: "destacada"
           }]
         },
       },
@@ -41,7 +38,8 @@ export const scheduleData: DaySchedule[] = [
             description: "Bienvenida y presentación de la HispaCón 2025 | Benvinguda i presentació de la HispaCón 2025",
             duration: 20,
             startTime: "16:30",
-            type: "destacada"
+            type: "destacada",
+            typeCa: "destacada"
           }],
           sala_4: {
             title: "Alicia tiene una tardis. Viajes y regeneraciones de Alicia en el País de las Maravillas en la cultura popular",
@@ -49,14 +47,16 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             duration: 20,
             startTime: "16:30",
-            type: "charla"
+            type: "charla",
+            typeCa: "xerrada"
           },
           editorial: {
             title: "Tentacle Pulp",
             description: "",
             duration: 20,
             startTime: "16:30",
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },
         }
       },
@@ -68,7 +68,8 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Loredana Volpe, Alberto Ramos, Quim Ribalta, Cristina Xifra",
             description: "Mesa redonda",
             duration: 50,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },
           sala_4: [
             {
@@ -77,7 +78,8 @@ export const scheduleData: DaySchedule[] = [
               description: "",
               duration: 50,
               startTime: "17:00",
-              type: "panel"
+              type: "panel",
+              typeCa: "panell"
             }
           ],
           editorial: [
@@ -86,7 +88,8 @@ export const scheduleData: DaySchedule[] = [
                 description: "",
                 duration: 20,
                 startTime: "17:00",
-                type: "panel"
+                type: "panel",
+                typeCa: "panell"
             },
             {
                 title: "Medusa Books",
@@ -94,7 +97,8 @@ export const scheduleData: DaySchedule[] = [
                 duration: 20,
                 startTime: "17:30",
                 lang: 'ca',
-                type: "panel"
+                type: "panel",
+                typeCa: "panell"
             }
           ],
         }
@@ -108,7 +112,8 @@ export const scheduleData: DaySchedule[] = [
             description: "Mesa redonda sobre Space Opera",
             startTime: "18:00",
             duration: 50,
-            type: "charla"
+            type: "charla",
+            typeCa: "xerrada"
           },
           sala_4: {
             title: "Ride the Laughing",
@@ -116,7 +121,8 @@ export const scheduleData: DaySchedule[] = [
             description: "Taller para escribir humor",
             startTime: "18:00",
             duration: 50,
-            type: "taller"
+            type: "taller",
+            typeCa: "taller"
           },
           editorial: {
             title: "Presentación Autopublicación",
@@ -124,7 +130,8 @@ export const scheduleData: DaySchedule[] = [
             description: "A cargo de sus autores y autoras",
             startTime: "18:00",
             duration: 90,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },
         }
       },
@@ -137,7 +144,8 @@ export const scheduleData: DaySchedule[] = [
             description: "Mesa redonda sobre terror escrito por mujeres",
             startTime: "19:00",
             duration: 50,
-            type: "charla"
+            type: "charla",
+            typeCa: "xerrada"
           },
           sala_4: [
             {
@@ -146,7 +154,8 @@ export const scheduleData: DaySchedule[] = [
               description: "",
               duration: 20,
               startTime: "19:00",
-              type: "taller"
+              type: "taller",
+              typeCa: "taller"
             },
             {
               title: "Escribir un microrrelato usando el Tarot",
@@ -154,7 +163,8 @@ export const scheduleData: DaySchedule[] = [
               description: "",
               duration: 20,
               startTime: "19:30",
-              type: "taller"
+              type: "taller",
+              typeCa: "taller"
             }
           ],
           editorial: [{
@@ -163,7 +173,8 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             duration: 20,
             startTime: "19:30",
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           }]
         }
       },
@@ -175,7 +186,8 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Bea Aguilar, Eduard Martí, Sergi Álvarez, Sergi Viciana",
             description: "",
             duration: 50,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },
           sala_4: [
             {
@@ -184,7 +196,8 @@ export const scheduleData: DaySchedule[] = [
               description: "",
               duration: 20,
               startTime: "20:00",
-              type: "taller"
+              type: "taller",
+              typeCa: "taller"
             },
             {
               title: "El género fantástico en la música de los 80: No es serio este cementerio",
@@ -192,7 +205,8 @@ export const scheduleData: DaySchedule[] = [
               description: "",
               duration: 20,
               startTime: "20:30",
-              type: "taller"
+              type: "taller",
+              typeCa: "taller"
             }
           ],
           editorial: [
@@ -201,14 +215,16 @@ export const scheduleData: DaySchedule[] = [
                 description: "",
                 duration: 20,
                 startTime: "20:00",
-                type: "panel"
+                type: "panel",
+                typeCa: "panell"
             },
             {
                 title: "LES Editorial",
                 description: "",
                 duration: 20,
                 startTime: "20:30",
-                type: "panel"
+                type: "panel",
+                typeCa: "panell"
             }
           ],
         }
@@ -221,10 +237,11 @@ export const scheduleData: DaySchedule[] = [
     tracks: [
       { id: 'auditorio_lacy', name: 'Auditorio Lacy', nameCa: 'Auditori Lacy', color: 'bg-blue-500' },
       { id: 'auditorio_2', name: 'Auditorio 2', nameCa: 'Auditori 2', color: 'bg-green-500' },
-      // { id: 'sala_3', name: 'Sala 3 (Planta 1)', color: 'bg-pink-500' },
-      { id: 'sala_4', name: 'Sala 4 (Planta 2)', color: 'bg-purple-500' },
-      // { id: 'ludica', name: 'Sala Lúdica', color: 'bg-yellow-500' },
-      { id: 'editorial', name: 'Sala 5 - Presentaciones | Presentacions', color: 'bg-orange-500' },
+      // OPCION LLUVIA
+      // { id: 'ludica', name: 'Sala 4 (Planta 2)', color: 'bg-purple-500' },
+      // { id: 'editorial', name: 'Sala 5 - Presentaciones | Presentacions', color: 'bg-orange-500' },
+      { id: 'ludica', name: 'Sala Lúdica - Salón de Actos', nameCa: 'Saló d\'Actes', color: 'bg-yellow-500' },
+      { id: 'editorial', name: 'Sala 4 (Planta 2) | Presentaciones', nameCa: 'Presentacions', color: 'bg-orange-500' },
     ],
     timeSlots: [
       {
@@ -236,32 +253,37 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             duration: 50,
             lang: "ca",
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },
           auditorio_2: {
             title: "Cómo hacer ucronías en España",
             speaker: "Andrea Valeiras, Talita Isla, Javier Miró",
             description: "",
             duration: 50,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },
-          sala_4: {
+          ludica: {
             title: "Juegos y rol | Jocs i rol",
             speaker: "",
             description: "Toda la mañana | Tot el matí",
             duration: 240,
-            type: "taller"
+            type: "taller",
+            typeCa  : "taller"
           },
           editorial: [{
             title: "Estelas de magia",
             startTime: "10:00",
             duration: 20,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },{
             title: "Algar Editorial",
             startTime: "10:30",
             duration: 20,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           }]
         }
       },
@@ -273,7 +295,8 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Marina Vidal, Ricard Efa, Sara Soler, Genie Espinosa",
             description: "",
             duration: 50,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },
           auditorio_2: {
             title: "Tiempos que fueron y que pudieron ser: género fantástico de inspiración histórica",
@@ -281,9 +304,10 @@ export const scheduleData: DaySchedule[] = [
             startTime: "11:00",
             description: "",
             duration: 50,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },
-          sala_4: {
+          ludica: {
             title: "Juegos y rol | Jocs i rol",
             speaker: "",
             description: "Toda la mañana | Tot el matí",
@@ -294,12 +318,14 @@ export const scheduleData: DaySchedule[] = [
             title: "Apache Libros",
             startTime: "11:00",
             duration: 20,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },{
             title: "Esqueleto Negro",
             startTime: "11:30",
             duration: 20,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           }]
         }
       },
@@ -320,25 +346,29 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             startTime: "12:00",
             duration: 50,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },
-          sala_4: {
+          ludica: {
             title: "Juegos y rol | Jocs i rol",
             speaker: "",
             description: "Toda la mañana | Tot el matí",
             duration: 240,
-            type: "taller"
+            type: "taller",
+            typeCa  : "taller"
           },
           editorial: [{
             title: "Obscura Editorial",
             startTime: "12:00",
             duration: 20,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },{
             title: "Editorial Numak",
             startTime: "12:30",
             duration: 20,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           }]
         }
       },
@@ -351,7 +381,8 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             startTime: "13:00",
             duration: 50,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },
           auditorio_2: {
             title: "Tendencias actuales del terror: del papel a lo audiovisual",
@@ -359,25 +390,29 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             startTime: "13:00",
             duration: 90,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },
-          sala_4: {
+          ludica: {
             title: "Juegos y rol | Jocs i rol",
             speaker: "",
             description: "Toda la mañana | Tot el matí",
             duration: 240,
-            type: "taller"
+            type: "taller",
+            typeCa  : "taller"
           },
           editorial: [{
             title: "Suseya Editorial",
             startTime: "13:00",
             duration: 20,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           }, {
             title: "Pórtico",
             startTime: "13:30",
             duration: 20,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           }]
         }
       },
@@ -395,7 +430,8 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             startTime: "16:00",
             duration: 50,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },
           auditorio_2: {
             title: "Consejos de escritura de Stephen King",
@@ -403,27 +439,31 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             startTime: "16:00",
             duration: 50,
-            type: "taller"
+            type: "taller",
+            typeCa: "taller"
           },
-          sala_4: {
+          ludica: {
             title: "Cluedo en vivo",
             speaker: "Bruno Puelles",
             description: "'Fiesta en el Hotel Jardín de Odette'. Actividad a cargo de Bruno Puelles, 3h de duración. Requiere inscripción previa.",
             link: "https://docs.google.com/forms/d/e/1FAIpQLSeb9Hp7tjR_wEpqj2vnfPAlo1C5ZK-o05q5N3e28OfkN0losQ/viewform",
             startTime: "16:00",
             duration: 180,
-            type: "taller"
+            type: "taller",
+            typeCa: "taller"
           },
           editorial: [{
             title: "La Biblioteca de Carfax",
             startTime: "16:00",
             duration: 20,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           }, {
             title: "Isphanya",
             startTime: "16:30",
             duration: 20,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           }]
         }
       },
@@ -437,7 +477,8 @@ export const scheduleData: DaySchedule[] = [
             startTime: "17:00",
             lang: "ca",
             duration: 50,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },
           auditorio_2: {
             title: "Situación de la mujer mangaka",
@@ -445,27 +486,31 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             startTime: "17:00",
             duration: 50,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },
-          sala_4: {
+          ludica: {
             title: "Cluedo en vivo",
             speaker: "Bruno Puelles",
             description: "'Fiesta en el Hotel Jardín de Odette'. Actividad a cargo de Bruno Puelles, 3h de duración. Requiere inscripción previa.",
             link: "https://docs.google.com/forms/d/e/1FAIpQLSeb9Hp7tjR_wEpqj2vnfPAlo1C5ZK-o05q5N3e28OfkN0losQ/viewform",
             startTime: "16:00",
             duration: 180,
-            type: "taller"
+            type: "taller",
+            typeCa: "taller"
           },
           editorial: [{
             title: "Editorial Magnífica",
             startTime: "17:00",
             duration: 20,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           }, {
             title: "Editorial Raven",
             startTime: "17:30",
             duration: 20,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           }]
         }
       },
@@ -478,7 +523,8 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             startTime: "18:00",
             duration: 50,
-            type: "destacada"
+            type: "destacada",
+            typeCa: "destacada"
           },
           auditorio_2: {
             title: "Menos IA, más fantasía",
@@ -486,9 +532,10 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             startTime: "18:00",
             duration: 50,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },
-          sala_4: {
+          ludica: {
             title: "Cluedo en vivo",
             speaker: "Bruno Puelles",
             description: "'Fiesta en el Hotel Jardín de Odette'. Actividad a cargo de Bruno Puelles, 3h de duración. Requiere inscripción previa.",
@@ -501,12 +548,14 @@ export const scheduleData: DaySchedule[] = [
             title: "Editorial Crononauta",
             startTime: "18:00",
             duration: 20,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           }, {
             title: "Editorial Minotauro",
             startTime: "18:30",
             duration: 20,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           }]
         }
       }, {
@@ -530,28 +579,32 @@ export const scheduleData: DaySchedule[] = [
               startTime: "22:30",
               duration: 30,
               lang: "ca",
-              type: "especial"
+              type: "especial",
+              typeCa: "especial"
             },
             {
               title: "idíl•liQ",
               startTime: "23:00",
               duration: 30,
               lang: "ca",
-              type: "especial"
+              type: "especial",
+              typeCa: "especial"
             },
             {
               title: "La Estantería Sáfica",
               description: "ES",
               startTime: "23:30",
               duration: 30,
-              type: "especial"
+              type: "especial",
+              typeCa: "especial"
             },
             {
               title: "Furia en la Librería",
               description: "ES",
               startTime: "00:00",
               duration: 30,
-              type: "especial"
+              type: "especial",
+              typeCa: "especial"
             }
           ]
         },
@@ -565,9 +618,8 @@ export const scheduleData: DaySchedule[] = [
     tracks: [
       { id: 'auditorio_lacy', name: 'Auditorio Lacy', nameCa: 'Auditori Lacy', color: 'bg-blue-500' },
       { id: 'auditorio_2', name: 'Auditorio 2', nameCa: 'Auditori 2', color: 'bg-green-500' },
-      // { id: 'sala_3', name: 'Sala 3 (Planta 1)', color: 'bg-pink-500' },
-      { id: 'sala_3', name: 'Sala 3 (Planta 2)', color: 'bg-pink-500' },
-      { id: 'editorial', name: 'Sala 5 - Presentaciones | Presentacions', nameCa: 'Sala 5 - Presentacions', color: 'bg-orange-500' },
+      { id: 'sala_4', name: 'Sala 4 (Planta 2)', color: 'bg-pink-500' },
+      { id: 'editorial', name: 'Sala 5 (Planta 2) Presentaciones', nameCa: 'Presentacions', color: 'bg-orange-500' },
     ],
     timeSlots: [
       {
@@ -578,7 +630,8 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Susana Vallejo, Marina Tena, Mariló Álvarez",
             description: "",
             duration: 50,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },
           auditorio_2: {
               title: "Audioficciones de género fantástico",
@@ -586,22 +639,25 @@ export const scheduleData: DaySchedule[] = [
               description: "",
               duration: 50,
               startTime: "10:00",
-              type: "panel"
+              type: "panel",
+              typeCa: "panell"
           },
-          sala_3: [{
+          sala_4: [{
             title: "Realismo y verosimilitud en la literatura de género",
             speaker: "Javier Saborido",
             description: "",
             startTime: "10:00",
             duration: 20,
-            type: "taller"
+            type: "taller",
+            typeCa: "taller"
           }, {
             title: "Género y fantasía: Personajes heroicos dentro de la fantasía",
             speaker: "Inés María Martínez Domenech",
             description: "",
             startTime: "10:30",
             duration: 20,
-            type: "taller"
+            type: "taller",
+            typeCa: "taller"
           }],
           editorial: []
         }
@@ -614,7 +670,8 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             startTime: "11:00",
             duration: 50,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },
           auditorio_2: {
             title: "La edad de oro del fantástico en España (1989-2009)",
@@ -622,9 +679,10 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             startTime: "11:00",
             duration: 50,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },
-          sala_3: [{
+          sala_4: [{
             title: "¿Quién dijo miedo? Pon un fantasma en tu vida",
             speaker: "Beatriz Alcaná, Ana Saiz",
             description: "",
@@ -637,18 +695,21 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             startTime: "11:30",
             duration: 20,
-            type: "taller"
+            type: "taller",
+            typeCa: "taller"
           }],
           editorial: [{
             title: "Editorial Specula",
             startTime: "11:00",
             duration: 20,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           }, {
             title: "Editorial Literup",
             startTime: "11:30",
             duration: 20,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           }]
         }
       }, {
@@ -660,7 +721,8 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             startTime: "12:00",
             duration: 50,
-            type: "destacada"
+            type: "destacada",
+            typeCa: "destacada"
           },
           auditorio_2: {
             title: "Fantasía se escribe con ñ",
@@ -668,26 +730,30 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             startTime: "12:00",
             duration: 50,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },
-          sala_3: [{
+          sala_4: [{
             title: "Mundos de ensueño: fantasía onírica en la literatura",
             speaker: "Natalia Sánchez y Manel Medina",
             description: "",
             startTime: "12:00",
             duration: 50,
-            type: "taller"
+            type: "taller",
+            typeCa: "taller"
           }],
           editorial: [{
             title: "Editorial Transbordador",
             startTime: "12:00",
             duration: 20,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           }, {
             title: "Insólita Editorial",
             startTime: "12:00",
             duration: 20,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           }]
         }
       }, {
@@ -699,7 +765,7 @@ export const scheduleData: DaySchedule[] = [
             description: "",
             startTime: "13:00",
             duration: 50,
-            type: "panel"
+            type: "panel",
           },
           auditorio_2: {
             title: "Editar género: dando voz a autores y autoras",
@@ -708,32 +774,37 @@ export const scheduleData: DaySchedule[] = [
             startTime: "13:00",
             duration: 50,
             type: "panel",
+            typeCa: "panell"
           },
-          sala_3: [{
+          sala_4: [{
             title: "La sutil diferencia entre mitologia y misticismo: un dilema en la difusión del fantástico",
             speaker: "Alfons Mallol García, Karen Madrid",
             description: "",
             startTime: "13:00",
             duration: 20,
-            type: "charla"
+            type: "charla",
+            typeCa: "xerrada"
           }, {
             title: "Protección contra la IA generativa en el mundo editorial",
             speaker: "Andrés Zelada",
             description: "",
             startTime: "13:30",
             duration: 20,
-            type: "taller"
+            type: "taller",
+            typeCa: "taller"
           }],
           editorial: [{
             title: "40 aniversario de Gigamesh",
             startTime: "13:00",
             duration: 20,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           },{
             title: "Droids & Druids",
             startTime: "13:30",
             duration: 20,
-            type: "panel"
+            type: "panel",
+            typeCa: "panell"
           }]
         }
       }, {
@@ -744,7 +815,8 @@ export const scheduleData: DaySchedule[] = [
             speaker: "Comité organizador | Comitè organitzador",
             description: "Cierre oficial de HispaCón 2025 y anuncio próxima edición | Tancament oficial de HispaCón 2025 i anunci pròxima edició",
             duration: 20,
-            type: "destacada"
+            type: "destacada",
+            typeCa: "destacada"
           }
         }
       }
