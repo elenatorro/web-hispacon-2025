@@ -1,5 +1,9 @@
 import type { DaySchedule } from "@/types/schedule";
 
+const TRACKS_LLUVIA = {
+
+}
+
 export const scheduleData: DaySchedule[] = [
   {
     date: "Viernes 19",
@@ -220,7 +224,7 @@ export const scheduleData: DaySchedule[] = [
       // { id: 'sala_3', name: 'Sala 3 (Planta 1)', color: 'bg-pink-500' },
       { id: 'sala_4', name: 'Sala 4 (Planta 2)', color: 'bg-purple-500' },
       // { id: 'ludica', name: 'Sala Lúdica', color: 'bg-yellow-500' },
-      { id: 'editorial', name: 'Sala 5 - Presentaciones', color: 'bg-orange-500' },
+      { id: 'editorial', name: 'Sala 5 - Presentaciones | Presentacions', color: 'bg-orange-500' },
     ],
     timeSlots: [
       {
@@ -242,9 +246,9 @@ export const scheduleData: DaySchedule[] = [
             type: "panel"
           },
           sala_4: {
-            title: "Juegos y rol",
+            title: "Juegos y rol | Jocs i rol",
             speaker: "",
-            description: "Toda la mañana",
+            description: "Toda la mañana | Tot el matí",
             duration: 240,
             type: "taller"
           },
@@ -280,9 +284,9 @@ export const scheduleData: DaySchedule[] = [
             type: "panel"
           },
           sala_4: {
-            title: "Juegos y rol",
+            title: "Juegos y rol | Jocs i rol",
             speaker: "",
-            description: "Toda la mañana",
+            description: "Toda la mañana | Tot el matí",
             duration: 240,
             type: "taller"
           },
@@ -319,9 +323,9 @@ export const scheduleData: DaySchedule[] = [
             type: "panel"
           },
           sala_4: {
-            title: "Juegos y rol",
+            title: "Juegos y rol | Jocs i rol",
             speaker: "",
-            description: "Toda la mañana",
+            description: "Toda la mañana | Tot el matí",
             duration: 240,
             type: "taller"
           },
@@ -358,9 +362,9 @@ export const scheduleData: DaySchedule[] = [
             type: "panel"
           },
           sala_4: {
-            title: "Juegos y rol",
+            title: "Juegos y rol | Jocs i rol",
             speaker: "",
-            description: "Toda la mañana",
+            description: "Toda la mañana | Tot el matí",
             duration: 240,
             type: "taller"
           },
@@ -563,7 +567,7 @@ export const scheduleData: DaySchedule[] = [
       { id: 'auditorio_2', name: 'Auditorio 2', nameCa: 'Auditori 2', color: 'bg-green-500' },
       // { id: 'sala_3', name: 'Sala 3 (Planta 1)', color: 'bg-pink-500' },
       { id: 'sala_3', name: 'Sala 3 (Planta 2)', color: 'bg-pink-500' },
-      { id: 'editorial', name: 'Sala 5 - Presentaciones', nameCa: 'Sala 5 - Presentacions', color: 'bg-orange-500' },
+      { id: 'editorial', name: 'Sala 5 - Presentaciones | Presentacions', nameCa: 'Sala 5 - Presentacions', color: 'bg-orange-500' },
     ],
     timeSlots: [
       {
