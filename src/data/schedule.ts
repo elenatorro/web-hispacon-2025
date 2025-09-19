@@ -84,12 +84,12 @@ export const scheduleData: DaySchedule[] = [
           ],
           editorial: [
             {
-                title: "Fénix Literario",
-                description: "",
+                title: "Sin programar | Sense programar",
+                description: "-",
                 duration: 20,
                 startTime: "17:00",
-                type: "panel",
-                typeCa: "panell"
+                type: "",
+                typeCa: ""
             },
             {
                 title: "Medusa Books",
@@ -168,13 +168,22 @@ export const scheduleData: DaySchedule[] = [
             }
           ],
           editorial: [{
-            title: "Aquí hay Dragonas",
+            title: "Presentación Autopublicación",
             speaker: "",
-            description: "",
-            duration: 20,
-            startTime: "19:30",
+            description: "A cargo de sus autores y autoras",
+            startTime: "18:00",
+            duration: 90,
             type: "panel",
             typeCa: "panell"
+            },
+            {
+              title: "Aquí hay Dragonas",
+              speaker: "",
+              description: "",
+              duration: 20,
+              startTime: "19:30",
+              type: "panel",
+              typeCa: "panell"
           }]
         }
       },
