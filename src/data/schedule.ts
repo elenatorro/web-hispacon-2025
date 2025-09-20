@@ -411,15 +411,9 @@ export const scheduleData: DaySchedule[] = [
             typeCa  : "taller"
           },
           editorial: [{
-            title: "Sin programa - Sense programar",
-            startTime: "13:00",
-            duration: 20,
-            type: "panel",
-            typeCa: "panell"
-          }, {
             title: "Pórtico",
-            startTime: "13:30",
-            duration: 20,
+            startTime: "13:00",
+            duration: 50,
             type: "panel",
             typeCa: "panell"
           }]
